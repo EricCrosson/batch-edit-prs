@@ -1,0 +1,15 @@
+{
+  "name": "batch-edit-prs",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Eric Crosson <eric.s.crosson@gmail.com>",
+  "license": "(Apache-2.0 OR ISC)",
+  "main": "main.js",
+  "keywords": [],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@octokit/rest": "20.0.2"
+  }
+}
