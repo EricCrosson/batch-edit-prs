@@ -4,7 +4,7 @@
   "description": "",
   "author": "Eric Crosson <eric.s.crosson@gmail.com>",
   "license": "(Apache-2.0 OR ISC)",
-  "main": "main.js",
+  "main": "src/main.js",
   "keywords": [],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
