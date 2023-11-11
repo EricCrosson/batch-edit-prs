@@ -4,7 +4,8 @@
   "description": "Edit a batch of GitHub pull requests",
   "author": "Eric Crosson <eric.s.crosson@gmail.com>",
   "license": "(Apache-2.0 OR ISC)",
-  "main": "src/main.js",
+  "type": "module",
+  "exports": "./src/main.js",
   "keywords": [],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

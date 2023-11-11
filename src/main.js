@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { Octokit } = require("@octokit/rest");
+import { Octokit } from "@octokit/rest";
 
 // Validate GitHub token
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
