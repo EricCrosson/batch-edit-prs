@@ -12,7 +12,7 @@ const { mergeFlag, pattern, githubToken } = validateCliArguments(args);
 const octokit = new Octokit({ auth: githubToken });
 
 // Function to check if all CI checks have passed
-async function allChecksPassed(owner, repo, ref) {
+async function allChecksPassed(octokit, owner, repo, ref) {
   const { data: checks } = await octokit.checks.listForRef({
     owner,
     repo,
@@ -50,6 +50,7 @@ async function processAssignedPullRequests() {
           });
 
           const allStatusChecksArePassing = await allChecksPassed(
+            octokit,
             owner,
             repo,
             pr.data.head.sha,
