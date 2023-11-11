@@ -1,16 +1,14 @@
 /**
  * Validates command-line arguments.
  *
- * @param {string[]} args - The command-line arguments to validate.
- * @returns {{mergeFlag: boolean, pattern: string}} Validated CLI arguments.
- * @throws {Error} Will throw an error if the arguments are not valid.
+ * @param {string[]} args - The arguments to validate.
+ * @returns {{mergeFlag: boolean, pattern: string, githubToken: string}} Validated arguments.
+ * @throws {Error} Throws an error if the arguments are not valid.
  */
 export function validateCliArguments(args) {
   const mergeFlag = args.includes("--merge");
   const helpFlag = args.includes("--help");
-  const pattern = args.find(
-    (arg) => !arg.startsWith("--") && !arg.startsWith("-"),
-  );
+  const pattern = args.filter((arg) => !arg.startsWith("--"));
 
   let errors = [];
 
@@ -23,12 +21,18 @@ export function validateCliArguments(args) {
     process.exit(0);
   }
 
-  if (!pattern) {
+  // Validate GitHub token
+  const githubToken = process.env.GITHUB_TOKEN;
+  if (!githubToken) {
+    errors.push("Error: GITHUB_TOKEN environment variable is not set.");
+  }
+
+  if (pattern.length === 0) {
     errors.push("Error: Pattern argument is required.");
   }
 
-  if (args.length > 2 || (args.length === 2 && !mergeFlag && !helpFlag)) {
-    errors.push("Error: Unexpected arguments.");
+  if (pattern.length > 1) {
+    errors.push("Error: Unexpected arguments -- expected only one pattern.");
   }
 
   if (errors.length > 0) {
@@ -36,5 +40,5 @@ export function validateCliArguments(args) {
     process.exit(1);
   }
 
-  return { mergeFlag, pattern };
+  return { mergeFlag, pattern, githubToken };
 }

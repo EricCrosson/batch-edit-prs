@@ -4,19 +4,12 @@ import { Octokit } from "@octokit/rest";
 
 import { validateCliArguments } from "./validate.js";
 
-// Validate GitHub token
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-if (!GITHUB_TOKEN) {
-  console.error("Error: GITHUB_TOKEN environment variable is not set.");
-  process.exit(1);
-}
-
-// Initialize Octokit
-const octokit = new Octokit({ auth: GITHUB_TOKEN });
-
 // Parse and validate command-line arguments
 const args = process.argv.slice(2);
-const { mergeFlag, pattern } = validateCliArguments(args);
+const { mergeFlag, pattern, githubToken } = validateCliArguments(args);
+
+// Initialize Octokit
+const octokit = new Octokit({ auth: githubToken });
 
 // Function to check if all CI checks have passed
 async function allChecksPassed(owner, repo, ref) {
