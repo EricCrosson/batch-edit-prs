@@ -74,20 +74,20 @@ export async function batchEditPullRequests(github, output, args) {
         break;
       case "approve":
         github.approvePullRequest(pr);
-        output.write(`- ✔ ${display(pr, maxTitleLength)}\n`);
+        output.write(`✔ ${display(pr, maxTitleLength)}\n`);
         break;
       case "approve and merge":
         github.approvePullRequest(pr);
         github.mergePullRequest(pr);
-        output.write(`- 🚢 ${display(pr, maxTitleLength)}\n`);
+        output.write(`🚢 ${display(pr, maxTitleLength)}\n`);
         break;
       case "merge":
         github.mergePullRequest(pr);
-        output.write(`- 🚢 ${display(pr, maxTitleLength)}\n`);
+        output.write(`🚢 ${display(pr, maxTitleLength)}\n`);
         break;
       case "close":
         github.closePullRequest(pr);
-        output.write(`- 🛑 ${display(pr, maxTitleLength)}\n`);
+        output.write(`🛑 ${display(pr, maxTitleLength)}\n`);
         break;
     }
 

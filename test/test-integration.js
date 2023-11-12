@@ -128,10 +128,10 @@ test.describe("happy path", () => {
     assert.equal(
       output,
       `
-- ✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-- ✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-- ✔ chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-- ✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
+✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
+✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
+✔ chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
+✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
         .trim()
         .concat("\n"),
       "output differed from expected snapshot",
@@ -194,10 +194,10 @@ test.describe("happy path", () => {
     assert.equal(
       output,
       `
-- 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-- 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-- 🚢 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-- 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
+🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
+🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
+🚢 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
+🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
         .trim()
         .concat("\n"),
       "output differed from expected snapshot",
@@ -260,10 +260,10 @@ test.describe("happy path", () => {
     assert.equal(
       output,
       `
-- 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-- 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-- 🚢 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-- 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
+🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
+🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
+🚢 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
+🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
         .trim()
         .concat("\n"),
       "output differed from expected snapshot",
@@ -326,10 +326,10 @@ test.describe("happy path", () => {
     assert.equal(
       output,
       `
-- 🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-- 🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-- 🛑 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-- 🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
+🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
+🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
+🛑 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
+🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
         .trim()
         .concat("\n"),
       "output differed from expected snapshot",
