@@ -11,6 +11,10 @@
   "homepage": "https://github.com/EricCrosson/batch-edit-prs",
   "type": "module",
   "exports": "./src/main.js",
+  "files": [
+    "src/",
+    "test/"
+  ],
   "scripts": {
     "test": "node --test test/test-*"
   },
