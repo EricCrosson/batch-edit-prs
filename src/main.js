@@ -16,7 +16,7 @@ async function main() {
   };
 
   try {
-    batchEditPullRequests(github, process.stdout, args);
+    await batchEditPullRequests(github, args);
   } catch (error) {
     console.error("Error processing pull requests:", error);
     process.exit(1);

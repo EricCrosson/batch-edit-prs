@@ -3,7 +3,6 @@ import test from "node:test";
 
 import { MockGithubClient } from "./mock/mock-github.js";
 import { batchEditPullRequests } from "../src/lib.js";
-import { StringWritable } from "./string-writable.js";
 
 test.describe("happy path", () => {
   test("search", async () => {
@@ -13,20 +12,12 @@ test.describe("happy path", () => {
       checksFile: "./test-data/happy-path/checks.json",
     });
 
-    const outputStream = new StringWritable();
-
-    const outputFinalized = new Promise((resolve) => {
-      outputStream.on("done", (data) => {
-        resolve(data);
-      });
-    });
-
     const args = {
       pattern: "semantic-release to v22",
       action: "search",
     };
 
-    let results = await batchEditPullRequests(mockGithub, outputStream, args);
+    let results = await batchEditPullRequests(mockGithub, args);
 
     const approvedPullRequests = results.filter((result) => result.approved);
     assert.ok(
@@ -57,19 +48,6 @@ test.describe("happy path", () => {
       mockGithub.closed.length === 0,
       "when action is search, the service should receive no requests to close a pull request",
     );
-
-    const output = await outputFinalized;
-    assert.equal(
-      output,
-      `
-- fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-- fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-- chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-- fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
-        .trim()
-        .concat("\n"),
-      "output differed from expected snapshot",
-    );
   });
 
   test("approve", async () => {
@@ -79,20 +57,12 @@ test.describe("happy path", () => {
       checksFile: "./test-data/happy-path/checks.json",
     });
 
-    const outputStream = new StringWritable();
-
-    const outputFinalized = new Promise((resolve) => {
-      outputStream.on("done", (data) => {
-        resolve(data);
-      });
-    });
-
     const args = {
       pattern: "semantic-release to v22",
       action: "approve",
     };
 
-    let results = await batchEditPullRequests(mockGithub, outputStream, args);
+    let results = await batchEditPullRequests(mockGithub, args);
 
     const approvedPullRequests = results.filter((result) => result.approved);
     assert.ok(
@@ -123,19 +93,6 @@ test.describe("happy path", () => {
       mockGithub.closed.length === 0,
       "when action is approve, the service should receive no requests to close a pull request",
     );
-
-    const output = await outputFinalized;
-    assert.equal(
-      output,
-      `
-✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-✔ chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-✔ fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
-        .trim()
-        .concat("\n"),
-      "output differed from expected snapshot",
-    );
   });
 
   test("approve and merge", async () => {
@@ -145,20 +102,12 @@ test.describe("happy path", () => {
       checksFile: "./test-data/happy-path/checks.json",
     });
 
-    const outputStream = new StringWritable();
-
-    const outputFinalized = new Promise((resolve) => {
-      outputStream.on("done", (data) => {
-        resolve(data);
-      });
-    });
-
     const args = {
       pattern: "semantic-release to v22",
       action: "approve and merge",
     };
 
-    let results = await batchEditPullRequests(mockGithub, outputStream, args);
+    let results = await batchEditPullRequests(mockGithub, args);
 
     const approvedPullRequests = results.filter((result) => result.approved);
     assert.ok(
@@ -189,19 +138,6 @@ test.describe("happy path", () => {
       mockGithub.closed.length === 0,
       "when action is approve and merge, the service should receive no requests to close a pull request",
     );
-
-    const output = await outputFinalized;
-    assert.equal(
-      output,
-      `
-🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-🚢 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
-        .trim()
-        .concat("\n"),
-      "output differed from expected snapshot",
-    );
   });
 
   test("merge", async () => {
@@ -211,20 +147,12 @@ test.describe("happy path", () => {
       checksFile: "./test-data/happy-path/checks.json",
     });
 
-    const outputStream = new StringWritable();
-
-    const outputFinalized = new Promise((resolve) => {
-      outputStream.on("done", (data) => {
-        resolve(data);
-      });
-    });
-
     const args = {
       pattern: "semantic-release to v22",
       action: "merge",
     };
 
-    let results = await batchEditPullRequests(mockGithub, outputStream, args);
+    let results = await batchEditPullRequests(mockGithub, args);
 
     const approvedPullRequests = results.filter((result) => result.approved);
     assert.ok(
@@ -255,19 +183,6 @@ test.describe("happy path", () => {
       mockGithub.closed.length === 0,
       "when action is merge, the service should receive no requests to close a pull request",
     );
-
-    const output = await outputFinalized;
-    assert.equal(
-      output,
-      `
-🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-🚢 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
-        .trim()
-        .concat("\n"),
-      "output differed from expected snapshot",
-    );
   });
 
   test("close", async () => {
@@ -277,20 +192,12 @@ test.describe("happy path", () => {
       checksFile: "./test-data/happy-path/checks.json",
     });
 
-    const outputStream = new StringWritable();
-
-    const outputFinalized = new Promise((resolve) => {
-      outputStream.on("done", (data) => {
-        resolve(data);
-      });
-    });
-
     const args = {
       pattern: "semantic-release to v22",
       action: "close",
     };
 
-    let results = await batchEditPullRequests(mockGithub, outputStream, args);
+    let results = await batchEditPullRequests(mockGithub, args);
 
     const approvedPullRequests = results.filter((result) => result.approved);
     assert.ok(
@@ -320,19 +227,6 @@ test.describe("happy path", () => {
     assert.ok(
       mockGithub.closed.length === 4,
       "when action is close, the service should receive n requests to close a pull request",
-    );
-
-    const output = await outputFinalized;
-    assert.equal(
-      output,
-      `
-🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
-🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
-🛑 chore(deps): update dependency semantic-release to v22  [https://github.com/semantic-release-extras/test-verified-git-commit/pull/18]
-🛑 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/typescript/pull/18]`
-        .trim()
-        .concat("\n"),
-      "output differed from expected snapshot",
     );
   });
 });

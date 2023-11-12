@@ -1,4 +1,4 @@
-import { Writable } from "node:stream";
+import { delay, Listr } from "listr2";
 
 import { GithubClientInterface } from "./service/github.js";
 import { templateSearchString } from "./template.js";
@@ -21,13 +21,12 @@ import { templateSearchString } from "./template.js";
  * Batch edit pull requests.
  *
  * @param {GithubClientInterface} github - The GitHub client to use for API calls.
- * @param {Writable} output - The output stream to use for printing.
  * @param {Object} args - The arguments for the function.
  * @param {string} args.pattern - The pattern to use for searching pull requests.
  * @param {Action} args.action - The action to take on matching pull requests.
  * @returns {Promise<Array<PullRequestReport>>} A promise that resolves when all assigned pull requests have been processed.
  */
-export async function batchEditPullRequests(github, output, args) {
+export async function batchEditPullRequests(github, args) {
   const { pattern, action } = args;
 
   /**
@@ -68,41 +67,60 @@ export async function batchEditPullRequests(github, output, args) {
    */
   const maxTitleLength = Math.max(...prs.map((pr) => pr.title.length));
 
-  for (const pr of prs) {
-    switch (action) {
-      case "search":
-        output.write(`- ${display(pr, maxTitleLength)}\n`);
-        break;
-      case "approve":
-        github.approvePullRequest(pr);
-        output.write(`✔ ${display(pr, maxTitleLength)}\n`);
-        break;
-      case "approve and merge":
-        github.approvePullRequest(pr);
-        github.mergePullRequest(pr);
-        output.write(`🚢 ${display(pr, maxTitleLength)}\n`);
-        break;
-      case "merge":
-        github.mergePullRequest(pr);
-        output.write(`🚢 ${display(pr, maxTitleLength)}\n`);
-        break;
-      case "close":
-        github.closePullRequest(pr);
-        output.write(`🛑 ${display(pr, maxTitleLength)}\n`);
-        break;
-    }
+  const tasks = new Listr(
+    prs.map((pr) => {
+      reports.push({
+        owner: pr.head.repo.owner.login,
+        repo: pr.head.repo.name,
+        pullRequestNumber: pr.number,
+        approved: action === "approve" || action === "approve and merge",
+        merged: action === "merge" || action === "approve and merge",
+        closed: action === "close",
+      });
 
-    reports.push({
-      owner: pr.head.repo.owner.login,
-      repo: pr.head.repo.name,
-      pullRequestNumber: pr.number,
-      approved: action === "approve" || action === "approve and merge",
-      merged: action === "merge" || action === "approve and merge",
-      closed: action === "close",
-    });
-  }
+      switch (action) {
+        case "search":
+          return {
+            title: `🔍 ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await delay(500);
+            },
+          };
+        case "approve":
+          return {
+            title: `🖊️ ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await github.approvePullRequest(pr);
+            },
+          };
+        case "approve and merge":
+          return {
+            title: `🚢 ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await github.approvePullRequest(pr);
+              await github.mergePullRequest(pr);
+            },
+          };
+        case "merge":
+          return {
+            title: `🚢 ${display(pr, maxTitleLength)}\n`,
+            task: async () => {
+              await github.mergePullRequest(pr);
+            },
+          };
+        case "close":
+          return {
+            title: `🚮 ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await github.closePullRequest(pr);
+            },
+          };
+      }
+    }),
+    { concurrent: true },
+  );
 
-  output.end();
+  await tasks.run();
 
   return reports;
 }

@@ -5,8 +5,15 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __esm = (fn, res) => function __init() {
+  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+};
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
@@ -217,25 +224,25 @@ var require_is_plain_object = __commonJS({
 var require_dist_node2 = __commonJS({
   "node_modules/@octokit/endpoint/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       endpoint: () => endpoint
     });
     module2.exports = __toCommonJS(dist_src_exports);
@@ -490,7 +497,7 @@ var require_dist_node2 = __commonJS({
       if (!isBinaryRequest) {
         if (options.mediaType.format) {
           headers.accept = headers.accept.split(/,/).map(
-            (format) => format.replace(
+            (format2) => format2.replace(
               /application\/vnd(\.\w+)(\.v3)?(\.\w+)?(\+json)?$/,
               `application/vnd$1$2.${options.mediaType.format}`
             )
@@ -500,8 +507,8 @@ var require_dist_node2 = __commonJS({
           if (options.mediaType.previews?.length) {
             const previewsFromAcceptHeader = headers.accept.match(/[\w-]+(?=-preview)/g) || [];
             headers.accept = previewsFromAcceptHeader.concat(options.mediaType.previews).map((preview) => {
-              const format = options.mediaType.format ? `.${options.mediaType.format}` : "+json";
-              return `application/vnd.github.${preview}-preview${format}`;
+              const format2 = options.mediaType.format ? `.${options.mediaType.format}` : "+json";
+              return `application/vnd.github.${preview}-preview${format2}`;
             }).join(",");
           }
         }
@@ -645,20 +652,20 @@ var require_dist_node4 = __commonJS({
   "node_modules/@octokit/request-error/dist-node/index.js"(exports, module2) {
     "use strict";
     var __create2 = Object.create;
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __getProtoOf2 = Object.getPrototypeOf;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
@@ -667,12 +674,12 @@ var require_dist_node4 = __commonJS({
       // file that has been converted to a CommonJS file using a Babel-
       // compatible transform (i.e. "__esModule" has not been set), then set
       // "default" to the CommonJS "module.exports" for node compatibility.
-      isNodeMode || !mod || !mod.__esModule ? __defProp2(target, "default", { value: mod, enumerable: true }) : target,
+      isNodeMode || !mod || !mod.__esModule ? __defProp3(target, "default", { value: mod, enumerable: true }) : target,
       mod
     ));
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       RequestError: () => RequestError
     });
     module2.exports = __toCommonJS(dist_src_exports);
@@ -736,25 +743,25 @@ var require_dist_node4 = __commonJS({
 var require_dist_node5 = __commonJS({
   "node_modules/@octokit/request/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       request: () => request
     });
     module2.exports = __toCommonJS(dist_src_exports);
@@ -929,25 +936,25 @@ var require_dist_node5 = __commonJS({
 var require_dist_node6 = __commonJS({
   "node_modules/@octokit/graphql/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       GraphqlResponseError: () => GraphqlResponseError,
       graphql: () => graphql2,
       withCustomRequest: () => withCustomRequest
@@ -1067,25 +1074,25 @@ var require_dist_node6 = __commonJS({
 var require_dist_node7 = __commonJS({
   "node_modules/@octokit/auth-token/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       createTokenAuth: () => createTokenAuth
     });
     module2.exports = __toCommonJS(dist_src_exports);
@@ -1138,25 +1145,25 @@ var require_dist_node7 = __commonJS({
 var require_dist_node8 = __commonJS({
   "node_modules/@octokit/core/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       Octokit: () => Octokit2
     });
     module2.exports = __toCommonJS(dist_src_exports);
@@ -1297,25 +1304,25 @@ var require_dist_node8 = __commonJS({
 var require_dist_node9 = __commonJS({
   "node_modules/@octokit/plugin-request-log/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       requestLog: () => requestLog
     });
     module2.exports = __toCommonJS(dist_src_exports);
@@ -1347,25 +1354,25 @@ var require_dist_node9 = __commonJS({
 var require_dist_node10 = __commonJS({
   "node_modules/@octokit/plugin-paginate-rest/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       composePaginateRest: () => composePaginateRest,
       isPaginatingEndpoint: () => isPaginatingEndpoint,
       paginateRest: () => paginateRest,
@@ -1724,25 +1731,25 @@ var require_dist_node10 = __commonJS({
 var require_dist_node11 = __commonJS({
   "node_modules/@octokit/plugin-rest-endpoint-methods/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       legacyRestEndpointMethods: () => legacyRestEndpointMethods,
       restEndpointMethods: () => restEndpointMethods
     });
@@ -3821,25 +3828,25 @@ var require_dist_node11 = __commonJS({
 var require_dist_node12 = __commonJS({
   "node_modules/@octokit/rest/dist-node/index.js"(exports, module2) {
     "use strict";
-    var __defProp2 = Object.defineProperty;
+    var __defProp3 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
     var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __export = (target, all) => {
+    var __export2 = (target, all) => {
       for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+        __defProp3(target, name, { get: all[name], enumerable: true });
     };
     var __copyProps2 = (to, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key of __getOwnPropNames2(from))
           if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+            __defProp3(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
       return to;
     };
-    var __toCommonJS = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var __toCommonJS = (mod) => __copyProps2(__defProp3({}, "__esModule", { value: true }), mod);
     var dist_src_exports = {};
-    __export(dist_src_exports, {
+    __export2(dist_src_exports, {
       Octokit: () => Octokit2
     });
     module2.exports = __toCommonJS(dist_src_exports);
@@ -3855,6 +3862,2348 @@ var require_dist_node12 = __commonJS({
     ).defaults({
       userAgent: `octokit-rest.js/${VERSION}`
     });
+  }
+});
+
+// node_modules/eventemitter3/index.js
+var require_eventemitter3 = __commonJS({
+  "node_modules/eventemitter3/index.js"(exports, module2) {
+    "use strict";
+    var has = Object.prototype.hasOwnProperty;
+    var prefix = "~";
+    function Events() {
+    }
+    if (Object.create) {
+      Events.prototype = /* @__PURE__ */ Object.create(null);
+      if (!new Events().__proto__)
+        prefix = false;
+    }
+    function EE(fn, context, once) {
+      this.fn = fn;
+      this.context = context;
+      this.once = once || false;
+    }
+    function addListener(emitter, event, fn, context, once) {
+      if (typeof fn !== "function") {
+        throw new TypeError("The listener must be a function");
+      }
+      var listener = new EE(fn, context || emitter, once), evt = prefix ? prefix + event : event;
+      if (!emitter._events[evt])
+        emitter._events[evt] = listener, emitter._eventsCount++;
+      else if (!emitter._events[evt].fn)
+        emitter._events[evt].push(listener);
+      else
+        emitter._events[evt] = [emitter._events[evt], listener];
+      return emitter;
+    }
+    function clearEvent(emitter, evt) {
+      if (--emitter._eventsCount === 0)
+        emitter._events = new Events();
+      else
+        delete emitter._events[evt];
+    }
+    function EventEmitter2() {
+      this._events = new Events();
+      this._eventsCount = 0;
+    }
+    EventEmitter2.prototype.eventNames = function eventNames() {
+      var names = [], events, name;
+      if (this._eventsCount === 0)
+        return names;
+      for (name in events = this._events) {
+        if (has.call(events, name))
+          names.push(prefix ? name.slice(1) : name);
+      }
+      if (Object.getOwnPropertySymbols) {
+        return names.concat(Object.getOwnPropertySymbols(events));
+      }
+      return names;
+    };
+    EventEmitter2.prototype.listeners = function listeners(event) {
+      var evt = prefix ? prefix + event : event, handlers = this._events[evt];
+      if (!handlers)
+        return [];
+      if (handlers.fn)
+        return [handlers.fn];
+      for (var i = 0, l = handlers.length, ee = new Array(l); i < l; i++) {
+        ee[i] = handlers[i].fn;
+      }
+      return ee;
+    };
+    EventEmitter2.prototype.listenerCount = function listenerCount(event) {
+      var evt = prefix ? prefix + event : event, listeners = this._events[evt];
+      if (!listeners)
+        return 0;
+      if (listeners.fn)
+        return 1;
+      return listeners.length;
+    };
+    EventEmitter2.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
+      var evt = prefix ? prefix + event : event;
+      if (!this._events[evt])
+        return false;
+      var listeners = this._events[evt], len = arguments.length, args, i;
+      if (listeners.fn) {
+        if (listeners.once)
+          this.removeListener(event, listeners.fn, void 0, true);
+        switch (len) {
+          case 1:
+            return listeners.fn.call(listeners.context), true;
+          case 2:
+            return listeners.fn.call(listeners.context, a1), true;
+          case 3:
+            return listeners.fn.call(listeners.context, a1, a2), true;
+          case 4:
+            return listeners.fn.call(listeners.context, a1, a2, a3), true;
+          case 5:
+            return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
+          case 6:
+            return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
+        }
+        for (i = 1, args = new Array(len - 1); i < len; i++) {
+          args[i - 1] = arguments[i];
+        }
+        listeners.fn.apply(listeners.context, args);
+      } else {
+        var length = listeners.length, j;
+        for (i = 0; i < length; i++) {
+          if (listeners[i].once)
+            this.removeListener(event, listeners[i].fn, void 0, true);
+          switch (len) {
+            case 1:
+              listeners[i].fn.call(listeners[i].context);
+              break;
+            case 2:
+              listeners[i].fn.call(listeners[i].context, a1);
+              break;
+            case 3:
+              listeners[i].fn.call(listeners[i].context, a1, a2);
+              break;
+            case 4:
+              listeners[i].fn.call(listeners[i].context, a1, a2, a3);
+              break;
+            default:
+              if (!args)
+                for (j = 1, args = new Array(len - 1); j < len; j++) {
+                  args[j - 1] = arguments[j];
+                }
+              listeners[i].fn.apply(listeners[i].context, args);
+          }
+        }
+      }
+      return true;
+    };
+    EventEmitter2.prototype.on = function on(event, fn, context) {
+      return addListener(this, event, fn, context, false);
+    };
+    EventEmitter2.prototype.once = function once(event, fn, context) {
+      return addListener(this, event, fn, context, true);
+    };
+    EventEmitter2.prototype.removeListener = function removeListener(event, fn, context, once) {
+      var evt = prefix ? prefix + event : event;
+      if (!this._events[evt])
+        return this;
+      if (!fn) {
+        clearEvent(this, evt);
+        return this;
+      }
+      var listeners = this._events[evt];
+      if (listeners.fn) {
+        if (listeners.fn === fn && (!once || listeners.once) && (!context || listeners.context === context)) {
+          clearEvent(this, evt);
+        }
+      } else {
+        for (var i = 0, events = [], length = listeners.length; i < length; i++) {
+          if (listeners[i].fn !== fn || once && !listeners[i].once || context && listeners[i].context !== context) {
+            events.push(listeners[i]);
+          }
+        }
+        if (events.length)
+          this._events[evt] = events.length === 1 ? events[0] : events;
+        else
+          clearEvent(this, evt);
+      }
+      return this;
+    };
+    EventEmitter2.prototype.removeAllListeners = function removeAllListeners(event) {
+      var evt;
+      if (event) {
+        evt = prefix ? prefix + event : event;
+        if (this._events[evt])
+          clearEvent(this, evt);
+      } else {
+        this._events = new Events();
+        this._eventsCount = 0;
+      }
+      return this;
+    };
+    EventEmitter2.prototype.off = EventEmitter2.prototype.removeListener;
+    EventEmitter2.prototype.addListener = EventEmitter2.prototype.on;
+    EventEmitter2.prefixed = prefix;
+    EventEmitter2.EventEmitter = EventEmitter2;
+    if ("undefined" !== typeof module2) {
+      module2.exports = EventEmitter2;
+    }
+  }
+});
+
+// node_modules/rfdc/index.js
+var require_rfdc = __commonJS({
+  "node_modules/rfdc/index.js"(exports, module2) {
+    "use strict";
+    module2.exports = rfdc2;
+    function copyBuffer(cur) {
+      if (cur instanceof Buffer) {
+        return Buffer.from(cur);
+      }
+      return new cur.constructor(cur.buffer.slice(), cur.byteOffset, cur.length);
+    }
+    function rfdc2(opts) {
+      opts = opts || {};
+      if (opts.circles)
+        return rfdcCircles(opts);
+      return opts.proto ? cloneProto : clone2;
+      function cloneArray(a, fn) {
+        var keys = Object.keys(a);
+        var a2 = new Array(keys.length);
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          var cur = a[k];
+          if (typeof cur !== "object" || cur === null) {
+            a2[k] = cur;
+          } else if (cur instanceof Date) {
+            a2[k] = new Date(cur);
+          } else if (ArrayBuffer.isView(cur)) {
+            a2[k] = copyBuffer(cur);
+          } else {
+            a2[k] = fn(cur);
+          }
+        }
+        return a2;
+      }
+      function clone2(o) {
+        if (typeof o !== "object" || o === null)
+          return o;
+        if (o instanceof Date)
+          return new Date(o);
+        if (Array.isArray(o))
+          return cloneArray(o, clone2);
+        if (o instanceof Map)
+          return new Map(cloneArray(Array.from(o), clone2));
+        if (o instanceof Set)
+          return new Set(cloneArray(Array.from(o), clone2));
+        var o2 = {};
+        for (var k in o) {
+          if (Object.hasOwnProperty.call(o, k) === false)
+            continue;
+          var cur = o[k];
+          if (typeof cur !== "object" || cur === null) {
+            o2[k] = cur;
+          } else if (cur instanceof Date) {
+            o2[k] = new Date(cur);
+          } else if (cur instanceof Map) {
+            o2[k] = new Map(cloneArray(Array.from(cur), clone2));
+          } else if (cur instanceof Set) {
+            o2[k] = new Set(cloneArray(Array.from(cur), clone2));
+          } else if (ArrayBuffer.isView(cur)) {
+            o2[k] = copyBuffer(cur);
+          } else {
+            o2[k] = clone2(cur);
+          }
+        }
+        return o2;
+      }
+      function cloneProto(o) {
+        if (typeof o !== "object" || o === null)
+          return o;
+        if (o instanceof Date)
+          return new Date(o);
+        if (Array.isArray(o))
+          return cloneArray(o, cloneProto);
+        if (o instanceof Map)
+          return new Map(cloneArray(Array.from(o), cloneProto));
+        if (o instanceof Set)
+          return new Set(cloneArray(Array.from(o), cloneProto));
+        var o2 = {};
+        for (var k in o) {
+          var cur = o[k];
+          if (typeof cur !== "object" || cur === null) {
+            o2[k] = cur;
+          } else if (cur instanceof Date) {
+            o2[k] = new Date(cur);
+          } else if (cur instanceof Map) {
+            o2[k] = new Map(cloneArray(Array.from(cur), cloneProto));
+          } else if (cur instanceof Set) {
+            o2[k] = new Set(cloneArray(Array.from(cur), cloneProto));
+          } else if (ArrayBuffer.isView(cur)) {
+            o2[k] = copyBuffer(cur);
+          } else {
+            o2[k] = cloneProto(cur);
+          }
+        }
+        return o2;
+      }
+    }
+    function rfdcCircles(opts) {
+      var refs = [];
+      var refsNew = [];
+      return opts.proto ? cloneProto : clone2;
+      function cloneArray(a, fn) {
+        var keys = Object.keys(a);
+        var a2 = new Array(keys.length);
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          var cur = a[k];
+          if (typeof cur !== "object" || cur === null) {
+            a2[k] = cur;
+          } else if (cur instanceof Date) {
+            a2[k] = new Date(cur);
+          } else if (ArrayBuffer.isView(cur)) {
+            a2[k] = copyBuffer(cur);
+          } else {
+            var index = refs.indexOf(cur);
+            if (index !== -1) {
+              a2[k] = refsNew[index];
+            } else {
+              a2[k] = fn(cur);
+            }
+          }
+        }
+        return a2;
+      }
+      function clone2(o) {
+        if (typeof o !== "object" || o === null)
+          return o;
+        if (o instanceof Date)
+          return new Date(o);
+        if (Array.isArray(o))
+          return cloneArray(o, clone2);
+        if (o instanceof Map)
+          return new Map(cloneArray(Array.from(o), clone2));
+        if (o instanceof Set)
+          return new Set(cloneArray(Array.from(o), clone2));
+        var o2 = {};
+        refs.push(o);
+        refsNew.push(o2);
+        for (var k in o) {
+          if (Object.hasOwnProperty.call(o, k) === false)
+            continue;
+          var cur = o[k];
+          if (typeof cur !== "object" || cur === null) {
+            o2[k] = cur;
+          } else if (cur instanceof Date) {
+            o2[k] = new Date(cur);
+          } else if (cur instanceof Map) {
+            o2[k] = new Map(cloneArray(Array.from(cur), clone2));
+          } else if (cur instanceof Set) {
+            o2[k] = new Set(cloneArray(Array.from(cur), clone2));
+          } else if (ArrayBuffer.isView(cur)) {
+            o2[k] = copyBuffer(cur);
+          } else {
+            var i = refs.indexOf(cur);
+            if (i !== -1) {
+              o2[k] = refsNew[i];
+            } else {
+              o2[k] = clone2(cur);
+            }
+          }
+        }
+        refs.pop();
+        refsNew.pop();
+        return o2;
+      }
+      function cloneProto(o) {
+        if (typeof o !== "object" || o === null)
+          return o;
+        if (o instanceof Date)
+          return new Date(o);
+        if (Array.isArray(o))
+          return cloneArray(o, cloneProto);
+        if (o instanceof Map)
+          return new Map(cloneArray(Array.from(o), cloneProto));
+        if (o instanceof Set)
+          return new Set(cloneArray(Array.from(o), cloneProto));
+        var o2 = {};
+        refs.push(o);
+        refsNew.push(o2);
+        for (var k in o) {
+          var cur = o[k];
+          if (typeof cur !== "object" || cur === null) {
+            o2[k] = cur;
+          } else if (cur instanceof Date) {
+            o2[k] = new Date(cur);
+          } else if (cur instanceof Map) {
+            o2[k] = new Map(cloneArray(Array.from(cur), cloneProto));
+          } else if (cur instanceof Set) {
+            o2[k] = new Set(cloneArray(Array.from(cur), cloneProto));
+          } else if (ArrayBuffer.isView(cur)) {
+            o2[k] = copyBuffer(cur);
+          } else {
+            var i = refs.indexOf(cur);
+            if (i !== -1) {
+              o2[k] = refsNew[i];
+            } else {
+              o2[k] = cloneProto(cur);
+            }
+          }
+        }
+        refs.pop();
+        refsNew.pop();
+        return o2;
+      }
+    }
+  }
+});
+
+// node_modules/log-update/node_modules/ansi-escapes/index.js
+var ESC, OSC, BEL, SEP, isTerminalApp, ansiEscapes, ansi_escapes_default;
+var init_ansi_escapes = __esm({
+  "node_modules/log-update/node_modules/ansi-escapes/index.js"() {
+    ESC = "\x1B[";
+    OSC = "\x1B]";
+    BEL = "\x07";
+    SEP = ";";
+    isTerminalApp = process.env.TERM_PROGRAM === "Apple_Terminal";
+    ansiEscapes = {};
+    ansiEscapes.cursorTo = (x, y) => {
+      if (typeof x !== "number") {
+        throw new TypeError("The `x` argument is required");
+      }
+      if (typeof y !== "number") {
+        return ESC + (x + 1) + "G";
+      }
+      return ESC + (y + 1) + ";" + (x + 1) + "H";
+    };
+    ansiEscapes.cursorMove = (x, y) => {
+      if (typeof x !== "number") {
+        throw new TypeError("The `x` argument is required");
+      }
+      let returnValue = "";
+      if (x < 0) {
+        returnValue += ESC + -x + "D";
+      } else if (x > 0) {
+        returnValue += ESC + x + "C";
+      }
+      if (y < 0) {
+        returnValue += ESC + -y + "A";
+      } else if (y > 0) {
+        returnValue += ESC + y + "B";
+      }
+      return returnValue;
+    };
+    ansiEscapes.cursorUp = (count = 1) => ESC + count + "A";
+    ansiEscapes.cursorDown = (count = 1) => ESC + count + "B";
+    ansiEscapes.cursorForward = (count = 1) => ESC + count + "C";
+    ansiEscapes.cursorBackward = (count = 1) => ESC + count + "D";
+    ansiEscapes.cursorLeft = ESC + "G";
+    ansiEscapes.cursorSavePosition = isTerminalApp ? "\x1B7" : ESC + "s";
+    ansiEscapes.cursorRestorePosition = isTerminalApp ? "\x1B8" : ESC + "u";
+    ansiEscapes.cursorGetPosition = ESC + "6n";
+    ansiEscapes.cursorNextLine = ESC + "E";
+    ansiEscapes.cursorPrevLine = ESC + "F";
+    ansiEscapes.cursorHide = ESC + "?25l";
+    ansiEscapes.cursorShow = ESC + "?25h";
+    ansiEscapes.eraseLines = (count) => {
+      let clear = "";
+      for (let i = 0; i < count; i++) {
+        clear += ansiEscapes.eraseLine + (i < count - 1 ? ansiEscapes.cursorUp() : "");
+      }
+      if (count) {
+        clear += ansiEscapes.cursorLeft;
+      }
+      return clear;
+    };
+    ansiEscapes.eraseEndLine = ESC + "K";
+    ansiEscapes.eraseStartLine = ESC + "1K";
+    ansiEscapes.eraseLine = ESC + "2K";
+    ansiEscapes.eraseDown = ESC + "J";
+    ansiEscapes.eraseUp = ESC + "1J";
+    ansiEscapes.eraseScreen = ESC + "2J";
+    ansiEscapes.scrollUp = ESC + "S";
+    ansiEscapes.scrollDown = ESC + "T";
+    ansiEscapes.clearScreen = "\x1Bc";
+    ansiEscapes.clearTerminal = process.platform === "win32" ? `${ansiEscapes.eraseScreen}${ESC}0f` : (
+      // 1. Erases the screen (Only done in case `2` is not supported)
+      // 2. Erases the whole screen including scrollback buffer
+      // 3. Moves cursor to the top-left position
+      // More info: https://www.real-world-systems.com/docs/ANSIcode.html
+      `${ansiEscapes.eraseScreen}${ESC}3J${ESC}H`
+    );
+    ansiEscapes.beep = BEL;
+    ansiEscapes.link = (text, url) => {
+      return [
+        OSC,
+        "8",
+        SEP,
+        SEP,
+        url,
+        BEL,
+        text,
+        OSC,
+        "8",
+        SEP,
+        SEP,
+        BEL
+      ].join("");
+    };
+    ansiEscapes.image = (buffer, options = {}) => {
+      let returnValue = `${OSC}1337;File=inline=1`;
+      if (options.width) {
+        returnValue += `;width=${options.width}`;
+      }
+      if (options.height) {
+        returnValue += `;height=${options.height}`;
+      }
+      if (options.preserveAspectRatio === false) {
+        returnValue += ";preserveAspectRatio=0";
+      }
+      return returnValue + ":" + buffer.toString("base64") + BEL;
+    };
+    ansiEscapes.iTerm = {
+      setCwd: (cwd = process.cwd()) => `${OSC}50;CurrentDir=${cwd}${BEL}`,
+      annotation: (message, options = {}) => {
+        let returnValue = `${OSC}1337;`;
+        const hasX = typeof options.x !== "undefined";
+        const hasY = typeof options.y !== "undefined";
+        if ((hasX || hasY) && !(hasX && hasY && typeof options.length !== "undefined")) {
+          throw new Error("`x`, `y` and `length` must be defined when `x` or `y` is defined");
+        }
+        message = message.replace(/\|/g, "");
+        returnValue += options.isHidden ? "AddHiddenAnnotation=" : "AddAnnotation=";
+        if (options.length > 0) {
+          returnValue += (hasX ? [message, options.length, options.x, options.y] : [options.length, message]).join("|");
+        } else {
+          returnValue += message;
+        }
+        return returnValue + BEL;
+      }
+    };
+    ansi_escapes_default = ansiEscapes;
+  }
+});
+
+// node_modules/mimic-fn/index.js
+var require_mimic_fn = __commonJS({
+  "node_modules/mimic-fn/index.js"(exports, module2) {
+    "use strict";
+    var mimicFn = (to, from) => {
+      for (const prop of Reflect.ownKeys(from)) {
+        Object.defineProperty(to, prop, Object.getOwnPropertyDescriptor(from, prop));
+      }
+      return to;
+    };
+    module2.exports = mimicFn;
+    module2.exports.default = mimicFn;
+  }
+});
+
+// node_modules/onetime/index.js
+var require_onetime = __commonJS({
+  "node_modules/onetime/index.js"(exports, module2) {
+    "use strict";
+    var mimicFn = require_mimic_fn();
+    var calledFunctions = /* @__PURE__ */ new WeakMap();
+    var onetime2 = (function_, options = {}) => {
+      if (typeof function_ !== "function") {
+        throw new TypeError("Expected a function");
+      }
+      let returnValue;
+      let callCount = 0;
+      const functionName = function_.displayName || function_.name || "<anonymous>";
+      const onetime3 = function(...arguments_) {
+        calledFunctions.set(onetime3, ++callCount);
+        if (callCount === 1) {
+          returnValue = function_.apply(this, arguments_);
+          function_ = null;
+        } else if (options.throw === true) {
+          throw new Error(`Function \`${functionName}\` can only be called once`);
+        }
+        return returnValue;
+      };
+      mimicFn(onetime3, function_);
+      calledFunctions.set(onetime3, callCount);
+      return onetime3;
+    };
+    module2.exports = onetime2;
+    module2.exports.default = onetime2;
+    module2.exports.callCount = (function_) => {
+      if (!calledFunctions.has(function_)) {
+        throw new Error(`The given function \`${function_.name}\` is not wrapped by the \`onetime\` package`);
+      }
+      return calledFunctions.get(function_);
+    };
+  }
+});
+
+// node_modules/signal-exit/signals.js
+var require_signals = __commonJS({
+  "node_modules/signal-exit/signals.js"(exports, module2) {
+    module2.exports = [
+      "SIGABRT",
+      "SIGALRM",
+      "SIGHUP",
+      "SIGINT",
+      "SIGTERM"
+    ];
+    if (process.platform !== "win32") {
+      module2.exports.push(
+        "SIGVTALRM",
+        "SIGXCPU",
+        "SIGXFSZ",
+        "SIGUSR2",
+        "SIGTRAP",
+        "SIGSYS",
+        "SIGQUIT",
+        "SIGIOT"
+        // should detect profiler and enable/disable accordingly.
+        // see #21
+        // 'SIGPROF'
+      );
+    }
+    if (process.platform === "linux") {
+      module2.exports.push(
+        "SIGIO",
+        "SIGPOLL",
+        "SIGPWR",
+        "SIGSTKFLT",
+        "SIGUNUSED"
+      );
+    }
+  }
+});
+
+// node_modules/signal-exit/index.js
+var require_signal_exit = __commonJS({
+  "node_modules/signal-exit/index.js"(exports, module2) {
+    var process5 = global.process;
+    var processOk = function(process6) {
+      return process6 && typeof process6 === "object" && typeof process6.removeListener === "function" && typeof process6.emit === "function" && typeof process6.reallyExit === "function" && typeof process6.listeners === "function" && typeof process6.kill === "function" && typeof process6.pid === "number" && typeof process6.on === "function";
+    };
+    if (!processOk(process5)) {
+      module2.exports = function() {
+        return function() {
+        };
+      };
+    } else {
+      assert = require("assert");
+      signals = require_signals();
+      isWin = /^win/i.test(process5.platform);
+      EE = require("events");
+      if (typeof EE !== "function") {
+        EE = EE.EventEmitter;
+      }
+      if (process5.__signal_exit_emitter__) {
+        emitter = process5.__signal_exit_emitter__;
+      } else {
+        emitter = process5.__signal_exit_emitter__ = new EE();
+        emitter.count = 0;
+        emitter.emitted = {};
+      }
+      if (!emitter.infinite) {
+        emitter.setMaxListeners(Infinity);
+        emitter.infinite = true;
+      }
+      module2.exports = function(cb, opts) {
+        if (!processOk(global.process)) {
+          return function() {
+          };
+        }
+        assert.equal(typeof cb, "function", "a callback must be provided for exit handler");
+        if (loaded === false) {
+          load();
+        }
+        var ev = "exit";
+        if (opts && opts.alwaysLast) {
+          ev = "afterexit";
+        }
+        var remove = function() {
+          emitter.removeListener(ev, cb);
+          if (emitter.listeners("exit").length === 0 && emitter.listeners("afterexit").length === 0) {
+            unload();
+          }
+        };
+        emitter.on(ev, cb);
+        return remove;
+      };
+      unload = function unload2() {
+        if (!loaded || !processOk(global.process)) {
+          return;
+        }
+        loaded = false;
+        signals.forEach(function(sig) {
+          try {
+            process5.removeListener(sig, sigListeners[sig]);
+          } catch (er) {
+          }
+        });
+        process5.emit = originalProcessEmit;
+        process5.reallyExit = originalProcessReallyExit;
+        emitter.count -= 1;
+      };
+      module2.exports.unload = unload;
+      emit = function emit2(event, code, signal) {
+        if (emitter.emitted[event]) {
+          return;
+        }
+        emitter.emitted[event] = true;
+        emitter.emit(event, code, signal);
+      };
+      sigListeners = {};
+      signals.forEach(function(sig) {
+        sigListeners[sig] = function listener() {
+          if (!processOk(global.process)) {
+            return;
+          }
+          var listeners = process5.listeners(sig);
+          if (listeners.length === emitter.count) {
+            unload();
+            emit("exit", null, sig);
+            emit("afterexit", null, sig);
+            if (isWin && sig === "SIGHUP") {
+              sig = "SIGINT";
+            }
+            process5.kill(process5.pid, sig);
+          }
+        };
+      });
+      module2.exports.signals = function() {
+        return signals;
+      };
+      loaded = false;
+      load = function load2() {
+        if (loaded || !processOk(global.process)) {
+          return;
+        }
+        loaded = true;
+        emitter.count += 1;
+        signals = signals.filter(function(sig) {
+          try {
+            process5.on(sig, sigListeners[sig]);
+            return true;
+          } catch (er) {
+            return false;
+          }
+        });
+        process5.emit = processEmit;
+        process5.reallyExit = processReallyExit;
+      };
+      module2.exports.load = load;
+      originalProcessReallyExit = process5.reallyExit;
+      processReallyExit = function processReallyExit2(code) {
+        if (!processOk(global.process)) {
+          return;
+        }
+        process5.exitCode = code || /* istanbul ignore next */
+        0;
+        emit("exit", process5.exitCode, null);
+        emit("afterexit", process5.exitCode, null);
+        originalProcessReallyExit.call(process5, process5.exitCode);
+      };
+      originalProcessEmit = process5.emit;
+      processEmit = function processEmit2(ev, arg) {
+        if (ev === "exit" && processOk(global.process)) {
+          if (arg !== void 0) {
+            process5.exitCode = arg;
+          }
+          var ret = originalProcessEmit.apply(this, arguments);
+          emit("exit", process5.exitCode, null);
+          emit("afterexit", process5.exitCode, null);
+          return ret;
+        } else {
+          return originalProcessEmit.apply(this, arguments);
+        }
+      };
+    }
+    var assert;
+    var signals;
+    var isWin;
+    var EE;
+    var emitter;
+    var unload;
+    var emit;
+    var sigListeners;
+    var loaded;
+    var load;
+    var originalProcessReallyExit;
+    var processReallyExit;
+    var originalProcessEmit;
+    var processEmit;
+  }
+});
+
+// node_modules/restore-cursor/index.js
+var import_node_process, import_onetime, import_signal_exit, restoreCursor, restore_cursor_default;
+var init_restore_cursor = __esm({
+  "node_modules/restore-cursor/index.js"() {
+    import_node_process = __toESM(require("node:process"), 1);
+    import_onetime = __toESM(require_onetime(), 1);
+    import_signal_exit = __toESM(require_signal_exit(), 1);
+    restoreCursor = (0, import_onetime.default)(() => {
+      (0, import_signal_exit.default)(() => {
+        import_node_process.default.stderr.write("\x1B[?25h");
+      }, { alwaysLast: true });
+    });
+    restore_cursor_default = restoreCursor;
+  }
+});
+
+// node_modules/cli-cursor/index.js
+var import_node_process2, isHidden, cliCursor, cli_cursor_default;
+var init_cli_cursor = __esm({
+  "node_modules/cli-cursor/index.js"() {
+    import_node_process2 = __toESM(require("node:process"), 1);
+    init_restore_cursor();
+    isHidden = false;
+    cliCursor = {};
+    cliCursor.show = (writableStream = import_node_process2.default.stderr) => {
+      if (!writableStream.isTTY) {
+        return;
+      }
+      isHidden = false;
+      writableStream.write("\x1B[?25h");
+    };
+    cliCursor.hide = (writableStream = import_node_process2.default.stderr) => {
+      if (!writableStream.isTTY) {
+        return;
+      }
+      restore_cursor_default();
+      isHidden = true;
+      writableStream.write("\x1B[?25l");
+    };
+    cliCursor.toggle = (force, writableStream) => {
+      if (force !== void 0) {
+        isHidden = force;
+      }
+      if (isHidden) {
+        cliCursor.show(writableStream);
+      } else {
+        cliCursor.hide(writableStream);
+      }
+    };
+    cli_cursor_default = cliCursor;
+  }
+});
+
+// node_modules/log-update/node_modules/ansi-regex/index.js
+function ansiRegex({ onlyFirst = false } = {}) {
+  const pattern = [
+    "[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)",
+    "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))"
+  ].join("|");
+  return new RegExp(pattern, onlyFirst ? void 0 : "g");
+}
+var init_ansi_regex = __esm({
+  "node_modules/log-update/node_modules/ansi-regex/index.js"() {
+  }
+});
+
+// node_modules/log-update/node_modules/strip-ansi/index.js
+function stripAnsi(string) {
+  if (typeof string !== "string") {
+    throw new TypeError(`Expected a \`string\`, got \`${typeof string}\``);
+  }
+  return string.replace(regex, "");
+}
+var regex;
+var init_strip_ansi = __esm({
+  "node_modules/log-update/node_modules/strip-ansi/index.js"() {
+    init_ansi_regex();
+    regex = ansiRegex();
+  }
+});
+
+// node_modules/eastasianwidth/eastasianwidth.js
+var require_eastasianwidth = __commonJS({
+  "node_modules/eastasianwidth/eastasianwidth.js"(exports, module2) {
+    var eaw = {};
+    if ("undefined" == typeof module2) {
+      window.eastasianwidth = eaw;
+    } else {
+      module2.exports = eaw;
+    }
+    eaw.eastAsianWidth = function(character) {
+      var x = character.charCodeAt(0);
+      var y = character.length == 2 ? character.charCodeAt(1) : 0;
+      var codePoint = x;
+      if (55296 <= x && x <= 56319 && (56320 <= y && y <= 57343)) {
+        x &= 1023;
+        y &= 1023;
+        codePoint = x << 10 | y;
+        codePoint += 65536;
+      }
+      if (12288 == codePoint || 65281 <= codePoint && codePoint <= 65376 || 65504 <= codePoint && codePoint <= 65510) {
+        return "F";
+      }
+      if (8361 == codePoint || 65377 <= codePoint && codePoint <= 65470 || 65474 <= codePoint && codePoint <= 65479 || 65482 <= codePoint && codePoint <= 65487 || 65490 <= codePoint && codePoint <= 65495 || 65498 <= codePoint && codePoint <= 65500 || 65512 <= codePoint && codePoint <= 65518) {
+        return "H";
+      }
+      if (4352 <= codePoint && codePoint <= 4447 || 4515 <= codePoint && codePoint <= 4519 || 4602 <= codePoint && codePoint <= 4607 || 9001 <= codePoint && codePoint <= 9002 || 11904 <= codePoint && codePoint <= 11929 || 11931 <= codePoint && codePoint <= 12019 || 12032 <= codePoint && codePoint <= 12245 || 12272 <= codePoint && codePoint <= 12283 || 12289 <= codePoint && codePoint <= 12350 || 12353 <= codePoint && codePoint <= 12438 || 12441 <= codePoint && codePoint <= 12543 || 12549 <= codePoint && codePoint <= 12589 || 12593 <= codePoint && codePoint <= 12686 || 12688 <= codePoint && codePoint <= 12730 || 12736 <= codePoint && codePoint <= 12771 || 12784 <= codePoint && codePoint <= 12830 || 12832 <= codePoint && codePoint <= 12871 || 12880 <= codePoint && codePoint <= 13054 || 13056 <= codePoint && codePoint <= 19903 || 19968 <= codePoint && codePoint <= 42124 || 42128 <= codePoint && codePoint <= 42182 || 43360 <= codePoint && codePoint <= 43388 || 44032 <= codePoint && codePoint <= 55203 || 55216 <= codePoint && codePoint <= 55238 || 55243 <= codePoint && codePoint <= 55291 || 63744 <= codePoint && codePoint <= 64255 || 65040 <= codePoint && codePoint <= 65049 || 65072 <= codePoint && codePoint <= 65106 || 65108 <= codePoint && codePoint <= 65126 || 65128 <= codePoint && codePoint <= 65131 || 110592 <= codePoint && codePoint <= 110593 || 127488 <= codePoint && codePoint <= 127490 || 127504 <= codePoint && codePoint <= 127546 || 127552 <= codePoint && codePoint <= 127560 || 127568 <= codePoint && codePoint <= 127569 || 131072 <= codePoint && codePoint <= 194367 || 177984 <= codePoint && codePoint <= 196605 || 196608 <= codePoint && codePoint <= 262141) {
+        return "W";
+      }
+      if (32 <= codePoint && codePoint <= 126 || 162 <= codePoint && codePoint <= 163 || 165 <= codePoint && codePoint <= 166 || 172 == codePoint || 175 == codePoint || 10214 <= codePoint && codePoint <= 10221 || 10629 <= codePoint && codePoint <= 10630) {
+        return "Na";
+      }
+      if (161 == codePoint || 164 == codePoint || 167 <= codePoint && codePoint <= 168 || 170 == codePoint || 173 <= codePoint && codePoint <= 174 || 176 <= codePoint && codePoint <= 180 || 182 <= codePoint && codePoint <= 186 || 188 <= codePoint && codePoint <= 191 || 198 == codePoint || 208 == codePoint || 215 <= codePoint && codePoint <= 216 || 222 <= codePoint && codePoint <= 225 || 230 == codePoint || 232 <= codePoint && codePoint <= 234 || 236 <= codePoint && codePoint <= 237 || 240 == codePoint || 242 <= codePoint && codePoint <= 243 || 247 <= codePoint && codePoint <= 250 || 252 == codePoint || 254 == codePoint || 257 == codePoint || 273 == codePoint || 275 == codePoint || 283 == codePoint || 294 <= codePoint && codePoint <= 295 || 299 == codePoint || 305 <= codePoint && codePoint <= 307 || 312 == codePoint || 319 <= codePoint && codePoint <= 322 || 324 == codePoint || 328 <= codePoint && codePoint <= 331 || 333 == codePoint || 338 <= codePoint && codePoint <= 339 || 358 <= codePoint && codePoint <= 359 || 363 == codePoint || 462 == codePoint || 464 == codePoint || 466 == codePoint || 468 == codePoint || 470 == codePoint || 472 == codePoint || 474 == codePoint || 476 == codePoint || 593 == codePoint || 609 == codePoint || 708 == codePoint || 711 == codePoint || 713 <= codePoint && codePoint <= 715 || 717 == codePoint || 720 == codePoint || 728 <= codePoint && codePoint <= 731 || 733 == codePoint || 735 == codePoint || 768 <= codePoint && codePoint <= 879 || 913 <= codePoint && codePoint <= 929 || 931 <= codePoint && codePoint <= 937 || 945 <= codePoint && codePoint <= 961 || 963 <= codePoint && codePoint <= 969 || 1025 == codePoint || 1040 <= codePoint && codePoint <= 1103 || 1105 == codePoint || 8208 == codePoint || 8211 <= codePoint && codePoint <= 8214 || 8216 <= codePoint && codePoint <= 8217 || 8220 <= codePoint && codePoint <= 8221 || 8224 <= codePoint && codePoint <= 8226 || 8228 <= codePoint && codePoint <= 8231 || 8240 == codePoint || 8242 <= codePoint && codePoint <= 8243 || 8245 == codePoint || 8251 == codePoint || 8254 == codePoint || 8308 == codePoint || 8319 == codePoint || 8321 <= codePoint && codePoint <= 8324 || 8364 == codePoint || 8451 == codePoint || 8453 == codePoint || 8457 == codePoint || 8467 == codePoint || 8470 == codePoint || 8481 <= codePoint && codePoint <= 8482 || 8486 == codePoint || 8491 == codePoint || 8531 <= codePoint && codePoint <= 8532 || 8539 <= codePoint && codePoint <= 8542 || 8544 <= codePoint && codePoint <= 8555 || 8560 <= codePoint && codePoint <= 8569 || 8585 == codePoint || 8592 <= codePoint && codePoint <= 8601 || 8632 <= codePoint && codePoint <= 8633 || 8658 == codePoint || 8660 == codePoint || 8679 == codePoint || 8704 == codePoint || 8706 <= codePoint && codePoint <= 8707 || 8711 <= codePoint && codePoint <= 8712 || 8715 == codePoint || 8719 == codePoint || 8721 == codePoint || 8725 == codePoint || 8730 == codePoint || 8733 <= codePoint && codePoint <= 8736 || 8739 == codePoint || 8741 == codePoint || 8743 <= codePoint && codePoint <= 8748 || 8750 == codePoint || 8756 <= codePoint && codePoint <= 8759 || 8764 <= codePoint && codePoint <= 8765 || 8776 == codePoint || 8780 == codePoint || 8786 == codePoint || 8800 <= codePoint && codePoint <= 8801 || 8804 <= codePoint && codePoint <= 8807 || 8810 <= codePoint && codePoint <= 8811 || 8814 <= codePoint && codePoint <= 8815 || 8834 <= codePoint && codePoint <= 8835 || 8838 <= codePoint && codePoint <= 8839 || 8853 == codePoint || 8857 == codePoint || 8869 == codePoint || 8895 == codePoint || 8978 == codePoint || 9312 <= codePoint && codePoint <= 9449 || 9451 <= codePoint && codePoint <= 9547 || 9552 <= codePoint && codePoint <= 9587 || 9600 <= codePoint && codePoint <= 9615 || 9618 <= codePoint && codePoint <= 9621 || 9632 <= codePoint && codePoint <= 9633 || 9635 <= codePoint && codePoint <= 9641 || 9650 <= codePoint && codePoint <= 9651 || 9654 <= codePoint && codePoint <= 9655 || 9660 <= codePoint && codePoint <= 9661 || 9664 <= codePoint && codePoint <= 9665 || 9670 <= codePoint && codePoint <= 9672 || 9675 == codePoint || 9678 <= codePoint && codePoint <= 9681 || 9698 <= codePoint && codePoint <= 9701 || 9711 == codePoint || 9733 <= codePoint && codePoint <= 9734 || 9737 == codePoint || 9742 <= codePoint && codePoint <= 9743 || 9748 <= codePoint && codePoint <= 9749 || 9756 == codePoint || 9758 == codePoint || 9792 == codePoint || 9794 == codePoint || 9824 <= codePoint && codePoint <= 9825 || 9827 <= codePoint && codePoint <= 9829 || 9831 <= codePoint && codePoint <= 9834 || 9836 <= codePoint && codePoint <= 9837 || 9839 == codePoint || 9886 <= codePoint && codePoint <= 9887 || 9918 <= codePoint && codePoint <= 9919 || 9924 <= codePoint && codePoint <= 9933 || 9935 <= codePoint && codePoint <= 9953 || 9955 == codePoint || 9960 <= codePoint && codePoint <= 9983 || 10045 == codePoint || 10071 == codePoint || 10102 <= codePoint && codePoint <= 10111 || 11093 <= codePoint && codePoint <= 11097 || 12872 <= codePoint && codePoint <= 12879 || 57344 <= codePoint && codePoint <= 63743 || 65024 <= codePoint && codePoint <= 65039 || 65533 == codePoint || 127232 <= codePoint && codePoint <= 127242 || 127248 <= codePoint && codePoint <= 127277 || 127280 <= codePoint && codePoint <= 127337 || 127344 <= codePoint && codePoint <= 127386 || 917760 <= codePoint && codePoint <= 917999 || 983040 <= codePoint && codePoint <= 1048573 || 1048576 <= codePoint && codePoint <= 1114109) {
+        return "A";
+      }
+      return "N";
+    };
+    eaw.characterLength = function(character) {
+      var code = this.eastAsianWidth(character);
+      if (code == "F" || code == "W" || code == "A") {
+        return 2;
+      } else {
+        return 1;
+      }
+    };
+    function stringToArray(string) {
+      return string.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[^\uD800-\uDFFF]/g) || [];
+    }
+    eaw.length = function(string) {
+      var characters = stringToArray(string);
+      var len = 0;
+      for (var i = 0; i < characters.length; i++) {
+        len = len + this.characterLength(characters[i]);
+      }
+      return len;
+    };
+    eaw.slice = function(text, start, end) {
+      textLen = eaw.length(text);
+      start = start ? start : 0;
+      end = end ? end : 1;
+      if (start < 0) {
+        start = textLen + start;
+      }
+      if (end < 0) {
+        end = textLen + end;
+      }
+      var result = "";
+      var eawLen = 0;
+      var chars = stringToArray(text);
+      for (var i = 0; i < chars.length; i++) {
+        var char = chars[i];
+        var charLen = eaw.length(char);
+        if (eawLen >= start - (charLen == 2 ? 1 : 0)) {
+          if (eawLen + charLen <= end) {
+            result += char;
+          } else {
+            break;
+          }
+        }
+        eawLen += charLen;
+      }
+      return result;
+    };
+  }
+});
+
+// node_modules/log-update/node_modules/emoji-regex/index.js
+var require_emoji_regex = __commonJS({
+  "node_modules/log-update/node_modules/emoji-regex/index.js"(exports, module2) {
+    "use strict";
+    module2.exports = function() {
+      return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67)\uDB40\uDC7F|(?:\uD83E\uDDD1\uD83C\uDFFF\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFC-\uDFFF])|\uD83D\uDC68(?:\uD83C\uDFFB(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|[\u2695\u2696\u2708]\uFE0F|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))?|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])\uFE0F|\u200D(?:(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D[\uDC66\uDC67])|\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC)?|(?:\uD83D\uDC69(?:\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69]))|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC69(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83E\uDDD1(?:\u200D(?:\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDE36\u200D\uD83C\uDF2B|\uD83C\uDFF3\uFE0F\u200D\u26A7|\uD83D\uDC3B\u200D\u2744|(?:(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\uD83C\uDFF4\u200D\u2620|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])\u200D[\u2640\u2642]|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600-\u2604\u260E\u2611\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F0\u26F1\u26F4\u26F7\u26F8\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u3030\u303D\u3297\u3299]|\uD83C[\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]|\uD83D[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3])\uFE0F|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDE35\u200D\uD83D\uDCAB|\uD83D\uDE2E\u200D\uD83D\uDCA8|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83E\uDDD1(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83D\uDC69(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF4\uD83C\uDDF2|\uD83D\uDC08\u200D\u2B1B|\u2764\uFE0F\u200D(?:\uD83D\uDD25|\uD83E\uDE79)|\uD83D\uDC41\uFE0F|\uD83C\uDFF3\uFE0F|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|[#\*0-9]\uFE0F\u20E3|\u2764\uFE0F|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|\uD83C\uDFF4|(?:[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270C\u270D]|\uD83D[\uDD74\uDD90])(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC08\uDC15\uDC3B\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE2E\uDE35\uDE36\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5]|\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD]|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF]|[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0D\uDD0E\uDD10-\uDD17\uDD1D\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78\uDD7A-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCB\uDDD0\uDDE0-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6]|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26A7\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5-\uDED7\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDD77\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
+    };
+  }
+});
+
+// node_modules/log-update/node_modules/string-width/index.js
+function stringWidth(string, options = {}) {
+  if (typeof string !== "string" || string.length === 0) {
+    return 0;
+  }
+  options = {
+    ambiguousIsNarrow: true,
+    ...options
+  };
+  string = stripAnsi(string);
+  if (string.length === 0) {
+    return 0;
+  }
+  string = string.replace((0, import_emoji_regex.default)(), "  ");
+  const ambiguousCharacterWidth = options.ambiguousIsNarrow ? 1 : 2;
+  let width = 0;
+  for (const character of string) {
+    const codePoint = character.codePointAt(0);
+    if (codePoint <= 31 || codePoint >= 127 && codePoint <= 159) {
+      continue;
+    }
+    if (codePoint >= 768 && codePoint <= 879) {
+      continue;
+    }
+    const code = import_eastasianwidth.default.eastAsianWidth(character);
+    switch (code) {
+      case "F":
+      case "W":
+        width += 2;
+        break;
+      case "A":
+        width += ambiguousCharacterWidth;
+        break;
+      default:
+        width += 1;
+    }
+  }
+  return width;
+}
+var import_eastasianwidth, import_emoji_regex;
+var init_string_width = __esm({
+  "node_modules/log-update/node_modules/string-width/index.js"() {
+    init_strip_ansi();
+    import_eastasianwidth = __toESM(require_eastasianwidth(), 1);
+    import_emoji_regex = __toESM(require_emoji_regex(), 1);
+  }
+});
+
+// node_modules/log-update/node_modules/ansi-styles/index.js
+function assembleStyles() {
+  const codes = /* @__PURE__ */ new Map();
+  for (const [groupName, group] of Object.entries(styles)) {
+    for (const [styleName, style] of Object.entries(group)) {
+      styles[styleName] = {
+        open: `\x1B[${style[0]}m`,
+        close: `\x1B[${style[1]}m`
+      };
+      group[styleName] = styles[styleName];
+      codes.set(style[0], style[1]);
+    }
+    Object.defineProperty(styles, groupName, {
+      value: group,
+      enumerable: false
+    });
+  }
+  Object.defineProperty(styles, "codes", {
+    value: codes,
+    enumerable: false
+  });
+  styles.color.close = "\x1B[39m";
+  styles.bgColor.close = "\x1B[49m";
+  styles.color.ansi = wrapAnsi16();
+  styles.color.ansi256 = wrapAnsi256();
+  styles.color.ansi16m = wrapAnsi16m();
+  styles.bgColor.ansi = wrapAnsi16(ANSI_BACKGROUND_OFFSET);
+  styles.bgColor.ansi256 = wrapAnsi256(ANSI_BACKGROUND_OFFSET);
+  styles.bgColor.ansi16m = wrapAnsi16m(ANSI_BACKGROUND_OFFSET);
+  Object.defineProperties(styles, {
+    rgbToAnsi256: {
+      value: (red2, green2, blue2) => {
+        if (red2 === green2 && green2 === blue2) {
+          if (red2 < 8) {
+            return 16;
+          }
+          if (red2 > 248) {
+            return 231;
+          }
+          return Math.round((red2 - 8) / 247 * 24) + 232;
+        }
+        return 16 + 36 * Math.round(red2 / 255 * 5) + 6 * Math.round(green2 / 255 * 5) + Math.round(blue2 / 255 * 5);
+      },
+      enumerable: false
+    },
+    hexToRgb: {
+      value: (hex) => {
+        const matches = /[a-f\d]{6}|[a-f\d]{3}/i.exec(hex.toString(16));
+        if (!matches) {
+          return [0, 0, 0];
+        }
+        let [colorString] = matches;
+        if (colorString.length === 3) {
+          colorString = [...colorString].map((character) => character + character).join("");
+        }
+        const integer = Number.parseInt(colorString, 16);
+        return [
+          /* eslint-disable no-bitwise */
+          integer >> 16 & 255,
+          integer >> 8 & 255,
+          integer & 255
+          /* eslint-enable no-bitwise */
+        ];
+      },
+      enumerable: false
+    },
+    hexToAnsi256: {
+      value: (hex) => styles.rgbToAnsi256(...styles.hexToRgb(hex)),
+      enumerable: false
+    },
+    ansi256ToAnsi: {
+      value: (code) => {
+        if (code < 8) {
+          return 30 + code;
+        }
+        if (code < 16) {
+          return 90 + (code - 8);
+        }
+        let red2;
+        let green2;
+        let blue2;
+        if (code >= 232) {
+          red2 = ((code - 232) * 10 + 8) / 255;
+          green2 = red2;
+          blue2 = red2;
+        } else {
+          code -= 16;
+          const remainder = code % 36;
+          red2 = Math.floor(code / 36) / 5;
+          green2 = Math.floor(remainder / 6) / 5;
+          blue2 = remainder % 6 / 5;
+        }
+        const value = Math.max(red2, green2, blue2) * 2;
+        if (value === 0) {
+          return 30;
+        }
+        let result = 30 + (Math.round(blue2) << 2 | Math.round(green2) << 1 | Math.round(red2));
+        if (value === 2) {
+          result += 60;
+        }
+        return result;
+      },
+      enumerable: false
+    },
+    rgbToAnsi: {
+      value: (red2, green2, blue2) => styles.ansi256ToAnsi(styles.rgbToAnsi256(red2, green2, blue2)),
+      enumerable: false
+    },
+    hexToAnsi: {
+      value: (hex) => styles.ansi256ToAnsi(styles.hexToAnsi256(hex)),
+      enumerable: false
+    }
+  });
+  return styles;
+}
+var ANSI_BACKGROUND_OFFSET, wrapAnsi16, wrapAnsi256, wrapAnsi16m, styles, modifierNames, foregroundColorNames, backgroundColorNames, colorNames, ansiStyles, ansi_styles_default;
+var init_ansi_styles = __esm({
+  "node_modules/log-update/node_modules/ansi-styles/index.js"() {
+    ANSI_BACKGROUND_OFFSET = 10;
+    wrapAnsi16 = (offset = 0) => (code) => `\x1B[${code + offset}m`;
+    wrapAnsi256 = (offset = 0) => (code) => `\x1B[${38 + offset};5;${code}m`;
+    wrapAnsi16m = (offset = 0) => (red2, green2, blue2) => `\x1B[${38 + offset};2;${red2};${green2};${blue2}m`;
+    styles = {
+      modifier: {
+        reset: [0, 0],
+        // 21 isn't widely supported and 22 does the same thing
+        bold: [1, 22],
+        dim: [2, 22],
+        italic: [3, 23],
+        underline: [4, 24],
+        overline: [53, 55],
+        inverse: [7, 27],
+        hidden: [8, 28],
+        strikethrough: [9, 29]
+      },
+      color: {
+        black: [30, 39],
+        red: [31, 39],
+        green: [32, 39],
+        yellow: [33, 39],
+        blue: [34, 39],
+        magenta: [35, 39],
+        cyan: [36, 39],
+        white: [37, 39],
+        // Bright color
+        blackBright: [90, 39],
+        gray: [90, 39],
+        // Alias of `blackBright`
+        grey: [90, 39],
+        // Alias of `blackBright`
+        redBright: [91, 39],
+        greenBright: [92, 39],
+        yellowBright: [93, 39],
+        blueBright: [94, 39],
+        magentaBright: [95, 39],
+        cyanBright: [96, 39],
+        whiteBright: [97, 39]
+      },
+      bgColor: {
+        bgBlack: [40, 49],
+        bgRed: [41, 49],
+        bgGreen: [42, 49],
+        bgYellow: [43, 49],
+        bgBlue: [44, 49],
+        bgMagenta: [45, 49],
+        bgCyan: [46, 49],
+        bgWhite: [47, 49],
+        // Bright color
+        bgBlackBright: [100, 49],
+        bgGray: [100, 49],
+        // Alias of `bgBlackBright`
+        bgGrey: [100, 49],
+        // Alias of `bgBlackBright`
+        bgRedBright: [101, 49],
+        bgGreenBright: [102, 49],
+        bgYellowBright: [103, 49],
+        bgBlueBright: [104, 49],
+        bgMagentaBright: [105, 49],
+        bgCyanBright: [106, 49],
+        bgWhiteBright: [107, 49]
+      }
+    };
+    modifierNames = Object.keys(styles.modifier);
+    foregroundColorNames = Object.keys(styles.color);
+    backgroundColorNames = Object.keys(styles.bgColor);
+    colorNames = [...foregroundColorNames, ...backgroundColorNames];
+    ansiStyles = assembleStyles();
+    ansi_styles_default = ansiStyles;
+  }
+});
+
+// node_modules/log-update/node_modules/wrap-ansi/index.js
+function wrapAnsi(string, columns, options) {
+  return String(string).normalize().replace(/\r\n/g, "\n").split("\n").map((line) => exec(line, columns, options)).join("\n");
+}
+var ESCAPES, END_CODE, ANSI_ESCAPE_BELL, ANSI_CSI, ANSI_OSC, ANSI_SGR_TERMINATOR, ANSI_ESCAPE_LINK, wrapAnsiCode, wrapAnsiHyperlink, wordLengths, wrapWord, stringVisibleTrimSpacesRight, exec;
+var init_wrap_ansi = __esm({
+  "node_modules/log-update/node_modules/wrap-ansi/index.js"() {
+    init_string_width();
+    init_strip_ansi();
+    init_ansi_styles();
+    ESCAPES = /* @__PURE__ */ new Set([
+      "\x1B",
+      "\x9B"
+    ]);
+    END_CODE = 39;
+    ANSI_ESCAPE_BELL = "\x07";
+    ANSI_CSI = "[";
+    ANSI_OSC = "]";
+    ANSI_SGR_TERMINATOR = "m";
+    ANSI_ESCAPE_LINK = `${ANSI_OSC}8;;`;
+    wrapAnsiCode = (code) => `${ESCAPES.values().next().value}${ANSI_CSI}${code}${ANSI_SGR_TERMINATOR}`;
+    wrapAnsiHyperlink = (uri) => `${ESCAPES.values().next().value}${ANSI_ESCAPE_LINK}${uri}${ANSI_ESCAPE_BELL}`;
+    wordLengths = (string) => string.split(" ").map((character) => stringWidth(character));
+    wrapWord = (rows, word, columns) => {
+      const characters = [...word];
+      let isInsideEscape = false;
+      let isInsideLinkEscape = false;
+      let visible = stringWidth(stripAnsi(rows[rows.length - 1]));
+      for (const [index, character] of characters.entries()) {
+        const characterLength = stringWidth(character);
+        if (visible + characterLength <= columns) {
+          rows[rows.length - 1] += character;
+        } else {
+          rows.push(character);
+          visible = 0;
+        }
+        if (ESCAPES.has(character)) {
+          isInsideEscape = true;
+          isInsideLinkEscape = characters.slice(index + 1).join("").startsWith(ANSI_ESCAPE_LINK);
+        }
+        if (isInsideEscape) {
+          if (isInsideLinkEscape) {
+            if (character === ANSI_ESCAPE_BELL) {
+              isInsideEscape = false;
+              isInsideLinkEscape = false;
+            }
+          } else if (character === ANSI_SGR_TERMINATOR) {
+            isInsideEscape = false;
+          }
+          continue;
+        }
+        visible += characterLength;
+        if (visible === columns && index < characters.length - 1) {
+          rows.push("");
+          visible = 0;
+        }
+      }
+      if (!visible && rows[rows.length - 1].length > 0 && rows.length > 1) {
+        rows[rows.length - 2] += rows.pop();
+      }
+    };
+    stringVisibleTrimSpacesRight = (string) => {
+      const words = string.split(" ");
+      let last = words.length;
+      while (last > 0) {
+        if (stringWidth(words[last - 1]) > 0) {
+          break;
+        }
+        last--;
+      }
+      if (last === words.length) {
+        return string;
+      }
+      return words.slice(0, last).join(" ") + words.slice(last).join("");
+    };
+    exec = (string, columns, options = {}) => {
+      if (options.trim !== false && string.trim() === "") {
+        return "";
+      }
+      let returnValue = "";
+      let escapeCode;
+      let escapeUrl;
+      const lengths = wordLengths(string);
+      let rows = [""];
+      for (const [index, word] of string.split(" ").entries()) {
+        if (options.trim !== false) {
+          rows[rows.length - 1] = rows[rows.length - 1].trimStart();
+        }
+        let rowLength = stringWidth(rows[rows.length - 1]);
+        if (index !== 0) {
+          if (rowLength >= columns && (options.wordWrap === false || options.trim === false)) {
+            rows.push("");
+            rowLength = 0;
+          }
+          if (rowLength > 0 || options.trim === false) {
+            rows[rows.length - 1] += " ";
+            rowLength++;
+          }
+        }
+        if (options.hard && lengths[index] > columns) {
+          const remainingColumns = columns - rowLength;
+          const breaksStartingThisLine = 1 + Math.floor((lengths[index] - remainingColumns - 1) / columns);
+          const breaksStartingNextLine = Math.floor((lengths[index] - 1) / columns);
+          if (breaksStartingNextLine < breaksStartingThisLine) {
+            rows.push("");
+          }
+          wrapWord(rows, word, columns);
+          continue;
+        }
+        if (rowLength + lengths[index] > columns && rowLength > 0 && lengths[index] > 0) {
+          if (options.wordWrap === false && rowLength < columns) {
+            wrapWord(rows, word, columns);
+            continue;
+          }
+          rows.push("");
+        }
+        if (rowLength + lengths[index] > columns && options.wordWrap === false) {
+          wrapWord(rows, word, columns);
+          continue;
+        }
+        rows[rows.length - 1] += word;
+      }
+      if (options.trim !== false) {
+        rows = rows.map((row) => stringVisibleTrimSpacesRight(row));
+      }
+      const pre = [...rows.join("\n")];
+      for (const [index, character] of pre.entries()) {
+        returnValue += character;
+        if (ESCAPES.has(character)) {
+          const { groups } = new RegExp(`(?:\\${ANSI_CSI}(?<code>\\d+)m|\\${ANSI_ESCAPE_LINK}(?<uri>.*)${ANSI_ESCAPE_BELL})`).exec(pre.slice(index).join("")) || { groups: {} };
+          if (groups.code !== void 0) {
+            const code2 = Number.parseFloat(groups.code);
+            escapeCode = code2 === END_CODE ? void 0 : code2;
+          } else if (groups.uri !== void 0) {
+            escapeUrl = groups.uri.length === 0 ? void 0 : groups.uri;
+          }
+        }
+        const code = ansi_styles_default.codes.get(Number(escapeCode));
+        if (pre[index + 1] === "\n") {
+          if (escapeUrl) {
+            returnValue += wrapAnsiHyperlink("");
+          }
+          if (escapeCode && code) {
+            returnValue += wrapAnsiCode(code);
+          }
+        } else if (character === "\n") {
+          if (escapeCode && code) {
+            returnValue += wrapAnsiCode(escapeCode);
+          }
+          if (escapeUrl) {
+            returnValue += wrapAnsiHyperlink(escapeUrl);
+          }
+        }
+      }
+      return returnValue;
+    };
+  }
+});
+
+// node_modules/slice-ansi/node_modules/is-fullwidth-code-point/index.js
+function isFullwidthCodePoint(codePoint) {
+  if (!Number.isInteger(codePoint)) {
+    return false;
+  }
+  return codePoint >= 4352 && (codePoint <= 4447 || // Hangul Jamo
+  codePoint === 9001 || // LEFT-POINTING ANGLE BRACKET
+  codePoint === 9002 || // RIGHT-POINTING ANGLE BRACKET
+  // CJK Radicals Supplement .. Enclosed CJK Letters and Months
+  11904 <= codePoint && codePoint <= 12871 && codePoint !== 12351 || // Enclosed CJK Letters and Months .. CJK Unified Ideographs Extension A
+  12880 <= codePoint && codePoint <= 19903 || // CJK Unified Ideographs .. Yi Radicals
+  19968 <= codePoint && codePoint <= 42182 || // Hangul Jamo Extended-A
+  43360 <= codePoint && codePoint <= 43388 || // Hangul Syllables
+  44032 <= codePoint && codePoint <= 55203 || // CJK Compatibility Ideographs
+  63744 <= codePoint && codePoint <= 64255 || // Vertical Forms
+  65040 <= codePoint && codePoint <= 65049 || // CJK Compatibility Forms .. Small Form Variants
+  65072 <= codePoint && codePoint <= 65131 || // Halfwidth and Fullwidth Forms
+  65281 <= codePoint && codePoint <= 65376 || 65504 <= codePoint && codePoint <= 65510 || // Kana Supplement
+  110592 <= codePoint && codePoint <= 110593 || // Enclosed Ideographic Supplement
+  127488 <= codePoint && codePoint <= 127569 || // CJK Unified Ideographs Extension B .. Tertiary Ideographic Plane
+  131072 <= codePoint && codePoint <= 262141);
+}
+var init_is_fullwidth_code_point = __esm({
+  "node_modules/slice-ansi/node_modules/is-fullwidth-code-point/index.js"() {
+  }
+});
+
+// node_modules/slice-ansi/node_modules/ansi-styles/index.js
+function assembleStyles2() {
+  const codes = /* @__PURE__ */ new Map();
+  for (const [groupName, group] of Object.entries(styles2)) {
+    for (const [styleName, style] of Object.entries(group)) {
+      styles2[styleName] = {
+        open: `\x1B[${style[0]}m`,
+        close: `\x1B[${style[1]}m`
+      };
+      group[styleName] = styles2[styleName];
+      codes.set(style[0], style[1]);
+    }
+    Object.defineProperty(styles2, groupName, {
+      value: group,
+      enumerable: false
+    });
+  }
+  Object.defineProperty(styles2, "codes", {
+    value: codes,
+    enumerable: false
+  });
+  styles2.color.close = "\x1B[39m";
+  styles2.bgColor.close = "\x1B[49m";
+  styles2.color.ansi = wrapAnsi162();
+  styles2.color.ansi256 = wrapAnsi2562();
+  styles2.color.ansi16m = wrapAnsi16m2();
+  styles2.bgColor.ansi = wrapAnsi162(ANSI_BACKGROUND_OFFSET2);
+  styles2.bgColor.ansi256 = wrapAnsi2562(ANSI_BACKGROUND_OFFSET2);
+  styles2.bgColor.ansi16m = wrapAnsi16m2(ANSI_BACKGROUND_OFFSET2);
+  Object.defineProperties(styles2, {
+    rgbToAnsi256: {
+      value: (red2, green2, blue2) => {
+        if (red2 === green2 && green2 === blue2) {
+          if (red2 < 8) {
+            return 16;
+          }
+          if (red2 > 248) {
+            return 231;
+          }
+          return Math.round((red2 - 8) / 247 * 24) + 232;
+        }
+        return 16 + 36 * Math.round(red2 / 255 * 5) + 6 * Math.round(green2 / 255 * 5) + Math.round(blue2 / 255 * 5);
+      },
+      enumerable: false
+    },
+    hexToRgb: {
+      value: (hex) => {
+        const matches = /[a-f\d]{6}|[a-f\d]{3}/i.exec(hex.toString(16));
+        if (!matches) {
+          return [0, 0, 0];
+        }
+        let [colorString] = matches;
+        if (colorString.length === 3) {
+          colorString = [...colorString].map((character) => character + character).join("");
+        }
+        const integer = Number.parseInt(colorString, 16);
+        return [
+          /* eslint-disable no-bitwise */
+          integer >> 16 & 255,
+          integer >> 8 & 255,
+          integer & 255
+          /* eslint-enable no-bitwise */
+        ];
+      },
+      enumerable: false
+    },
+    hexToAnsi256: {
+      value: (hex) => styles2.rgbToAnsi256(...styles2.hexToRgb(hex)),
+      enumerable: false
+    },
+    ansi256ToAnsi: {
+      value: (code) => {
+        if (code < 8) {
+          return 30 + code;
+        }
+        if (code < 16) {
+          return 90 + (code - 8);
+        }
+        let red2;
+        let green2;
+        let blue2;
+        if (code >= 232) {
+          red2 = ((code - 232) * 10 + 8) / 255;
+          green2 = red2;
+          blue2 = red2;
+        } else {
+          code -= 16;
+          const remainder = code % 36;
+          red2 = Math.floor(code / 36) / 5;
+          green2 = Math.floor(remainder / 6) / 5;
+          blue2 = remainder % 6 / 5;
+        }
+        const value = Math.max(red2, green2, blue2) * 2;
+        if (value === 0) {
+          return 30;
+        }
+        let result = 30 + (Math.round(blue2) << 2 | Math.round(green2) << 1 | Math.round(red2));
+        if (value === 2) {
+          result += 60;
+        }
+        return result;
+      },
+      enumerable: false
+    },
+    rgbToAnsi: {
+      value: (red2, green2, blue2) => styles2.ansi256ToAnsi(styles2.rgbToAnsi256(red2, green2, blue2)),
+      enumerable: false
+    },
+    hexToAnsi: {
+      value: (hex) => styles2.ansi256ToAnsi(styles2.hexToAnsi256(hex)),
+      enumerable: false
+    }
+  });
+  return styles2;
+}
+var ANSI_BACKGROUND_OFFSET2, wrapAnsi162, wrapAnsi2562, wrapAnsi16m2, styles2, modifierNames2, foregroundColorNames2, backgroundColorNames2, colorNames2, ansiStyles2, ansi_styles_default2;
+var init_ansi_styles2 = __esm({
+  "node_modules/slice-ansi/node_modules/ansi-styles/index.js"() {
+    ANSI_BACKGROUND_OFFSET2 = 10;
+    wrapAnsi162 = (offset = 0) => (code) => `\x1B[${code + offset}m`;
+    wrapAnsi2562 = (offset = 0) => (code) => `\x1B[${38 + offset};5;${code}m`;
+    wrapAnsi16m2 = (offset = 0) => (red2, green2, blue2) => `\x1B[${38 + offset};2;${red2};${green2};${blue2}m`;
+    styles2 = {
+      modifier: {
+        reset: [0, 0],
+        // 21 isn't widely supported and 22 does the same thing
+        bold: [1, 22],
+        dim: [2, 22],
+        italic: [3, 23],
+        underline: [4, 24],
+        overline: [53, 55],
+        inverse: [7, 27],
+        hidden: [8, 28],
+        strikethrough: [9, 29]
+      },
+      color: {
+        black: [30, 39],
+        red: [31, 39],
+        green: [32, 39],
+        yellow: [33, 39],
+        blue: [34, 39],
+        magenta: [35, 39],
+        cyan: [36, 39],
+        white: [37, 39],
+        // Bright color
+        blackBright: [90, 39],
+        gray: [90, 39],
+        // Alias of `blackBright`
+        grey: [90, 39],
+        // Alias of `blackBright`
+        redBright: [91, 39],
+        greenBright: [92, 39],
+        yellowBright: [93, 39],
+        blueBright: [94, 39],
+        magentaBright: [95, 39],
+        cyanBright: [96, 39],
+        whiteBright: [97, 39]
+      },
+      bgColor: {
+        bgBlack: [40, 49],
+        bgRed: [41, 49],
+        bgGreen: [42, 49],
+        bgYellow: [43, 49],
+        bgBlue: [44, 49],
+        bgMagenta: [45, 49],
+        bgCyan: [46, 49],
+        bgWhite: [47, 49],
+        // Bright color
+        bgBlackBright: [100, 49],
+        bgGray: [100, 49],
+        // Alias of `bgBlackBright`
+        bgGrey: [100, 49],
+        // Alias of `bgBlackBright`
+        bgRedBright: [101, 49],
+        bgGreenBright: [102, 49],
+        bgYellowBright: [103, 49],
+        bgBlueBright: [104, 49],
+        bgMagentaBright: [105, 49],
+        bgCyanBright: [106, 49],
+        bgWhiteBright: [107, 49]
+      }
+    };
+    modifierNames2 = Object.keys(styles2.modifier);
+    foregroundColorNames2 = Object.keys(styles2.color);
+    backgroundColorNames2 = Object.keys(styles2.bgColor);
+    colorNames2 = [...foregroundColorNames2, ...backgroundColorNames2];
+    ansiStyles2 = assembleStyles2();
+    ansi_styles_default2 = ansiStyles2;
+  }
+});
+
+// node_modules/slice-ansi/index.js
+function sliceAnsi(string, begin, end) {
+  const characters = [...string];
+  const ansiCodes = [];
+  let stringEnd = typeof end === "number" ? end : characters.length;
+  let isInsideEscape = false;
+  let ansiCode;
+  let visible = 0;
+  let output = "";
+  for (const [index, character] of characters.entries()) {
+    let leftEscape = false;
+    if (ESCAPES2.includes(character)) {
+      const code = /\d[^m]*/.exec(string.slice(index, index + 18));
+      ansiCode = code && code.length > 0 ? code[0] : void 0;
+      if (visible < stringEnd) {
+        isInsideEscape = true;
+        if (ansiCode !== void 0) {
+          ansiCodes.push(ansiCode);
+        }
+      }
+    } else if (isInsideEscape && character === "m") {
+      isInsideEscape = false;
+      leftEscape = true;
+    }
+    if (!isInsideEscape && !leftEscape) {
+      visible++;
+    }
+    if (!astralRegex.test(character) && isFullwidthCodePoint(character.codePointAt())) {
+      visible++;
+      if (typeof end !== "number") {
+        stringEnd++;
+      }
+    }
+    if (visible > begin && visible <= stringEnd) {
+      output += character;
+    } else if (visible === begin && !isInsideEscape && ansiCode !== void 0) {
+      output = checkAnsi(ansiCodes);
+    } else if (visible >= stringEnd) {
+      output += checkAnsi(ansiCodes, true, ansiCode);
+      break;
+    }
+  }
+  return output;
+}
+var astralRegex, ESCAPES2, wrapAnsi2, checkAnsi;
+var init_slice_ansi = __esm({
+  "node_modules/slice-ansi/index.js"() {
+    init_is_fullwidth_code_point();
+    init_ansi_styles2();
+    astralRegex = /^[\uD800-\uDBFF][\uDC00-\uDFFF]$/;
+    ESCAPES2 = [
+      "\x1B",
+      "\x9B"
+    ];
+    wrapAnsi2 = (code) => `${ESCAPES2[0]}[${code}m`;
+    checkAnsi = (ansiCodes, isEscapes, endAnsiCode) => {
+      let output = [];
+      ansiCodes = [...ansiCodes];
+      for (let ansiCode of ansiCodes) {
+        const ansiCodeOrigin = ansiCode;
+        if (ansiCode.includes(";")) {
+          ansiCode = ansiCode.split(";")[0][0] + "0";
+        }
+        const item = ansi_styles_default2.codes.get(Number.parseInt(ansiCode, 10));
+        if (item) {
+          const indexEscape = ansiCodes.indexOf(item.toString());
+          if (indexEscape === -1) {
+            output.push(wrapAnsi2(isEscapes ? item : ansiCodeOrigin));
+          } else {
+            ansiCodes.splice(indexEscape, 1);
+          }
+        } else if (isEscapes) {
+          output.push(wrapAnsi2(0));
+          break;
+        } else {
+          output.push(wrapAnsi2(ansiCodeOrigin));
+        }
+      }
+      if (isEscapes) {
+        output = output.filter((element, index) => output.indexOf(element) === index);
+        if (endAnsiCode !== void 0) {
+          const fistEscapeCode = wrapAnsi2(ansi_styles_default2.codes.get(Number.parseInt(endAnsiCode, 10)));
+          output = output.reduce((current, next) => next === fistEscapeCode ? [next, ...current] : [...current, next], []);
+        }
+      }
+      return output.join("");
+    };
+  }
+});
+
+// node_modules/log-update/index.js
+var log_update_exports = {};
+__export(log_update_exports, {
+  createLogUpdate: () => createLogUpdate,
+  default: () => log_update_default,
+  logUpdateStderr: () => logUpdateStderr
+});
+function createLogUpdate(stream, { showCursor = false } = {}) {
+  let previousLineCount = 0;
+  let previousWidth = getWidth(stream);
+  let previousOutput = "";
+  const render = (...arguments_) => {
+    if (!showCursor) {
+      cli_cursor_default.hide();
+    }
+    let output = arguments_.join(" ") + "\n";
+    output = fitToTerminalHeight(stream, output);
+    const width = getWidth(stream);
+    if (output === previousOutput && previousWidth === width) {
+      return;
+    }
+    previousOutput = output;
+    previousWidth = width;
+    output = wrapAnsi(output, width, {
+      trim: false,
+      hard: true,
+      wordWrap: false
+    });
+    stream.write(ansi_escapes_default.eraseLines(previousLineCount) + output);
+    previousLineCount = output.split("\n").length;
+  };
+  render.clear = () => {
+    stream.write(ansi_escapes_default.eraseLines(previousLineCount));
+    previousOutput = "";
+    previousWidth = getWidth(stream);
+    previousLineCount = 0;
+  };
+  render.done = () => {
+    previousOutput = "";
+    previousWidth = getWidth(stream);
+    previousLineCount = 0;
+    if (!showCursor) {
+      cli_cursor_default.show();
+    }
+  };
+  return render;
+}
+var import_node_process3, defaultTerminalHeight, getWidth, fitToTerminalHeight, logUpdate, log_update_default, logUpdateStderr;
+var init_log_update = __esm({
+  "node_modules/log-update/index.js"() {
+    import_node_process3 = __toESM(require("node:process"), 1);
+    init_ansi_escapes();
+    init_cli_cursor();
+    init_wrap_ansi();
+    init_slice_ansi();
+    init_strip_ansi();
+    defaultTerminalHeight = 24;
+    getWidth = (stream) => {
+      const { columns } = stream;
+      if (!columns) {
+        return 80;
+      }
+      return columns;
+    };
+    fitToTerminalHeight = (stream, text) => {
+      const terminalHeight = stream.rows || defaultTerminalHeight;
+      const lines = text.split("\n");
+      const toRemove = lines.length - terminalHeight;
+      if (toRemove <= 0) {
+        return text;
+      }
+      return sliceAnsi(
+        text,
+        stripAnsi(lines.slice(0, toRemove).join("\n")).length + 1
+      );
+    };
+    logUpdate = createLogUpdate(import_node_process3.default.stdout);
+    log_update_default = logUpdate;
+    logUpdateStderr = createLogUpdate(import_node_process3.default.stderr);
+  }
+});
+
+// node_modules/cli-truncate/node_modules/ansi-regex/index.js
+function ansiRegex2({ onlyFirst = false } = {}) {
+  const pattern = [
+    "[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)",
+    "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))"
+  ].join("|");
+  return new RegExp(pattern, onlyFirst ? void 0 : "g");
+}
+var init_ansi_regex2 = __esm({
+  "node_modules/cli-truncate/node_modules/ansi-regex/index.js"() {
+  }
+});
+
+// node_modules/cli-truncate/node_modules/strip-ansi/index.js
+function stripAnsi2(string) {
+  if (typeof string !== "string") {
+    throw new TypeError(`Expected a \`string\`, got \`${typeof string}\``);
+  }
+  return string.replace(regex2, "");
+}
+var regex2;
+var init_strip_ansi2 = __esm({
+  "node_modules/cli-truncate/node_modules/strip-ansi/index.js"() {
+    init_ansi_regex2();
+    regex2 = ansiRegex2();
+  }
+});
+
+// node_modules/cli-truncate/node_modules/emoji-regex/index.js
+var require_emoji_regex2 = __commonJS({
+  "node_modules/cli-truncate/node_modules/emoji-regex/index.js"(exports, module2) {
+    "use strict";
+    module2.exports = function() {
+      return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67)\uDB40\uDC7F|(?:\uD83E\uDDD1\uD83C\uDFFF\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFC-\uDFFF])|\uD83D\uDC68(?:\uD83C\uDFFB(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|[\u2695\u2696\u2708]\uFE0F|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))?|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])\uFE0F|\u200D(?:(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D[\uDC66\uDC67])|\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC)?|(?:\uD83D\uDC69(?:\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69]))|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC69(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83E\uDDD1(?:\u200D(?:\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDE36\u200D\uD83C\uDF2B|\uD83C\uDFF3\uFE0F\u200D\u26A7|\uD83D\uDC3B\u200D\u2744|(?:(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\uD83C\uDFF4\u200D\u2620|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])\u200D[\u2640\u2642]|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600-\u2604\u260E\u2611\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F0\u26F1\u26F4\u26F7\u26F8\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u3030\u303D\u3297\u3299]|\uD83C[\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]|\uD83D[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3])\uFE0F|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDE35\u200D\uD83D\uDCAB|\uD83D\uDE2E\u200D\uD83D\uDCA8|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83E\uDDD1(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83D\uDC69(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF4\uD83C\uDDF2|\uD83D\uDC08\u200D\u2B1B|\u2764\uFE0F\u200D(?:\uD83D\uDD25|\uD83E\uDE79)|\uD83D\uDC41\uFE0F|\uD83C\uDFF3\uFE0F|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|[#\*0-9]\uFE0F\u20E3|\u2764\uFE0F|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|\uD83C\uDFF4|(?:[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270C\u270D]|\uD83D[\uDD74\uDD90])(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC08\uDC15\uDC3B\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE2E\uDE35\uDE36\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5]|\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD]|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF]|[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0D\uDD0E\uDD10-\uDD17\uDD1D\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78\uDD7A-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCB\uDDD0\uDDE0-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6]|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26A7\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5-\uDED7\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDD77\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
+    };
+  }
+});
+
+// node_modules/cli-truncate/node_modules/string-width/index.js
+function stringWidth2(string, options = {}) {
+  if (typeof string !== "string" || string.length === 0) {
+    return 0;
+  }
+  options = {
+    ambiguousIsNarrow: true,
+    ...options
+  };
+  string = stripAnsi2(string);
+  if (string.length === 0) {
+    return 0;
+  }
+  string = string.replace((0, import_emoji_regex2.default)(), "  ");
+  const ambiguousCharacterWidth = options.ambiguousIsNarrow ? 1 : 2;
+  let width = 0;
+  for (const character of string) {
+    const codePoint = character.codePointAt(0);
+    if (codePoint <= 31 || codePoint >= 127 && codePoint <= 159) {
+      continue;
+    }
+    if (codePoint >= 768 && codePoint <= 879) {
+      continue;
+    }
+    const code = import_eastasianwidth2.default.eastAsianWidth(character);
+    switch (code) {
+      case "F":
+      case "W":
+        width += 2;
+        break;
+      case "A":
+        width += ambiguousCharacterWidth;
+        break;
+      default:
+        width += 1;
+    }
+  }
+  return width;
+}
+var import_eastasianwidth2, import_emoji_regex2;
+var init_string_width2 = __esm({
+  "node_modules/cli-truncate/node_modules/string-width/index.js"() {
+    init_strip_ansi2();
+    import_eastasianwidth2 = __toESM(require_eastasianwidth(), 1);
+    import_emoji_regex2 = __toESM(require_emoji_regex2(), 1);
+  }
+});
+
+// node_modules/cli-truncate/index.js
+var cli_truncate_exports = {};
+__export(cli_truncate_exports, {
+  default: () => cliTruncate
+});
+function getIndexOfNearestSpace(string, wantedIndex, shouldSearchRight) {
+  if (string.charAt(wantedIndex) === " ") {
+    return wantedIndex;
+  }
+  for (let index = 1; index <= 3; index++) {
+    if (shouldSearchRight) {
+      if (string.charAt(wantedIndex + index) === " ") {
+        return wantedIndex + index;
+      }
+    } else if (string.charAt(wantedIndex - index) === " ") {
+      return wantedIndex - index;
+    }
+  }
+  return wantedIndex;
+}
+function cliTruncate(text, columns, options) {
+  options = {
+    position: "end",
+    preferTruncationOnSpace: false,
+    truncationCharacter: "\u2026",
+    ...options
+  };
+  const { position, space, preferTruncationOnSpace } = options;
+  let { truncationCharacter } = options;
+  if (typeof text !== "string") {
+    throw new TypeError(`Expected \`input\` to be a string, got ${typeof text}`);
+  }
+  if (typeof columns !== "number") {
+    throw new TypeError(`Expected \`columns\` to be a number, got ${typeof columns}`);
+  }
+  if (columns < 1) {
+    return "";
+  }
+  if (columns === 1) {
+    return truncationCharacter;
+  }
+  const length = stringWidth2(text);
+  if (length <= columns) {
+    return text;
+  }
+  if (position === "start") {
+    if (preferTruncationOnSpace) {
+      const nearestSpace = getIndexOfNearestSpace(text, length - columns + 1, true);
+      return truncationCharacter + sliceAnsi(text, nearestSpace, length).trim();
+    }
+    if (space === true) {
+      truncationCharacter += " ";
+    }
+    return truncationCharacter + sliceAnsi(text, length - columns + stringWidth2(truncationCharacter), length);
+  }
+  if (position === "middle") {
+    if (space === true) {
+      truncationCharacter = ` ${truncationCharacter} `;
+    }
+    const half = Math.floor(columns / 2);
+    if (preferTruncationOnSpace) {
+      const spaceNearFirstBreakPoint = getIndexOfNearestSpace(text, half);
+      const spaceNearSecondBreakPoint = getIndexOfNearestSpace(text, length - (columns - half) + 1, true);
+      return sliceAnsi(text, 0, spaceNearFirstBreakPoint) + truncationCharacter + sliceAnsi(text, spaceNearSecondBreakPoint, length).trim();
+    }
+    return sliceAnsi(text, 0, half) + truncationCharacter + sliceAnsi(text, length - (columns - half) + stringWidth2(truncationCharacter), length);
+  }
+  if (position === "end") {
+    if (preferTruncationOnSpace) {
+      const nearestSpace = getIndexOfNearestSpace(text, columns - 1);
+      return sliceAnsi(text, 0, nearestSpace) + truncationCharacter;
+    }
+    if (space === true) {
+      truncationCharacter = ` ${truncationCharacter}`;
+    }
+    return sliceAnsi(text, 0, columns - stringWidth2(truncationCharacter)) + truncationCharacter;
+  }
+  throw new Error(`Expected \`options.position\` to be either \`start\`, \`middle\` or \`end\`, got ${position}`);
+}
+var init_cli_truncate = __esm({
+  "node_modules/cli-truncate/index.js"() {
+    init_slice_ansi();
+    init_string_width2();
+  }
+});
+
+// node_modules/listr2/node_modules/ansi-regex/index.js
+function ansiRegex3({ onlyFirst = false } = {}) {
+  const pattern = [
+    "[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)",
+    "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))"
+  ].join("|");
+  return new RegExp(pattern, onlyFirst ? void 0 : "g");
+}
+var init_ansi_regex3 = __esm({
+  "node_modules/listr2/node_modules/ansi-regex/index.js"() {
+  }
+});
+
+// node_modules/listr2/node_modules/strip-ansi/index.js
+function stripAnsi3(string) {
+  if (typeof string !== "string") {
+    throw new TypeError(`Expected a \`string\`, got \`${typeof string}\``);
+  }
+  return string.replace(regex3, "");
+}
+var regex3;
+var init_strip_ansi3 = __esm({
+  "node_modules/listr2/node_modules/strip-ansi/index.js"() {
+    init_ansi_regex3();
+    regex3 = ansiRegex3();
+  }
+});
+
+// node_modules/listr2/node_modules/emoji-regex/index.js
+var require_emoji_regex3 = __commonJS({
+  "node_modules/listr2/node_modules/emoji-regex/index.js"(exports, module2) {
+    "use strict";
+    module2.exports = function() {
+      return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67)\uDB40\uDC7F|(?:\uD83E\uDDD1\uD83C\uDFFF\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFC-\uDFFF])|\uD83D\uDC68(?:\uD83C\uDFFB(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|[\u2695\u2696\u2708]\uFE0F|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))?|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFF]))|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])\uFE0F|\u200D(?:(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D[\uDC66\uDC67])|\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC)?|(?:\uD83D\uDC69(?:\uD83C\uDFFB\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|(?:\uD83C[\uDFFC-\uDFFF])\u200D\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69]))|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC69(?:\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83E\uDDD1(?:\u200D(?:\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|\uD83D\uDE36\u200D\uD83C\uDF2B|\uD83C\uDFF3\uFE0F\u200D\u26A7|\uD83D\uDC3B\u200D\u2744|(?:(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\uD83C\uDFF4\u200D\u2620|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])\u200D[\u2640\u2642]|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600-\u2604\u260E\u2611\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F0\u26F1\u26F4\u26F7\u26F8\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u3030\u303D\u3297\u3299]|\uD83C[\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]|\uD83D[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3])\uFE0F|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDE35\u200D\uD83D\uDCAB|\uD83D\uDE2E\u200D\uD83D\uDCA8|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83E\uDDD1(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83D\uDC69(?:\uD83C\uDFFF|\uD83C\uDFFE|\uD83C\uDFFD|\uD83C\uDFFC|\uD83C\uDFFB)?|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF4\uD83C\uDDF2|\uD83D\uDC08\u200D\u2B1B|\u2764\uFE0F\u200D(?:\uD83D\uDD25|\uD83E\uDE79)|\uD83D\uDC41\uFE0F|\uD83C\uDFF3\uFE0F|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|[#\*0-9]\uFE0F\u20E3|\u2764\uFE0F|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|\uD83C\uDFF4|(?:[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270C\u270D]|\uD83D[\uDD74\uDD90])(?:\uFE0F|\uD83C[\uDFFB-\uDFFF])|[\u270A\u270B]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC08\uDC15\uDC3B\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE2E\uDE35\uDE36\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5]|\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD4\uDDD6-\uDDDD]|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF]|[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0D\uDD0E\uDD10-\uDD17\uDD1D\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78\uDD7A-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCB\uDDD0\uDDE0-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6]|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5-\uDED7\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26A7\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5-\uDED7\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFC\uDFE0-\uDFEB]|\uD83E[\uDD0C-\uDD3A\uDD3C-\uDD45\uDD47-\uDD78\uDD7A-\uDDCB\uDDCD-\uDDFF\uDE70-\uDE74\uDE78-\uDE7A\uDE80-\uDE86\uDE90-\uDEA8\uDEB0-\uDEB6\uDEC0-\uDEC2\uDED0-\uDED6])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0C\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDD77\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
+    };
+  }
+});
+
+// node_modules/listr2/node_modules/string-width/index.js
+function stringWidth3(string, options = {}) {
+  if (typeof string !== "string" || string.length === 0) {
+    return 0;
+  }
+  options = {
+    ambiguousIsNarrow: true,
+    ...options
+  };
+  string = stripAnsi3(string);
+  if (string.length === 0) {
+    return 0;
+  }
+  string = string.replace((0, import_emoji_regex3.default)(), "  ");
+  const ambiguousCharacterWidth = options.ambiguousIsNarrow ? 1 : 2;
+  let width = 0;
+  for (const character of string) {
+    const codePoint = character.codePointAt(0);
+    if (codePoint <= 31 || codePoint >= 127 && codePoint <= 159) {
+      continue;
+    }
+    if (codePoint >= 768 && codePoint <= 879) {
+      continue;
+    }
+    const code = import_eastasianwidth3.default.eastAsianWidth(character);
+    switch (code) {
+      case "F":
+      case "W":
+        width += 2;
+        break;
+      case "A":
+        width += ambiguousCharacterWidth;
+        break;
+      default:
+        width += 1;
+    }
+  }
+  return width;
+}
+var import_eastasianwidth3, import_emoji_regex3;
+var init_string_width3 = __esm({
+  "node_modules/listr2/node_modules/string-width/index.js"() {
+    init_strip_ansi3();
+    import_eastasianwidth3 = __toESM(require_eastasianwidth(), 1);
+    import_emoji_regex3 = __toESM(require_emoji_regex3(), 1);
+  }
+});
+
+// node_modules/listr2/node_modules/ansi-styles/index.js
+function assembleStyles3() {
+  const codes = /* @__PURE__ */ new Map();
+  for (const [groupName, group] of Object.entries(styles3)) {
+    for (const [styleName, style] of Object.entries(group)) {
+      styles3[styleName] = {
+        open: `\x1B[${style[0]}m`,
+        close: `\x1B[${style[1]}m`
+      };
+      group[styleName] = styles3[styleName];
+      codes.set(style[0], style[1]);
+    }
+    Object.defineProperty(styles3, groupName, {
+      value: group,
+      enumerable: false
+    });
+  }
+  Object.defineProperty(styles3, "codes", {
+    value: codes,
+    enumerable: false
+  });
+  styles3.color.close = "\x1B[39m";
+  styles3.bgColor.close = "\x1B[49m";
+  styles3.color.ansi = wrapAnsi163();
+  styles3.color.ansi256 = wrapAnsi2563();
+  styles3.color.ansi16m = wrapAnsi16m3();
+  styles3.bgColor.ansi = wrapAnsi163(ANSI_BACKGROUND_OFFSET3);
+  styles3.bgColor.ansi256 = wrapAnsi2563(ANSI_BACKGROUND_OFFSET3);
+  styles3.bgColor.ansi16m = wrapAnsi16m3(ANSI_BACKGROUND_OFFSET3);
+  Object.defineProperties(styles3, {
+    rgbToAnsi256: {
+      value: (red2, green2, blue2) => {
+        if (red2 === green2 && green2 === blue2) {
+          if (red2 < 8) {
+            return 16;
+          }
+          if (red2 > 248) {
+            return 231;
+          }
+          return Math.round((red2 - 8) / 247 * 24) + 232;
+        }
+        return 16 + 36 * Math.round(red2 / 255 * 5) + 6 * Math.round(green2 / 255 * 5) + Math.round(blue2 / 255 * 5);
+      },
+      enumerable: false
+    },
+    hexToRgb: {
+      value: (hex) => {
+        const matches = /[a-f\d]{6}|[a-f\d]{3}/i.exec(hex.toString(16));
+        if (!matches) {
+          return [0, 0, 0];
+        }
+        let [colorString] = matches;
+        if (colorString.length === 3) {
+          colorString = [...colorString].map((character) => character + character).join("");
+        }
+        const integer = Number.parseInt(colorString, 16);
+        return [
+          /* eslint-disable no-bitwise */
+          integer >> 16 & 255,
+          integer >> 8 & 255,
+          integer & 255
+          /* eslint-enable no-bitwise */
+        ];
+      },
+      enumerable: false
+    },
+    hexToAnsi256: {
+      value: (hex) => styles3.rgbToAnsi256(...styles3.hexToRgb(hex)),
+      enumerable: false
+    },
+    ansi256ToAnsi: {
+      value: (code) => {
+        if (code < 8) {
+          return 30 + code;
+        }
+        if (code < 16) {
+          return 90 + (code - 8);
+        }
+        let red2;
+        let green2;
+        let blue2;
+        if (code >= 232) {
+          red2 = ((code - 232) * 10 + 8) / 255;
+          green2 = red2;
+          blue2 = red2;
+        } else {
+          code -= 16;
+          const remainder = code % 36;
+          red2 = Math.floor(code / 36) / 5;
+          green2 = Math.floor(remainder / 6) / 5;
+          blue2 = remainder % 6 / 5;
+        }
+        const value = Math.max(red2, green2, blue2) * 2;
+        if (value === 0) {
+          return 30;
+        }
+        let result = 30 + (Math.round(blue2) << 2 | Math.round(green2) << 1 | Math.round(red2));
+        if (value === 2) {
+          result += 60;
+        }
+        return result;
+      },
+      enumerable: false
+    },
+    rgbToAnsi: {
+      value: (red2, green2, blue2) => styles3.ansi256ToAnsi(styles3.rgbToAnsi256(red2, green2, blue2)),
+      enumerable: false
+    },
+    hexToAnsi: {
+      value: (hex) => styles3.ansi256ToAnsi(styles3.hexToAnsi256(hex)),
+      enumerable: false
+    }
+  });
+  return styles3;
+}
+var ANSI_BACKGROUND_OFFSET3, wrapAnsi163, wrapAnsi2563, wrapAnsi16m3, styles3, modifierNames3, foregroundColorNames3, backgroundColorNames3, colorNames3, ansiStyles3, ansi_styles_default3;
+var init_ansi_styles3 = __esm({
+  "node_modules/listr2/node_modules/ansi-styles/index.js"() {
+    ANSI_BACKGROUND_OFFSET3 = 10;
+    wrapAnsi163 = (offset = 0) => (code) => `\x1B[${code + offset}m`;
+    wrapAnsi2563 = (offset = 0) => (code) => `\x1B[${38 + offset};5;${code}m`;
+    wrapAnsi16m3 = (offset = 0) => (red2, green2, blue2) => `\x1B[${38 + offset};2;${red2};${green2};${blue2}m`;
+    styles3 = {
+      modifier: {
+        reset: [0, 0],
+        // 21 isn't widely supported and 22 does the same thing
+        bold: [1, 22],
+        dim: [2, 22],
+        italic: [3, 23],
+        underline: [4, 24],
+        overline: [53, 55],
+        inverse: [7, 27],
+        hidden: [8, 28],
+        strikethrough: [9, 29]
+      },
+      color: {
+        black: [30, 39],
+        red: [31, 39],
+        green: [32, 39],
+        yellow: [33, 39],
+        blue: [34, 39],
+        magenta: [35, 39],
+        cyan: [36, 39],
+        white: [37, 39],
+        // Bright color
+        blackBright: [90, 39],
+        gray: [90, 39],
+        // Alias of `blackBright`
+        grey: [90, 39],
+        // Alias of `blackBright`
+        redBright: [91, 39],
+        greenBright: [92, 39],
+        yellowBright: [93, 39],
+        blueBright: [94, 39],
+        magentaBright: [95, 39],
+        cyanBright: [96, 39],
+        whiteBright: [97, 39]
+      },
+      bgColor: {
+        bgBlack: [40, 49],
+        bgRed: [41, 49],
+        bgGreen: [42, 49],
+        bgYellow: [43, 49],
+        bgBlue: [44, 49],
+        bgMagenta: [45, 49],
+        bgCyan: [46, 49],
+        bgWhite: [47, 49],
+        // Bright color
+        bgBlackBright: [100, 49],
+        bgGray: [100, 49],
+        // Alias of `bgBlackBright`
+        bgGrey: [100, 49],
+        // Alias of `bgBlackBright`
+        bgRedBright: [101, 49],
+        bgGreenBright: [102, 49],
+        bgYellowBright: [103, 49],
+        bgBlueBright: [104, 49],
+        bgMagentaBright: [105, 49],
+        bgCyanBright: [106, 49],
+        bgWhiteBright: [107, 49]
+      }
+    };
+    modifierNames3 = Object.keys(styles3.modifier);
+    foregroundColorNames3 = Object.keys(styles3.color);
+    backgroundColorNames3 = Object.keys(styles3.bgColor);
+    colorNames3 = [...foregroundColorNames3, ...backgroundColorNames3];
+    ansiStyles3 = assembleStyles3();
+    ansi_styles_default3 = ansiStyles3;
+  }
+});
+
+// node_modules/listr2/node_modules/wrap-ansi/index.js
+var wrap_ansi_exports = {};
+__export(wrap_ansi_exports, {
+  default: () => wrapAnsi3
+});
+function wrapAnsi3(string, columns, options) {
+  return String(string).normalize().replace(/\r\n/g, "\n").split("\n").map((line) => exec2(line, columns, options)).join("\n");
+}
+var ESCAPES3, END_CODE2, ANSI_ESCAPE_BELL2, ANSI_CSI2, ANSI_OSC2, ANSI_SGR_TERMINATOR2, ANSI_ESCAPE_LINK2, wrapAnsiCode2, wrapAnsiHyperlink2, wordLengths2, wrapWord2, stringVisibleTrimSpacesRight2, exec2;
+var init_wrap_ansi2 = __esm({
+  "node_modules/listr2/node_modules/wrap-ansi/index.js"() {
+    init_string_width3();
+    init_strip_ansi3();
+    init_ansi_styles3();
+    ESCAPES3 = /* @__PURE__ */ new Set([
+      "\x1B",
+      "\x9B"
+    ]);
+    END_CODE2 = 39;
+    ANSI_ESCAPE_BELL2 = "\x07";
+    ANSI_CSI2 = "[";
+    ANSI_OSC2 = "]";
+    ANSI_SGR_TERMINATOR2 = "m";
+    ANSI_ESCAPE_LINK2 = `${ANSI_OSC2}8;;`;
+    wrapAnsiCode2 = (code) => `${ESCAPES3.values().next().value}${ANSI_CSI2}${code}${ANSI_SGR_TERMINATOR2}`;
+    wrapAnsiHyperlink2 = (uri) => `${ESCAPES3.values().next().value}${ANSI_ESCAPE_LINK2}${uri}${ANSI_ESCAPE_BELL2}`;
+    wordLengths2 = (string) => string.split(" ").map((character) => stringWidth3(character));
+    wrapWord2 = (rows, word, columns) => {
+      const characters = [...word];
+      let isInsideEscape = false;
+      let isInsideLinkEscape = false;
+      let visible = stringWidth3(stripAnsi3(rows[rows.length - 1]));
+      for (const [index, character] of characters.entries()) {
+        const characterLength = stringWidth3(character);
+        if (visible + characterLength <= columns) {
+          rows[rows.length - 1] += character;
+        } else {
+          rows.push(character);
+          visible = 0;
+        }
+        if (ESCAPES3.has(character)) {
+          isInsideEscape = true;
+          isInsideLinkEscape = characters.slice(index + 1).join("").startsWith(ANSI_ESCAPE_LINK2);
+        }
+        if (isInsideEscape) {
+          if (isInsideLinkEscape) {
+            if (character === ANSI_ESCAPE_BELL2) {
+              isInsideEscape = false;
+              isInsideLinkEscape = false;
+            }
+          } else if (character === ANSI_SGR_TERMINATOR2) {
+            isInsideEscape = false;
+          }
+          continue;
+        }
+        visible += characterLength;
+        if (visible === columns && index < characters.length - 1) {
+          rows.push("");
+          visible = 0;
+        }
+      }
+      if (!visible && rows[rows.length - 1].length > 0 && rows.length > 1) {
+        rows[rows.length - 2] += rows.pop();
+      }
+    };
+    stringVisibleTrimSpacesRight2 = (string) => {
+      const words = string.split(" ");
+      let last = words.length;
+      while (last > 0) {
+        if (stringWidth3(words[last - 1]) > 0) {
+          break;
+        }
+        last--;
+      }
+      if (last === words.length) {
+        return string;
+      }
+      return words.slice(0, last).join(" ") + words.slice(last).join("");
+    };
+    exec2 = (string, columns, options = {}) => {
+      if (options.trim !== false && string.trim() === "") {
+        return "";
+      }
+      let returnValue = "";
+      let escapeCode;
+      let escapeUrl;
+      const lengths = wordLengths2(string);
+      let rows = [""];
+      for (const [index, word] of string.split(" ").entries()) {
+        if (options.trim !== false) {
+          rows[rows.length - 1] = rows[rows.length - 1].trimStart();
+        }
+        let rowLength = stringWidth3(rows[rows.length - 1]);
+        if (index !== 0) {
+          if (rowLength >= columns && (options.wordWrap === false || options.trim === false)) {
+            rows.push("");
+            rowLength = 0;
+          }
+          if (rowLength > 0 || options.trim === false) {
+            rows[rows.length - 1] += " ";
+            rowLength++;
+          }
+        }
+        if (options.hard && lengths[index] > columns) {
+          const remainingColumns = columns - rowLength;
+          const breaksStartingThisLine = 1 + Math.floor((lengths[index] - remainingColumns - 1) / columns);
+          const breaksStartingNextLine = Math.floor((lengths[index] - 1) / columns);
+          if (breaksStartingNextLine < breaksStartingThisLine) {
+            rows.push("");
+          }
+          wrapWord2(rows, word, columns);
+          continue;
+        }
+        if (rowLength + lengths[index] > columns && rowLength > 0 && lengths[index] > 0) {
+          if (options.wordWrap === false && rowLength < columns) {
+            wrapWord2(rows, word, columns);
+            continue;
+          }
+          rows.push("");
+        }
+        if (rowLength + lengths[index] > columns && options.wordWrap === false) {
+          wrapWord2(rows, word, columns);
+          continue;
+        }
+        rows[rows.length - 1] += word;
+      }
+      if (options.trim !== false) {
+        rows = rows.map((row) => stringVisibleTrimSpacesRight2(row));
+      }
+      const pre = [...rows.join("\n")];
+      for (const [index, character] of pre.entries()) {
+        returnValue += character;
+        if (ESCAPES3.has(character)) {
+          const { groups } = new RegExp(`(?:\\${ANSI_CSI2}(?<code>\\d+)m|\\${ANSI_ESCAPE_LINK2}(?<uri>.*)${ANSI_ESCAPE_BELL2})`).exec(pre.slice(index).join("")) || { groups: {} };
+          if (groups.code !== void 0) {
+            const code2 = Number.parseFloat(groups.code);
+            escapeCode = code2 === END_CODE2 ? void 0 : code2;
+          } else if (groups.uri !== void 0) {
+            escapeUrl = groups.uri.length === 0 ? void 0 : groups.uri;
+          }
+        }
+        const code = ansi_styles_default3.codes.get(Number(escapeCode));
+        if (pre[index + 1] === "\n") {
+          if (escapeUrl) {
+            returnValue += wrapAnsiHyperlink2("");
+          }
+          if (escapeCode && code) {
+            returnValue += wrapAnsiCode2(code);
+          }
+        } else if (character === "\n") {
+          if (escapeCode && code) {
+            returnValue += wrapAnsiCode2(escapeCode);
+          }
+          if (escapeUrl) {
+            returnValue += wrapAnsiHyperlink2(escapeUrl);
+          }
+        }
+      }
+      return returnValue;
+    };
   }
 });
 
@@ -3995,6 +6344,2357 @@ var GithubClient = class {
   }
 };
 
+// node_modules/eventemitter3/index.mjs
+var import_index = __toESM(require_eventemitter3(), 1);
+var eventemitter3_default = import_index.default;
+
+// node_modules/colorette/index.js
+var tty = __toESM(require("tty"), 1);
+var {
+  env = {},
+  argv = [],
+  platform = ""
+} = typeof process === "undefined" ? {} : process;
+var isDisabled = "NO_COLOR" in env || argv.includes("--no-color");
+var isForced = "FORCE_COLOR" in env || argv.includes("--color");
+var isWindows = platform === "win32";
+var isDumbTerminal = env.TERM === "dumb";
+var isCompatibleTerminal = tty && tty.isatty && tty.isatty(1) && env.TERM && !isDumbTerminal;
+var isCI = "CI" in env && ("GITHUB_ACTIONS" in env || "GITLAB_CI" in env || "CIRCLECI" in env);
+var isColorSupported = !isDisabled && (isForced || isWindows && !isDumbTerminal || isCompatibleTerminal || isCI);
+var replaceClose = (index, string, close, replace, head = string.substring(0, index) + replace, tail = string.substring(index + close.length), next = tail.indexOf(close)) => head + (next < 0 ? tail : replaceClose(next, tail, close, replace));
+var clearBleed = (index, string, open, close, replace) => index < 0 ? open + string + close : open + replaceClose(index, string, close, replace) + close;
+var filterEmpty = (open, close, replace = open, at = open.length + 1) => (string) => string || !(string === "" || string === void 0) ? clearBleed(
+  ("" + string).indexOf(close, at),
+  string,
+  open,
+  close,
+  replace
+) : "";
+var init = (open, close, replace) => filterEmpty(`\x1B[${open}m`, `\x1B[${close}m`, replace);
+var colors = {
+  reset: init(0, 0),
+  bold: init(1, 22, "\x1B[22m\x1B[1m"),
+  dim: init(2, 22, "\x1B[22m\x1B[2m"),
+  italic: init(3, 23),
+  underline: init(4, 24),
+  inverse: init(7, 27),
+  hidden: init(8, 28),
+  strikethrough: init(9, 29),
+  black: init(30, 39),
+  red: init(31, 39),
+  green: init(32, 39),
+  yellow: init(33, 39),
+  blue: init(34, 39),
+  magenta: init(35, 39),
+  cyan: init(36, 39),
+  white: init(37, 39),
+  gray: init(90, 39),
+  bgBlack: init(40, 49),
+  bgRed: init(41, 49),
+  bgGreen: init(42, 49),
+  bgYellow: init(43, 49),
+  bgBlue: init(44, 49),
+  bgMagenta: init(45, 49),
+  bgCyan: init(46, 49),
+  bgWhite: init(47, 49),
+  blackBright: init(90, 39),
+  redBright: init(91, 39),
+  greenBright: init(92, 39),
+  yellowBright: init(93, 39),
+  blueBright: init(94, 39),
+  magentaBright: init(95, 39),
+  cyanBright: init(96, 39),
+  whiteBright: init(97, 39),
+  bgBlackBright: init(100, 49),
+  bgRedBright: init(101, 49),
+  bgGreenBright: init(102, 49),
+  bgYellowBright: init(103, 49),
+  bgBlueBright: init(104, 49),
+  bgMagentaBright: init(105, 49),
+  bgCyanBright: init(106, 49),
+  bgWhiteBright: init(107, 49)
+};
+var createColors = ({ useColor = isColorSupported } = {}) => useColor ? colors : Object.keys(colors).reduce(
+  (colors2, key) => ({ ...colors2, [key]: String }),
+  {}
+);
+var {
+  reset,
+  bold,
+  dim,
+  italic,
+  underline,
+  inverse,
+  hidden,
+  strikethrough,
+  black,
+  red,
+  green,
+  yellow,
+  blue,
+  magenta,
+  cyan,
+  white,
+  gray,
+  bgBlack,
+  bgRed,
+  bgGreen,
+  bgYellow,
+  bgBlue,
+  bgMagenta,
+  bgCyan,
+  bgWhite,
+  blackBright,
+  redBright,
+  greenBright,
+  yellowBright,
+  blueBright,
+  magentaBright,
+  cyanBright,
+  whiteBright,
+  bgBlackBright,
+  bgRedBright,
+  bgGreenBright,
+  bgYellowBright,
+  bgBlueBright,
+  bgMagentaBright,
+  bgCyanBright,
+  bgWhiteBright
+} = createColors();
+
+// node_modules/listr2/dist/index.js
+var import_util = require("util");
+var import_os = require("os");
+var import_string_decoder = require("string_decoder");
+var import_os2 = require("os");
+var import_stream = require("stream");
+var import_os3 = require("os");
+var import_rfdc = __toESM(require_rfdc(), 1);
+var import_crypto = require("crypto");
+var import_stream2 = require("stream");
+var __defProp2 = Object.defineProperty;
+var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+var ANSI_ESCAPE = "\x1B[";
+var ANSI_ESCAPE_CODES = {
+  CURSOR_HIDE: ANSI_ESCAPE + "?25l",
+  CURSOR_SHOW: ANSI_ESCAPE + "?25h"
+};
+var ListrTaskState = /* @__PURE__ */ ((ListrTaskState2) => {
+  ListrTaskState2["WAITING"] = "WAITING";
+  ListrTaskState2["STARTED"] = "STARTED";
+  ListrTaskState2["COMPLETED"] = "COMPLETED";
+  ListrTaskState2["FAILED"] = "FAILED";
+  ListrTaskState2["SKIPPED"] = "SKIPPED";
+  ListrTaskState2["ROLLING_BACK"] = "ROLLING_BACK";
+  ListrTaskState2["ROLLED_BACK"] = "ROLLED_BACK";
+  ListrTaskState2["RETRY"] = "RETRY";
+  ListrTaskState2["PAUSED"] = "PAUSED";
+  ListrTaskState2["PROMPT"] = "PROMPT";
+  ListrTaskState2["PROMPT_COMPLETED"] = "PROMPT_COMPLETED";
+  ListrTaskState2["PROMPT_FAILED"] = "PROMPT_FAILED";
+  return ListrTaskState2;
+})(ListrTaskState || {});
+var _EventManager = class _EventManager2 {
+  constructor() {
+    this.emitter = new eventemitter3_default();
+  }
+  emit(dispatch, args) {
+    this.emitter.emit(dispatch, args);
+  }
+  on(dispatch, handler) {
+    this.emitter.addListener(dispatch, handler);
+  }
+  once(dispatch, handler) {
+    this.emitter.once(dispatch, handler);
+  }
+  off(dispatch, handler) {
+    this.emitter.off(dispatch, handler);
+  }
+  complete() {
+    this.emitter.removeAllListeners();
+  }
+};
+__name(_EventManager, "EventManager");
+var EventManager = _EventManager;
+var _BaseEventMap = class _BaseEventMap2 {
+};
+__name(_BaseEventMap, "BaseEventMap");
+function isObservable(obj) {
+  return !!obj && typeof obj.lift === "function" && typeof obj.subscribe === "function";
+}
+__name(isObservable, "isObservable");
+function isUnicodeSupported() {
+  return !!process.env[
+    "LISTR_FORCE_UNICODE"
+    /* FORCE_UNICODE */
+  ] || process.platform !== "win32" || !!process.env.CI || !!process.env.WT_SESSION || process.env.TERM_PROGRAM === "vscode" || process.env.TERM === "xterm-256color" || process.env.TERM === "alacritty";
+}
+__name(isUnicodeSupported, "isUnicodeSupported");
+var CLEAR_LINE_REGEX = "(?:\\u001b|\\u009b)\\[[\\=><~/#&.:=?%@~_-]*[0-9]*[\\a-ln-tqyz=><~/#&.:=?%@~_-]+";
+var BELL_REGEX = /\u0007/;
+function cleanseAnsi(chunk) {
+  return String(chunk).replace(new RegExp(CLEAR_LINE_REGEX, "gmi"), "").replace(new RegExp(BELL_REGEX, "gmi"), "").trim();
+}
+__name(cleanseAnsi, "cleanseAnsi");
+var color = createColors();
+function indent(string, count) {
+  return string.replace(/^(?!\s*$)/gm, " ".repeat(count));
+}
+__name(indent, "indent");
+var FIGURES_MAIN = {
+  warning: "\u26A0",
+  cross: "\u2716",
+  arrowDown: "\u2193",
+  tick: "\u2714",
+  arrowRight: "\u2192",
+  pointer: "\u276F",
+  checkboxOn: "\u2612",
+  arrowLeft: "\u2190",
+  squareSmallFilled: "\u25FC",
+  pointerSmall: "\u203A"
+};
+var FIGURES_FALLBACK = {
+  ...FIGURES_MAIN,
+  warning: "\u203C",
+  cross: "\xD7",
+  tick: "\u221A",
+  pointer: ">",
+  checkboxOn: "[\xD7]",
+  squareSmallFilled: "\u25A0"
+};
+var figures = isUnicodeSupported() ? FIGURES_MAIN : FIGURES_FALLBACK;
+function splat(message, ...splat2) {
+  return (0, import_util.format)(String(message), ...splat2);
+}
+__name(splat, "splat");
+var LISTR_LOGGER_STYLE = {
+  icon: {
+    [
+      "STARTED"
+      /* STARTED */
+    ]: figures.pointer,
+    [
+      "FAILED"
+      /* FAILED */
+    ]: figures.cross,
+    [
+      "SKIPPED"
+      /* SKIPPED */
+    ]: figures.arrowDown,
+    [
+      "COMPLETED"
+      /* COMPLETED */
+    ]: figures.tick,
+    [
+      "OUTPUT"
+      /* OUTPUT */
+    ]: figures.pointerSmall,
+    [
+      "TITLE"
+      /* TITLE */
+    ]: figures.arrowRight,
+    [
+      "RETRY"
+      /* RETRY */
+    ]: figures.warning,
+    [
+      "ROLLBACK"
+      /* ROLLBACK */
+    ]: figures.arrowLeft,
+    [
+      "PAUSED"
+      /* PAUSED */
+    ]: figures.squareSmallFilled
+  },
+  color: {
+    [
+      "STARTED"
+      /* STARTED */
+    ]: color.yellow,
+    [
+      "FAILED"
+      /* FAILED */
+    ]: color.red,
+    [
+      "SKIPPED"
+      /* SKIPPED */
+    ]: color.yellow,
+    [
+      "COMPLETED"
+      /* COMPLETED */
+    ]: color.green,
+    [
+      "RETRY"
+      /* RETRY */
+    ]: color.yellowBright,
+    [
+      "ROLLBACK"
+      /* ROLLBACK */
+    ]: color.redBright,
+    [
+      "PAUSED"
+      /* PAUSED */
+    ]: color.yellowBright
+  }
+};
+var LISTR_LOGGER_STDERR_LEVELS = [
+  "RETRY",
+  "ROLLBACK",
+  "FAILED"
+  /* FAILED */
+];
+var _ListrLogger = class _ListrLogger2 {
+  constructor(options) {
+    this.options = options;
+    this.options = {
+      useIcons: true,
+      toStderr: [],
+      ...options ?? {}
+    };
+    this.options.fields ??= {};
+    this.options.fields.prefix ??= [];
+    this.options.fields.suffix ??= [];
+    this.process = this.options.processOutput ?? new ProcessOutput();
+  }
+  log(level, message, options) {
+    const output = this.format(level, message, options);
+    if (this.options.toStderr.includes(level)) {
+      this.process.toStderr(output);
+      return;
+    }
+    this.process.toStdout(output);
+  }
+  toStdout(message, options, eol = true) {
+    this.process.toStdout(this.format(null, message, options), eol);
+  }
+  toStderr(message, options, eol = true) {
+    this.process.toStderr(this.format(null, message, options), eol);
+  }
+  wrap(message, options) {
+    if (!message) {
+      return message;
+    }
+    return this.applyFormat(`[${message}]`, options);
+  }
+  splat(...args) {
+    const message = args.shift() ?? "";
+    return args.length === 0 ? message : splat(message, args);
+  }
+  suffix(message, ...suffixes) {
+    suffixes.filter(Boolean).forEach((suffix) => {
+      message += this.spacing(message);
+      if (typeof suffix === "string") {
+        message += this.wrap(suffix);
+      } else if (typeof suffix === "object") {
+        suffix.args ??= [];
+        if (typeof suffix.condition === "function" ? !suffix.condition(...suffix.args) : !(suffix.condition ?? true)) {
+          return message;
+        }
+        message += this.wrap(typeof suffix.field === "function" ? suffix.field(...suffix.args) : suffix.field, {
+          format: suffix?.format(...suffix.args)
+        });
+      }
+    });
+    return message;
+  }
+  prefix(message, ...prefixes) {
+    prefixes.filter(Boolean).forEach((prefix) => {
+      message = this.spacing(message) + message;
+      if (typeof prefix === "string") {
+        message = this.wrap(prefix) + message;
+      } else if (typeof prefix === "object") {
+        prefix.args ??= [];
+        if (typeof prefix.condition === "function" ? !prefix.condition(...prefix.args) : !(prefix.condition ?? true)) {
+          return message;
+        }
+        message = this.wrap(typeof prefix.field === "function" ? prefix.field(...prefix.args) : prefix.field, {
+          format: prefix?.format()
+        }) + message;
+      }
+    });
+    return message;
+  }
+  fields(message, options) {
+    if (this.options?.fields?.prefix) {
+      message = this.prefix(message, ...this.options.fields.prefix);
+    }
+    if (options?.prefix) {
+      message = this.prefix(message, ...options.prefix);
+    }
+    if (options?.suffix) {
+      message = this.suffix(message, ...options.suffix);
+    }
+    if (this.options?.fields?.suffix) {
+      message = this.suffix(message, ...this.options.fields.suffix);
+    }
+    return message;
+  }
+  icon(level, icon) {
+    if (!level) {
+      return null;
+    }
+    icon ||= this.options.icon?.[level];
+    const coloring = this.options.color?.[level];
+    if (icon && coloring) {
+      icon = coloring(icon);
+    }
+    return icon;
+  }
+  format(level, message, options) {
+    if (!Array.isArray(message)) {
+      message = [message];
+    }
+    message = this.splat(message.shift(), ...message).toString().split(import_os.EOL).filter((m) => !m || m.trim() !== "").map((m) => {
+      return this.style(
+        level,
+        this.fields(m, {
+          prefix: Array.isArray(options?.prefix) ? options.prefix : [options?.prefix],
+          suffix: Array.isArray(options?.suffix) ? options.suffix : [options?.suffix]
+        })
+      );
+    }).join(import_os.EOL);
+    return message;
+  }
+  style(level, message) {
+    if (!level || !message) {
+      return message;
+    }
+    const icon = this.icon(level, !this.options.useIcons && this.wrap(level));
+    if (icon) {
+      message = icon + " " + message;
+    }
+    return message;
+  }
+  applyFormat(message, options) {
+    if (options?.format) {
+      return options.format(message);
+    }
+    return message;
+  }
+  spacing(message) {
+    return typeof message === "undefined" || message.trim() === "" ? "" : " ";
+  }
+};
+__name(_ListrLogger, "ListrLogger");
+var ListrLogger = _ListrLogger;
+var _ProcessOutputBuffer = class _ProcessOutputBuffer2 {
+  constructor(options) {
+    this.options = options;
+    this.buffer = [];
+    this.decoder = new import_string_decoder.StringDecoder();
+  }
+  get all() {
+    return this.buffer;
+  }
+  get last() {
+    return this.buffer.at(-1);
+  }
+  get length() {
+    return this.buffer.length;
+  }
+  write(data, ...args) {
+    const callback = args[args.length - 1];
+    this.buffer.push({
+      time: Date.now(),
+      stream: this.options?.stream,
+      entry: this.decoder.write(typeof data === "string" ? Buffer.from(data, typeof args[0] === "string" ? args[0] : void 0) : Buffer.from(data))
+    });
+    if (this.options?.limit) {
+      this.buffer = this.buffer.slice(-this.options.limit);
+    }
+    if (typeof callback === "function") {
+      callback();
+    }
+    return true;
+  }
+  reset() {
+    this.buffer = [];
+  }
+};
+__name(_ProcessOutputBuffer, "ProcessOutputBuffer");
+var ProcessOutputBuffer = _ProcessOutputBuffer;
+var _ProcessOutputStream = class _ProcessOutputStream2 {
+  constructor(stream) {
+    this.stream = stream;
+    this.method = stream.write;
+    this.buffer = new ProcessOutputBuffer({ stream });
+  }
+  get out() {
+    return Object.assign({}, this.stream, {
+      write: this.write.bind(this)
+    });
+  }
+  hijack() {
+    this.stream.write = this.buffer.write.bind(this.buffer);
+  }
+  release() {
+    this.stream.write = this.method;
+    const buffer = [...this.buffer.all];
+    this.buffer.reset();
+    return buffer;
+  }
+  write(...args) {
+    return this.method.apply(this.stream, args);
+  }
+};
+__name(_ProcessOutputStream, "ProcessOutputStream");
+var ProcessOutputStream = _ProcessOutputStream;
+var _ProcessOutput = class _ProcessOutput2 {
+  constructor(stdout, stderr, options) {
+    this.options = options;
+    this.stream = {
+      stdout: new ProcessOutputStream(stdout ?? process.stdout),
+      stderr: new ProcessOutputStream(stderr ?? process.stderr)
+    };
+    this.options = {
+      dump: ["stdout", "stderr"],
+      leaveEmptyLine: true,
+      ...options
+    };
+  }
+  get stdout() {
+    return this.stream.stdout.out;
+  }
+  get stderr() {
+    return this.stream.stderr.out;
+  }
+  hijack() {
+    if (this.active) {
+      throw new Error("ProcessOutput has been already hijacked!");
+    }
+    this.stream.stdout.write(ANSI_ESCAPE_CODES.CURSOR_HIDE);
+    Object.values(this.stream).forEach((stream) => stream.hijack());
+    this.active = true;
+  }
+  release() {
+    const output = Object.entries(this.stream).map(([name, stream]) => ({ name, buffer: stream.release() })).filter((output2) => this.options.dump.includes(output2.name)).flatMap((output2) => output2.buffer).sort((a, b) => a.time - b.time).map((message) => {
+      return {
+        ...message,
+        entry: cleanseAnsi(message.entry)
+      };
+    }).filter((message) => message.entry);
+    if (output.length > 0) {
+      if (this.options.leaveEmptyLine) {
+        this.stdout.write(import_os2.EOL);
+      }
+      output.forEach((message) => {
+        const stream = message.stream ?? this.stdout;
+        stream.write(message.entry + import_os2.EOL);
+      });
+    }
+    this.stream.stdout.write(ANSI_ESCAPE_CODES.CURSOR_SHOW);
+    this.active = false;
+  }
+  toStdout(buffer, eol = true) {
+    if (eol) {
+      buffer = buffer + import_os2.EOL;
+    }
+    return this.stream.stdout.write(buffer);
+  }
+  toStderr(buffer, eol = true) {
+    if (eol) {
+      buffer = buffer + import_os2.EOL;
+    }
+    return this.stream.stderr.write(buffer);
+  }
+};
+__name(_ProcessOutput, "ProcessOutput");
+var ProcessOutput = _ProcessOutput;
+function createWritable(cb) {
+  const writable = new import_stream.Writable();
+  writable.write = (chunk) => {
+    cb(chunk.toString());
+    return true;
+  };
+  return writable;
+}
+__name(createWritable, "createWritable");
+var _ListrPromptAdapter = class _ListrPromptAdapter2 {
+  constructor(task, wrapper) {
+    this.task = task;
+    this.wrapper = wrapper;
+  }
+  reportStarted() {
+    this.state = this.task.state;
+    if (this.task.prompt) {
+      throw new PromptError("There is already an active prompt attached to this task which may not be cleaned up properly.");
+    }
+    this.task.prompt = this;
+    this.task.state$ = "PROMPT";
+  }
+  reportFailed() {
+    this.task.state$ = "PROMPT_FAILED";
+    this.restoreState();
+  }
+  reportCompleted() {
+    this.task.state$ = "PROMPT_COMPLETED";
+    this.restoreState();
+  }
+  restoreState() {
+    this.task.prompt = void 0;
+    if (this.state) {
+      this.task.state = this.state;
+    }
+  }
+};
+__name(_ListrPromptAdapter, "ListrPromptAdapter");
+var _Spinner = class _Spinner2 {
+  constructor() {
+    this.spinner = !isUnicodeSupported() ? ["-", "\\", "|", "/"] : ["\u280B", "\u2819", "\u2839", "\u2838", "\u283C", "\u2834", "\u2826", "\u2827", "\u2807", "\u280F"];
+    this.spinnerPosition = 0;
+  }
+  spin() {
+    this.spinnerPosition = ++this.spinnerPosition % this.spinner.length;
+  }
+  fetch() {
+    return this.spinner[this.spinnerPosition];
+  }
+  isRunning() {
+    return !!this.id;
+  }
+  start(cb, interval = 100) {
+    this.id = setInterval(() => {
+      this.spin();
+      if (cb) {
+        cb();
+      }
+    }, interval);
+  }
+  stop() {
+    clearInterval(this.id);
+  }
+};
+__name(_Spinner, "Spinner");
+var Spinner = _Spinner;
+var LISTR_DEFAULT_RENDERER_STYLE = {
+  icon: {
+    [
+      "SKIPPED_WITH_COLLAPSE"
+      /* SKIPPED_WITH_COLLAPSE */
+    ]: figures.arrowDown,
+    [
+      "SKIPPED_WITHOUT_COLLAPSE"
+      /* SKIPPED_WITHOUT_COLLAPSE */
+    ]: figures.warning,
+    [
+      "OUTPUT"
+      /* OUTPUT */
+    ]: figures.pointerSmall,
+    [
+      "OUTPUT_WITH_BOTTOMBAR"
+      /* OUTPUT_WITH_BOTTOMBAR */
+    ]: figures.pointerSmall,
+    [
+      "PENDING"
+      /* PENDING */
+    ]: figures.pointer,
+    [
+      "COMPLETED"
+      /* COMPLETED */
+    ]: figures.tick,
+    [
+      "COMPLETED_WITH_FAILED_SUBTASKS"
+      /* COMPLETED_WITH_FAILED_SUBTASKS */
+    ]: figures.warning,
+    [
+      "COMPLETED_WITH_SISTER_TASKS_FAILED"
+      /* COMPLETED_WITH_FAILED_SISTER_TASKS */
+    ]: figures.squareSmallFilled,
+    [
+      "RETRY"
+      /* RETRY */
+    ]: figures.warning,
+    [
+      "ROLLING_BACK"
+      /* ROLLING_BACK */
+    ]: figures.warning,
+    [
+      "ROLLED_BACK"
+      /* ROLLED_BACK */
+    ]: figures.arrowLeft,
+    [
+      "FAILED"
+      /* FAILED */
+    ]: figures.cross,
+    [
+      "FAILED_WITH_SUBTASKS"
+      /* FAILED_WITH_FAILED_SUBTASKS */
+    ]: figures.pointer,
+    [
+      "WAITING"
+      /* WAITING */
+    ]: figures.squareSmallFilled,
+    [
+      "PAUSED"
+      /* PAUSED */
+    ]: figures.squareSmallFilled
+  },
+  color: {
+    [
+      "SKIPPED_WITH_COLLAPSE"
+      /* SKIPPED_WITH_COLLAPSE */
+    ]: color.yellow,
+    [
+      "SKIPPED_WITHOUT_COLLAPSE"
+      /* SKIPPED_WITHOUT_COLLAPSE */
+    ]: color.yellow,
+    [
+      "PENDING"
+      /* PENDING */
+    ]: color.yellow,
+    [
+      "COMPLETED"
+      /* COMPLETED */
+    ]: color.green,
+    [
+      "COMPLETED_WITH_FAILED_SUBTASKS"
+      /* COMPLETED_WITH_FAILED_SUBTASKS */
+    ]: color.yellow,
+    [
+      "COMPLETED_WITH_SISTER_TASKS_FAILED"
+      /* COMPLETED_WITH_FAILED_SISTER_TASKS */
+    ]: color.red,
+    [
+      "RETRY"
+      /* RETRY */
+    ]: color.yellowBright,
+    [
+      "ROLLING_BACK"
+      /* ROLLING_BACK */
+    ]: color.redBright,
+    [
+      "ROLLED_BACK"
+      /* ROLLED_BACK */
+    ]: color.redBright,
+    [
+      "FAILED"
+      /* FAILED */
+    ]: color.red,
+    [
+      "FAILED_WITH_SUBTASKS"
+      /* FAILED_WITH_FAILED_SUBTASKS */
+    ]: color.red,
+    [
+      "WAITING"
+      /* WAITING */
+    ]: color.dim,
+    [
+      "PAUSED"
+      /* PAUSED */
+    ]: color.yellowBright
+  }
+};
+function parseTimer(duration) {
+  const seconds = Math.floor(duration / 1e3);
+  const minutes = Math.floor(seconds / 60);
+  let parsedTime;
+  if (seconds === 0 && minutes === 0) {
+    parsedTime = `0.${Math.floor(duration / 100)}s`;
+  }
+  if (seconds > 0) {
+    parsedTime = `${seconds % 60}s`;
+  }
+  if (minutes > 0) {
+    parsedTime = `${minutes}m${parsedTime}`;
+  }
+  return parsedTime;
+}
+__name(parseTimer, "parseTimer");
+var PRESET_TIMER = {
+  condition: true,
+  field: parseTimer,
+  format: () => color.dim
+};
+function parseTimestamp() {
+  const now = /* @__PURE__ */ new Date();
+  return String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0") + ":" + String(now.getSeconds()).padStart(2, "0");
+}
+__name(parseTimestamp, "parseTimestamp");
+var _DefaultRenderer = class _DefaultRenderer2 {
+  constructor(tasks, options, events) {
+    this.tasks = tasks;
+    this.options = options;
+    this.events = events;
+    this.buffer = {
+      output: /* @__PURE__ */ new Map(),
+      bottom: /* @__PURE__ */ new Map()
+    };
+    this.cache = {
+      render: /* @__PURE__ */ new Map(),
+      rendererOptions: /* @__PURE__ */ new Map(),
+      rendererTaskOptions: /* @__PURE__ */ new Map()
+    };
+    this.options = {
+      ..._DefaultRenderer2.rendererOptions,
+      ...this.options,
+      icon: {
+        ...LISTR_DEFAULT_RENDERER_STYLE.icon,
+        ...options?.icon ?? {}
+      },
+      color: {
+        ...LISTR_DEFAULT_RENDERER_STYLE.color,
+        ...options?.color ?? {}
+      }
+    };
+    this.spinner = this.options.spinner ?? new Spinner();
+    this.logger = this.options.logger ?? new ListrLogger({ useIcons: true, toStderr: [] });
+    this.logger.options.icon = this.options.icon;
+    this.logger.options.color = this.options.color;
+  }
+  async render() {
+    const { createLogUpdate: createLogUpdate2 } = await Promise.resolve().then(() => (init_log_update(), log_update_exports));
+    const { default: truncate } = await Promise.resolve().then(() => (init_cli_truncate(), cli_truncate_exports));
+    const { default: wrap } = await Promise.resolve().then(() => (init_wrap_ansi2(), wrap_ansi_exports));
+    this.updater = createLogUpdate2(this.logger.process.stdout);
+    this.truncate = truncate;
+    this.wrap = wrap;
+    this.logger.process.hijack();
+    if (!this.options?.lazy) {
+      this.spinner.start(() => {
+        this.update();
+      });
+    }
+    this.events.on("SHOUD_REFRESH_RENDER", () => {
+      this.update();
+    });
+  }
+  update() {
+    this.updater(this.create());
+  }
+  end() {
+    this.spinner.stop();
+    this.updater.clear();
+    this.updater.done();
+    if (!this.options.clearOutput) {
+      this.logger.process.toStdout(this.create({ prompt: false }));
+    }
+    this.logger.process.release();
+  }
+  create(options) {
+    options = {
+      tasks: true,
+      bottomBar: true,
+      prompt: true,
+      ...options
+    };
+    const render = [];
+    const renderTasks = this.renderer(this.tasks);
+    const renderBottomBar = this.renderBottomBar();
+    const renderPrompt = this.renderPrompt();
+    if (options.tasks && renderTasks.length > 0) {
+      render.push(...renderTasks);
+    }
+    if (options.bottomBar && renderBottomBar.length > 0) {
+      if (render.length > 0) {
+        render.push("");
+      }
+      render.push(...renderBottomBar);
+    }
+    if (options.prompt && renderPrompt.length > 0) {
+      if (render.length > 0) {
+        render.push("");
+      }
+      render.push(...renderPrompt);
+    }
+    return render.join(import_os3.EOL);
+  }
+  // eslint-disable-next-line complexity
+  style(task, output = false) {
+    const rendererOptions = this.cache.rendererOptions.get(task.id);
+    if (task.isSkipped()) {
+      if (output || rendererOptions.collapseSkips) {
+        return this.logger.icon(
+          "SKIPPED_WITH_COLLAPSE"
+          /* SKIPPED_WITH_COLLAPSE */
+        );
+      } else if (rendererOptions.collapseSkips === false) {
+        return this.logger.icon(
+          "SKIPPED_WITHOUT_COLLAPSE"
+          /* SKIPPED_WITHOUT_COLLAPSE */
+        );
+      }
+    }
+    if (output) {
+      if (this.shouldOutputToBottomBar(task)) {
+        return this.logger.icon(
+          "OUTPUT_WITH_BOTTOMBAR"
+          /* OUTPUT_WITH_BOTTOMBAR */
+        );
+      }
+      return this.logger.icon(
+        "OUTPUT"
+        /* OUTPUT */
+      );
+    }
+    if (task.hasSubtasks()) {
+      if (task.isStarted() || task.isPrompt() && rendererOptions.showSubtasks !== false && !task.subtasks.every((subtask) => !subtask.hasTitle())) {
+        return this.logger.icon(
+          "PENDING"
+          /* PENDING */
+        );
+      } else if (task.isCompleted() && task.subtasks.some((subtask) => subtask.hasFailed())) {
+        return this.logger.icon(
+          "COMPLETED_WITH_FAILED_SUBTASKS"
+          /* COMPLETED_WITH_FAILED_SUBTASKS */
+        );
+      } else if (task.hasFailed()) {
+        return this.logger.icon(
+          "FAILED_WITH_SUBTASKS"
+          /* FAILED_WITH_FAILED_SUBTASKS */
+        );
+      }
+    }
+    if (task.isStarted() || task.isPrompt()) {
+      return this.logger.icon("PENDING", !this.options?.lazy && this.spinner.fetch());
+    } else if (task.isCompleted()) {
+      return this.logger.icon(
+        "COMPLETED"
+        /* COMPLETED */
+      );
+    } else if (task.isRetrying()) {
+      return this.logger.icon("RETRY", !this.options?.lazy && this.spinner.fetch());
+    } else if (task.isRollingBack()) {
+      return this.logger.icon("ROLLING_BACK", !this.options?.lazy && this.spinner.fetch());
+    } else if (task.hasRolledBack()) {
+      return this.logger.icon(
+        "ROLLED_BACK"
+        /* ROLLED_BACK */
+      );
+    } else if (task.hasFailed()) {
+      return this.logger.icon(
+        "FAILED"
+        /* FAILED */
+      );
+    } else if (task.isPaused()) {
+      return this.logger.icon(
+        "PAUSED"
+        /* PAUSED */
+      );
+    }
+    return this.logger.icon(
+      "WAITING"
+      /* WAITING */
+    );
+  }
+  format(message, icon, level) {
+    if (message.trim() === "") {
+      return [];
+    }
+    if (icon) {
+      message = icon + " " + message;
+    }
+    let parsed;
+    const columns = (process.stdout.columns ?? 80) - level * this.options.indentation - 2;
+    switch (this.options.formatOutput) {
+      case "truncate":
+        parsed = message.split(import_os3.EOL).map((s, i) => {
+          return this.truncate(this.indent(s, i), columns);
+        });
+        break;
+      case "wrap":
+        parsed = this.wrap(message, columns, { hard: true }).split(import_os3.EOL).map((s, i) => this.indent(s, i));
+        break;
+      default:
+        throw new ListrRendererError("Format option for the renderer is wrong.");
+    }
+    if (this.options.removeEmptyLines) {
+      parsed = parsed.filter(Boolean);
+    }
+    return parsed.map((str) => indent(str, level * this.options.indentation));
+  }
+  shouldOutputToOutputBar(task) {
+    const outputBar = this.cache.rendererTaskOptions.get(task.id).outputBar;
+    return typeof outputBar === "number" && outputBar !== 0 || typeof outputBar === "boolean" && outputBar !== false;
+  }
+  shouldOutputToBottomBar(task) {
+    const bottomBar = this.cache.rendererTaskOptions.get(task.id).bottomBar;
+    return typeof bottomBar === "number" && bottomBar !== 0 || typeof bottomBar === "boolean" && bottomBar !== false || !task.hasTitle();
+  }
+  renderer(tasks, level = 0) {
+    return tasks.flatMap((task) => {
+      if (!task.isEnabled()) {
+        return [];
+      }
+      if (this.cache.render.has(task.id)) {
+        return this.cache.render.get(task.id);
+      }
+      this.calculate(task);
+      this.setupBuffer(task);
+      const rendererOptions = this.cache.rendererOptions.get(task.id);
+      const rendererTaskOptions = this.cache.rendererTaskOptions.get(task.id);
+      const output = [];
+      if (task.isPrompt()) {
+        if (this.activePrompt && this.activePrompt !== task.id) {
+          throw new ListrRendererError("Only one prompt can be active at the given time, please re-evaluate your task design.");
+        } else if (!this.activePrompt) {
+          task.on("PROMPT", (prompt) => {
+            const cleansed = cleanseAnsi(prompt);
+            if (cleansed) {
+              this.prompt = cleansed;
+            }
+          });
+          task.on("STATE", (state) => {
+            if (state === "PROMPT_COMPLETED" || task.hasFinalized() || task.hasReset()) {
+              this.prompt = null;
+              this.activePrompt = null;
+              task.off(
+                "PROMPT"
+                /* PROMPT */
+              );
+            }
+          });
+          this.activePrompt = task.id;
+        }
+      }
+      if (task.hasTitle()) {
+        if (!(tasks.some((task2) => task2.hasFailed()) && !task.hasFailed() && task.options.exitOnError !== false && !(task.isCompleted() || task.isSkipped()))) {
+          if (task.hasFailed() && rendererOptions.collapseErrors) {
+            output.push(...this.format(!task.hasSubtasks() && task.message.error && rendererOptions.showErrorMessage ? task.message.error : task.title, this.style(task), level));
+          } else if (task.isSkipped() && rendererOptions.collapseSkips) {
+            output.push(
+              ...this.format(
+                this.logger.suffix(task.message.skip && rendererOptions.showSkipMessage ? task.message.skip : task.title, {
+                  field: "SKIPPED",
+                  condition: rendererOptions.suffixSkips,
+                  format: () => color.dim
+                }),
+                this.style(task),
+                level
+              )
+            );
+          } else if (task.isRetrying()) {
+            output.push(
+              ...this.format(
+                this.logger.suffix(task.title, {
+                  field: `${"RETRY"}:${task.message.retry.count}`,
+                  format: () => color.yellow,
+                  condition: rendererOptions.suffixRetries
+                }),
+                this.style(task),
+                level
+              )
+            );
+          } else if (task.isCompleted() && task.hasTitle() && assertFunctionOrSelf(rendererTaskOptions.timer?.condition, task.message.duration)) {
+            output.push(
+              ...this.format(
+                this.logger.suffix(task?.title, {
+                  ...rendererTaskOptions.timer,
+                  args: [task.message.duration]
+                }),
+                this.style(task),
+                level
+              )
+            );
+          } else if (task.isPaused()) {
+            output.push(
+              ...this.format(
+                this.logger.suffix(task.title, {
+                  ...rendererOptions.pausedTimer,
+                  args: [task.message.paused - Date.now()]
+                }),
+                this.style(task),
+                level
+              )
+            );
+          } else {
+            output.push(...this.format(task.title, this.style(task), level));
+          }
+        } else {
+          output.push(...this.format(task.title, this.logger.icon(
+            "COMPLETED_WITH_SISTER_TASKS_FAILED"
+            /* COMPLETED_WITH_FAILED_SISTER_TASKS */
+          ), level));
+        }
+      }
+      if (!task.hasSubtasks() || !rendererOptions.showSubtasks) {
+        if (task.hasFailed() && rendererOptions.collapseErrors === false && (rendererOptions.showErrorMessage || !rendererOptions.showSubtasks)) {
+          output.push(...this.dump(
+            task,
+            level,
+            "FAILED"
+            /* FAILED */
+          ));
+        } else if (task.isSkipped() && rendererOptions.collapseSkips === false && (rendererOptions.showSkipMessage || !rendererOptions.showSubtasks)) {
+          output.push(...this.dump(
+            task,
+            level,
+            "SKIPPED"
+            /* SKIPPED */
+          ));
+        }
+      }
+      if (task.isPending() || rendererTaskOptions.persistentOutput) {
+        output.push(...this.renderOutputBar(task, level));
+      }
+      if (
+        // check if renderer option is on first
+        rendererOptions.showSubtasks !== false && // if it doesnt have subtasks no need to check
+        task.hasSubtasks() && (task.isPending() || task.hasFinalized() && !task.hasTitle() || // have to be completed and have subtasks
+        task.isCompleted() && rendererOptions.collapseSubtasks === false && !task.subtasks.some((subtask) => this.cache.rendererOptions.get(subtask.id)?.collapseSubtasks === true) || // if any of the subtasks have the collapse option of
+        task.subtasks.some((subtask) => this.cache.rendererOptions.get(subtask.id)?.collapseSubtasks === false) || // if any of the subtasks has failed
+        task.subtasks.some((subtask) => subtask.hasFailed()) || // if any of the subtasks rolled back
+        task.subtasks.some((subtask) => subtask.hasRolledBack()))
+      ) {
+        const subtaskLevel = !task.hasTitle() ? level : level + 1;
+        const subtaskRender = this.renderer(task.subtasks, subtaskLevel);
+        output.push(...subtaskRender);
+      }
+      if (task.hasFinalized()) {
+        if (!rendererTaskOptions.persistentOutput) {
+          this.buffer.bottom.delete(task.id);
+          this.buffer.output.delete(task.id);
+        }
+      }
+      if (task.isClosed()) {
+        this.cache.render.set(task.id, output);
+        this.reset(task);
+      }
+      return output;
+    });
+  }
+  renderOutputBar(task, level) {
+    const output = this.buffer.output.get(task.id);
+    if (!output) {
+      return [];
+    }
+    return output.all.flatMap((o) => this.dump(task, level, "OUTPUT", o.entry));
+  }
+  renderBottomBar() {
+    if (this.buffer.bottom.size === 0) {
+      return [];
+    }
+    return Array.from(this.buffer.bottom.values()).flatMap((output) => output.all).sort((a, b) => a.time - b.time).map((output) => output.entry);
+  }
+  renderPrompt() {
+    if (!this.prompt) {
+      return [];
+    }
+    return [this.prompt];
+  }
+  calculate(task) {
+    if (this.cache.rendererOptions.has(task.id) && this.cache.rendererTaskOptions.has(task.id)) {
+      return;
+    }
+    const rendererOptions = {
+      ...this.options,
+      ...task.rendererOptions
+    };
+    this.cache.rendererOptions.set(task.id, rendererOptions);
+    this.cache.rendererTaskOptions.set(task.id, {
+      ..._DefaultRenderer2.rendererTaskOptions,
+      timer: rendererOptions.timer,
+      ...task.rendererTaskOptions
+    });
+  }
+  setupBuffer(task) {
+    if (this.buffer.bottom.has(task.id) || this.buffer.output.has(task.id)) {
+      return;
+    }
+    const rendererTaskOptions = this.cache.rendererTaskOptions.get(task.id);
+    if (this.shouldOutputToBottomBar(task) && !this.buffer.bottom.has(task.id)) {
+      this.buffer.bottom.set(task.id, new ProcessOutputBuffer({ limit: typeof rendererTaskOptions.bottomBar === "number" ? rendererTaskOptions.bottomBar : 1 }));
+      task.on("OUTPUT", (output) => {
+        const data = this.dump(task, -1, "OUTPUT", output);
+        this.buffer.bottom.get(task.id).write(data.join(import_os3.EOL));
+      });
+      task.on("STATE", (state) => {
+        switch (state) {
+          case "RETRY":
+            this.buffer.bottom.delete(task.id);
+            break;
+        }
+      });
+    } else if (this.shouldOutputToOutputBar(task) && !this.buffer.output.has(task.id)) {
+      this.buffer.output.set(task.id, new ProcessOutputBuffer({ limit: typeof rendererTaskOptions.outputBar === "number" ? rendererTaskOptions.outputBar : 1 }));
+      task.on("OUTPUT", (output) => {
+        this.buffer.output.get(task.id).write(output);
+      });
+      task.on("STATE", (state) => {
+        switch (state) {
+          case "RETRY":
+            this.buffer.output.delete(task.id);
+            break;
+        }
+      });
+    }
+  }
+  reset(task) {
+    this.cache.rendererOptions.delete(task.id);
+    this.cache.rendererTaskOptions.delete(task.id);
+    this.buffer.output.delete(task.id);
+  }
+  dump(task, level, source = "OUTPUT", data) {
+    if (!data) {
+      switch (source) {
+        case "OUTPUT":
+          data = task.output;
+          break;
+        case "SKIPPED":
+          data = task.message.skip;
+          break;
+        case "FAILED":
+          data = task.message.error;
+          break;
+      }
+    }
+    if (task.hasTitle() && source === "FAILED" && data === task.title || typeof data !== "string") {
+      return [];
+    }
+    if (source === "OUTPUT") {
+      data = cleanseAnsi(data);
+    }
+    return this.format(data, this.style(task, true), level + 1);
+  }
+  indent(str, i) {
+    return i > 0 ? indent(str.trim(), this.options.indentation) : str.trim();
+  }
+};
+__name(_DefaultRenderer, "DefaultRenderer");
+_DefaultRenderer.nonTTY = false;
+_DefaultRenderer.rendererOptions = {
+  indentation: 2,
+  clearOutput: false,
+  showSubtasks: true,
+  collapseSubtasks: true,
+  collapseSkips: true,
+  showSkipMessage: true,
+  suffixSkips: false,
+  collapseErrors: true,
+  showErrorMessage: true,
+  suffixRetries: true,
+  lazy: false,
+  removeEmptyLines: true,
+  formatOutput: "wrap",
+  pausedTimer: {
+    ...PRESET_TIMER,
+    format: () => color.yellowBright
+  }
+};
+_DefaultRenderer.rendererTaskOptions = {
+  outputBar: true
+};
+var DefaultRenderer = _DefaultRenderer;
+var _SilentRenderer = class _SilentRenderer2 {
+  constructor(tasks, options) {
+    this.tasks = tasks;
+    this.options = options;
+  }
+  render() {
+    return;
+  }
+  end() {
+    return;
+  }
+};
+__name(_SilentRenderer, "SilentRenderer");
+_SilentRenderer.nonTTY = true;
+var SilentRenderer = _SilentRenderer;
+var _SimpleRenderer = class _SimpleRenderer2 {
+  constructor(tasks, options) {
+    this.tasks = tasks;
+    this.options = options;
+    this.cache = {
+      rendererOptions: /* @__PURE__ */ new Map(),
+      rendererTaskOptions: /* @__PURE__ */ new Map()
+    };
+    this.options = {
+      ..._SimpleRenderer2.rendererOptions,
+      ...options,
+      icon: {
+        ...LISTR_LOGGER_STYLE.icon,
+        ...options?.icon ?? {}
+      },
+      color: {
+        ...LISTR_LOGGER_STYLE.color,
+        ...options?.color ?? {}
+      }
+    };
+    this.logger = this.options.logger ?? new ListrLogger({ useIcons: true, toStderr: LISTR_LOGGER_STDERR_LEVELS });
+    this.logger.options.icon = this.options.icon;
+    this.logger.options.color = this.options.color;
+    if (this.options.timestamp) {
+      this.logger.options.fields.prefix.unshift(this.options.timestamp);
+    }
+  }
+  end() {
+    this.logger.process.release();
+  }
+  render() {
+    this.renderer(this.tasks);
+  }
+  renderer(tasks) {
+    tasks.forEach((task) => {
+      this.calculate(task);
+      task.once("CLOSED", () => {
+        this.reset(task);
+      });
+      const rendererOptions = this.cache.rendererOptions.get(task.id);
+      const rendererTaskOptions = this.cache.rendererTaskOptions.get(task.id);
+      task.on("SUBTASK", (subtasks) => {
+        this.renderer(subtasks);
+      });
+      task.on("STATE", (state) => {
+        if (!task.hasTitle()) {
+          return;
+        }
+        if (state === "STARTED") {
+          this.logger.log("STARTED", task.title);
+        } else if (state === "COMPLETED") {
+          const timer = rendererTaskOptions?.timer;
+          this.logger.log(
+            "COMPLETED",
+            task.title,
+            timer && {
+              suffix: {
+                ...timer,
+                condition: !!task.message?.duration && timer.condition,
+                args: [task.message.duration]
+              }
+            }
+          );
+        } else if (state === "PROMPT") {
+          this.logger.process.hijack();
+          task.on("PROMPT", (prompt) => {
+            this.logger.process.toStderr(prompt, false);
+          });
+        } else if (state === "PROMPT_COMPLETED") {
+          task.off(
+            "PROMPT"
+            /* PROMPT */
+          );
+          this.logger.process.release();
+        }
+      });
+      task.on("OUTPUT", (output) => {
+        this.logger.log("OUTPUT", output);
+      });
+      task.on("MESSAGE", (message) => {
+        if (message.error) {
+          this.logger.log("FAILED", task.title, {
+            suffix: {
+              field: `${"FAILED"}: ${message.error}`,
+              format: () => color.red
+            }
+          });
+        } else if (message.skip) {
+          this.logger.log("SKIPPED", task.title, {
+            suffix: {
+              field: `${"SKIPPED"}: ${message.skip}`,
+              format: () => color.yellow
+            }
+          });
+        } else if (message.rollback) {
+          this.logger.log("ROLLBACK", task.title, {
+            suffix: {
+              field: `${"ROLLBACK"}: ${message.rollback}`,
+              format: () => color.red
+            }
+          });
+        } else if (message.retry) {
+          this.logger.log("RETRY", task.title, {
+            suffix: {
+              field: `${"RETRY"}:${message.retry.count}`,
+              format: () => color.red
+            }
+          });
+        } else if (message.paused) {
+          const timer = rendererOptions?.pausedTimer;
+          this.logger.log(
+            "PAUSED",
+            task.title,
+            timer && {
+              suffix: {
+                ...timer,
+                condition: !!message?.paused && timer.condition,
+                args: [message.paused - Date.now()]
+              }
+            }
+          );
+        }
+      });
+    });
+  }
+  calculate(task) {
+    if (this.cache.rendererOptions.has(task.id) && this.cache.rendererTaskOptions.has(task.id)) {
+      return;
+    }
+    const rendererOptions = {
+      ...this.options,
+      ...task.rendererOptions
+    };
+    this.cache.rendererOptions.set(task.id, rendererOptions);
+    this.cache.rendererTaskOptions.set(task.id, {
+      ..._SimpleRenderer2.rendererTaskOptions,
+      timer: rendererOptions.timer,
+      ...task.rendererTaskOptions
+    });
+  }
+  reset(task) {
+    this.cache.rendererOptions.delete(task.id);
+    this.cache.rendererTaskOptions.delete(task.id);
+  }
+};
+__name(_SimpleRenderer, "SimpleRenderer");
+_SimpleRenderer.nonTTY = true;
+_SimpleRenderer.rendererOptions = {
+  pausedTimer: {
+    ...PRESET_TIMER,
+    field: (time) => `${"PAUSED"}:${time}`,
+    format: () => color.yellowBright
+  }
+};
+_SimpleRenderer.rendererTaskOptions = {};
+var SimpleRenderer = _SimpleRenderer;
+var _TestRendererSerializer = class _TestRendererSerializer2 {
+  constructor(options) {
+    this.options = options;
+  }
+  serialize(event, data, task) {
+    return JSON.stringify(this.generate(event, data, task));
+  }
+  generate(event, data, task) {
+    const output = {
+      event,
+      data
+    };
+    if (typeof this.options?.task !== "boolean") {
+      const t = Object.fromEntries(
+        this.options.task.map((entity) => {
+          const property = task[entity];
+          if (typeof property === "function") {
+            return [entity, property.call(task)];
+          }
+          return [entity, property];
+        })
+      );
+      if (Object.keys(task).length > 0) {
+        output.task = t;
+      }
+    }
+    return output;
+  }
+};
+__name(_TestRendererSerializer, "TestRendererSerializer");
+var TestRendererSerializer = _TestRendererSerializer;
+var _TestRenderer = class _TestRenderer2 {
+  constructor(tasks, options) {
+    this.tasks = tasks;
+    this.options = options;
+    this.options = { ..._TestRenderer2.rendererOptions, ...this.options };
+    this.logger = this.options.logger ?? new ListrLogger({ useIcons: false });
+    this.serializer = new TestRendererSerializer(this.options);
+  }
+  render() {
+    this.renderer(this.tasks);
+  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  end() {
+  }
+  // verbose renderer multi-level
+  renderer(tasks) {
+    tasks.forEach((task) => {
+      if (this.options.subtasks) {
+        task.on("SUBTASK", (subtasks) => {
+          this.renderer(subtasks);
+        });
+      }
+      if (this.options.state) {
+        task.on("STATE", (state) => {
+          this.logger.toStdout(this.serializer.serialize("STATE", state, task));
+        });
+      }
+      if (this.options.output) {
+        task.on("OUTPUT", (data) => {
+          this.logger.toStdout(this.serializer.serialize("OUTPUT", data, task));
+        });
+      }
+      if (this.options.prompt) {
+        task.on("PROMPT", (prompt) => {
+          this.logger.toStdout(this.serializer.serialize("PROMPT", prompt, task));
+        });
+      }
+      if (this.options.title) {
+        task.on("TITLE", (title) => {
+          this.logger.toStdout(this.serializer.serialize("TITLE", title, task));
+        });
+      }
+      task.on("MESSAGE", (message) => {
+        const parsed = Object.fromEntries(
+          Object.entries(message).map(([key, value]) => {
+            if (this.options.messages.includes(key)) {
+              return [key, value];
+            }
+          }).filter(Boolean)
+        );
+        if (Object.keys(parsed).length > 0) {
+          const output = this.serializer.serialize("MESSAGE", parsed, task);
+          if (this.options.messagesToStderr.some((state) => Object.keys(parsed).includes(state))) {
+            this.logger.toStderr(output);
+          } else {
+            this.logger.toStdout(output);
+          }
+        }
+      });
+    });
+  }
+};
+__name(_TestRenderer, "TestRenderer");
+_TestRenderer.nonTTY = true;
+_TestRenderer.rendererOptions = {
+  subtasks: true,
+  state: Object.values(ListrTaskState),
+  output: true,
+  prompt: true,
+  title: true,
+  messages: ["skip", "error", "retry", "rollback", "paused"],
+  messagesToStderr: ["error", "rollback", "retry"],
+  task: [
+    "hasRolledBack",
+    "isRollingBack",
+    "isCompleted",
+    "isSkipped",
+    "hasFinalized",
+    "hasSubtasks",
+    "title",
+    "hasReset",
+    "hasTitle",
+    "isPrompt",
+    "isPaused",
+    "isPending",
+    "isSkipped",
+    "isStarted",
+    "hasFailed",
+    "isEnabled",
+    "isRetrying",
+    "path"
+  ]
+};
+var TestRenderer = _TestRenderer;
+var _VerboseRenderer = class _VerboseRenderer2 {
+  constructor(tasks, options) {
+    this.tasks = tasks;
+    this.options = options;
+    this.cache = {
+      rendererOptions: /* @__PURE__ */ new Map(),
+      rendererTaskOptions: /* @__PURE__ */ new Map()
+    };
+    this.options = {
+      ..._VerboseRenderer2.rendererOptions,
+      ...this.options,
+      icon: {
+        ...LISTR_LOGGER_STYLE.icon,
+        ...options?.icon ?? {}
+      },
+      color: {
+        ...LISTR_LOGGER_STYLE.color,
+        ...options?.color ?? {}
+      }
+    };
+    this.logger = this.options.logger ?? new ListrLogger({ useIcons: false, toStderr: LISTR_LOGGER_STDERR_LEVELS });
+    this.logger.options.icon = this.options.icon;
+    this.logger.options.color = this.options.color;
+    if (this.options.timestamp) {
+      this.logger.options.fields.prefix.unshift(this.options.timestamp);
+    }
+  }
+  render() {
+    this.renderer(this.tasks);
+  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  end() {
+  }
+  renderer(tasks) {
+    tasks.forEach((task) => {
+      this.calculate(task);
+      task.once("CLOSED", () => {
+        this.reset(task);
+      });
+      const rendererOptions = this.cache.rendererOptions.get(task.id);
+      const rendererTaskOptions = this.cache.rendererTaskOptions.get(task.id);
+      task.on("SUBTASK", (subtasks) => {
+        this.renderer(subtasks);
+      });
+      task.on("STATE", (state) => {
+        if (!task.hasTitle()) {
+          return;
+        }
+        if (state === "STARTED") {
+          this.logger.log("STARTED", task.title);
+        } else if (state === "COMPLETED") {
+          const timer = rendererTaskOptions.timer;
+          this.logger.log(
+            "COMPLETED",
+            task.title,
+            timer && {
+              suffix: {
+                ...timer,
+                condition: !!task.message?.duration && timer.condition,
+                args: [task.message.duration]
+              }
+            }
+          );
+        }
+      });
+      task.on("OUTPUT", (data) => {
+        this.logger.log("OUTPUT", data);
+      });
+      task.on("PROMPT", (prompt) => {
+        const cleansed = cleanseAnsi(prompt);
+        if (cleansed) {
+          this.logger.log("PROMPT", cleansed);
+        }
+      });
+      if (this.options?.logTitleChange !== false) {
+        task.on("TITLE", (title) => {
+          this.logger.log("TITLE", title);
+        });
+      }
+      task.on("MESSAGE", (message) => {
+        if (message?.error) {
+          this.logger.log("FAILED", message.error);
+        } else if (message?.skip) {
+          this.logger.log("SKIPPED", message.skip);
+        } else if (message?.rollback) {
+          this.logger.log("ROLLBACK", message.rollback);
+        } else if (message?.retry) {
+          this.logger.log("RETRY", task.title, { suffix: message.retry.count.toString() });
+        } else if (message?.paused) {
+          const timer = rendererOptions?.pausedTimer;
+          this.logger.log(
+            "PAUSED",
+            task.title,
+            timer && {
+              suffix: {
+                ...timer,
+                condition: !!message?.paused && timer.condition,
+                args: [message.paused - Date.now()]
+              }
+            }
+          );
+        }
+      });
+    });
+  }
+  calculate(task) {
+    if (this.cache.rendererOptions.has(task.id) && this.cache.rendererTaskOptions.has(task.id)) {
+      return;
+    }
+    const rendererOptions = {
+      ...this.options,
+      ...task.rendererOptions
+    };
+    this.cache.rendererOptions.set(task.id, rendererOptions);
+    this.cache.rendererTaskOptions.set(task.id, {
+      ..._VerboseRenderer2.rendererTaskOptions,
+      timer: rendererOptions.timer,
+      ...task.rendererTaskOptions
+    });
+  }
+  reset(task) {
+    this.cache.rendererOptions.delete(task.id);
+    this.cache.rendererTaskOptions.delete(task.id);
+  }
+};
+__name(_VerboseRenderer, "VerboseRenderer");
+_VerboseRenderer.nonTTY = true;
+_VerboseRenderer.rendererOptions = {
+  logTitleChange: false,
+  pausedTimer: {
+    ...PRESET_TIMER,
+    format: () => color.yellowBright
+  }
+};
+var VerboseRenderer = _VerboseRenderer;
+var RENDERERS = {
+  default: DefaultRenderer,
+  simple: SimpleRenderer,
+  verbose: VerboseRenderer,
+  test: TestRenderer,
+  silent: SilentRenderer
+};
+function isRendererSupported(renderer) {
+  return process.stdout.isTTY === true || renderer.nonTTY === true;
+}
+__name(isRendererSupported, "isRendererSupported");
+function getRendererClass(renderer) {
+  if (typeof renderer === "string") {
+    return RENDERERS[renderer] ?? RENDERERS.default;
+  }
+  return typeof renderer === "function" ? renderer : RENDERERS.default;
+}
+__name(getRendererClass, "getRendererClass");
+function getRenderer(options) {
+  if (assertFunctionOrSelf(options?.silentRendererCondition)) {
+    return {
+      renderer: getRendererClass("silent"),
+      selection: "SILENT"
+      /* SILENT */
+    };
+  }
+  const r = {
+    renderer: getRendererClass(options.renderer),
+    options: options.rendererOptions,
+    selection: "PRIMARY"
+    /* PRIMARY */
+  };
+  if (!isRendererSupported(r.renderer) || assertFunctionOrSelf(options?.fallbackRendererCondition)) {
+    return {
+      renderer: getRendererClass(options.fallbackRenderer),
+      options: options.fallbackRendererOptions,
+      selection: "SECONDARY"
+      /* SECONDARY */
+    };
+  }
+  return r;
+}
+__name(getRenderer, "getRenderer");
+function assertFunctionOrSelf(functionOrSelf, ...args) {
+  if (typeof functionOrSelf === "function") {
+    return functionOrSelf(...args);
+  } else {
+    return functionOrSelf;
+  }
+}
+__name(assertFunctionOrSelf, "assertFunctionOrSelf");
+var clone = (0, import_rfdc.default)({ circles: true });
+function cloneObject(obj) {
+  return clone(obj);
+}
+__name(cloneObject, "cloneObject");
+var _Concurrency = class _Concurrency2 {
+  constructor(options) {
+    this.concurrency = options.concurrency;
+    this.count = 0;
+    this.queue = /* @__PURE__ */ new Set();
+  }
+  add(fn) {
+    if (this.count < this.concurrency) {
+      return this.run(fn);
+    }
+    return new Promise((resolve) => {
+      const callback = /* @__PURE__ */ __name(() => resolve(this.run(fn)), "callback");
+      this.queue.add(callback);
+    });
+  }
+  flush() {
+    for (const callback of this.queue) {
+      if (this.count >= this.concurrency) {
+        break;
+      }
+      this.queue.delete(callback);
+      callback();
+    }
+  }
+  run(fn) {
+    this.count++;
+    const promise = fn();
+    const cleanup = /* @__PURE__ */ __name(() => {
+      this.count--;
+      this.flush();
+    }, "cleanup");
+    promise.then(cleanup, () => {
+      this.queue.clear();
+    });
+    return promise;
+  }
+};
+__name(_Concurrency, "Concurrency");
+var Concurrency = _Concurrency;
+function delay(time) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+}
+__name(delay, "delay");
+var _ListrError = class _ListrError2 extends Error {
+  constructor(error, type, task) {
+    super(error.message);
+    this.error = error;
+    this.type = type;
+    this.task = task;
+    this.name = "ListrError";
+    this.path = task.path;
+    if (task?.options.collectErrors === "full") {
+      this.task = cloneObject(task);
+      this.ctx = cloneObject(task.listr.ctx);
+    }
+    this.stack = error?.stack;
+  }
+};
+__name(_ListrError, "ListrError");
+var ListrError = _ListrError;
+var _ListrRendererError = class _ListrRendererError2 extends Error {
+};
+__name(_ListrRendererError, "ListrRendererError");
+var ListrRendererError = _ListrRendererError;
+var _PromptError = class _PromptError2 extends Error {
+};
+__name(_PromptError, "PromptError");
+var PromptError = _PromptError;
+var _TaskWrapper = class _TaskWrapper2 {
+  constructor(task) {
+    this.task = task;
+  }
+  get title() {
+    return this.task.title;
+  }
+  /**
+   * Title of the current task.
+   *
+   * @see {@link https://listr2.kilic.dev/task/title.html}
+   */
+  set title(title) {
+    title = Array.isArray(title) ? title : [title];
+    this.task.title$ = splat(title.shift(), ...title);
+  }
+  get output() {
+    return this.task.output;
+  }
+  /**
+   * Send output from the current task to the renderer.
+   *
+   * @see {@link https://listr2.kilic.dev/task/output.html}
+   */
+  set output(output) {
+    output = Array.isArray(output) ? output : [output];
+    this.task.output$ = splat(output.shift(), ...output);
+  }
+  /** Send an output to the output channel as prompt. */
+  set promptOutput(output) {
+    this.task.promptOutput$ = output;
+  }
+  /**
+   * Creates a new set of Listr subtasks.
+   *
+   * @see {@link https://listr2.kilic.dev/task/subtasks.html}
+   */
+  newListr(task, options) {
+    let tasks;
+    if (typeof task === "function") {
+      tasks = task(this);
+    } else {
+      tasks = task;
+    }
+    return new Listr(tasks, options, this.task);
+  }
+  /**
+   * Report an error that has to be collected and handled.
+   *
+   * @see {@link https://listr2.kilic.dev/task/error-handling.html}
+   */
+  report(error, type) {
+    if (this.task.options.collectErrors !== false) {
+      this.task.listr.errors.push(new ListrError(error, type, this.task));
+    }
+    this.task.message$ = { error: error.message ?? this.task?.title };
+  }
+  /**
+   * Skip the current task.
+   *
+   * @see {@link https://listr2.kilic.dev/task/skip.html}
+   */
+  skip(message, ...metadata) {
+    this.task.state$ = "SKIPPED";
+    if (message) {
+      this.task.message$ = { skip: message ? splat(message, ...metadata) : this.task?.title };
+    }
+  }
+  /**
+   * Check whether this task is currently in a retry state.
+   *
+   * @see {@link https://listr2.kilic.dev/task/retry.html}
+   */
+  isRetrying() {
+    return this.task.isRetrying() ? this.task.retry : { count: 0 };
+  }
+  /**
+   * Create a new prompt for getting user input through the prompt adapter.
+   * This will create a new prompt through the adapter if the task is not currently rendering a prompt or will return the active instance.
+   *
+   * This part of the application requires optional peer dependencies, please refer to documentation.
+   *
+   * @see {@link https://listr2.kilic.dev/task/prompt.html}
+   */
+  prompt(adapter) {
+    if (this.task.prompt) {
+      return this.task.prompt;
+    }
+    return new adapter(this.task, this);
+  }
+  /**
+   * Generates a fake stdout for your use case, where it will be tunnelled through Listr to handle the rendering process.
+   *
+   * @see {@link https://listr2.kilic.dev/renderer/process-output.html}
+   */
+  stdout(type) {
+    return createWritable((chunk) => {
+      switch (type) {
+        case "PROMPT":
+          this.promptOutput = chunk;
+          break;
+        default:
+          this.output = chunk;
+      }
+    });
+  }
+  /** Run this task. */
+  run(ctx) {
+    return this.task.run(ctx, this);
+  }
+};
+__name(_TaskWrapper, "TaskWrapper");
+var TaskWrapper = _TaskWrapper;
+var _ListrTaskEventManager = class _ListrTaskEventManager2 extends EventManager {
+};
+__name(_ListrTaskEventManager, "ListrTaskEventManager");
+var ListrTaskEventManager = _ListrTaskEventManager;
+var _Task = class _Task2 extends ListrTaskEventManager {
+  constructor(listr, task, options, rendererOptions, rendererTaskOptions) {
+    super();
+    this.listr = listr;
+    this.task = task;
+    this.options = options;
+    this.rendererOptions = rendererOptions;
+    this.rendererTaskOptions = rendererTaskOptions;
+    this.id = (0, import_crypto.randomUUID)();
+    this.state = "WAITING";
+    this.message = {};
+    if (task.title) {
+      const title = Array.isArray(task?.title) ? task.title : [task.title];
+      this.title = splat(title.shift(), ...title);
+      this.initialTitle = this.title;
+    }
+    this.taskFn = task.task;
+    this.parent = listr.parentTask;
+  }
+  /**
+   * Update the current state of the Task and emit the neccassary events.
+   */
+  set state$(state) {
+    this.state = state;
+    this.emit("STATE", state);
+    if (this.hasSubtasks() && this.hasFailed()) {
+      for (const subtask of this.subtasks) {
+        if (subtask.state === "STARTED") {
+          subtask.state$ = "FAILED";
+        }
+      }
+    }
+    this.listr.events.emit(
+      "SHOUD_REFRESH_RENDER"
+      /* SHOULD_REFRESH_RENDER */
+    );
+  }
+  /**
+   * Update the current output of the Task and emit the neccassary events.
+   */
+  set output$(data) {
+    this.output = data;
+    this.emit("OUTPUT", data);
+    this.listr.events.emit(
+      "SHOUD_REFRESH_RENDER"
+      /* SHOULD_REFRESH_RENDER */
+    );
+  }
+  /**
+   * Update the current prompt output of the Task and emit the neccassary events.
+   */
+  set promptOutput$(data) {
+    this.emit("PROMPT", data);
+    if (cleanseAnsi(data)) {
+      this.listr.events.emit(
+        "SHOUD_REFRESH_RENDER"
+        /* SHOULD_REFRESH_RENDER */
+      );
+    }
+  }
+  /**
+   * Update or extend the current message of the Task and emit the neccassary events.
+   */
+  set message$(data) {
+    this.message = { ...this.message, ...data };
+    this.emit("MESSAGE", data);
+    this.listr.events.emit(
+      "SHOUD_REFRESH_RENDER"
+      /* SHOULD_REFRESH_RENDER */
+    );
+  }
+  /**
+   * Update the current title of the Task and emit the neccassary events.
+   */
+  set title$(title) {
+    this.title = title;
+    this.emit("TITLE", title);
+    this.listr.events.emit(
+      "SHOUD_REFRESH_RENDER"
+      /* SHOULD_REFRESH_RENDER */
+    );
+  }
+  /**
+   * Current task path in the hierarchy.
+   */
+  get path() {
+    return [...this.listr.path, this.initialTitle];
+  }
+  /**
+   * Checks whether the current task with the given context should be set as enabled.
+   */
+  async check(ctx) {
+    if (this.state === "WAITING") {
+      this.enabled = await assertFunctionOrSelf(this.task?.enabled ?? true, ctx);
+      this.emit("ENABLED", this.enabled);
+      this.listr.events.emit(
+        "SHOUD_REFRESH_RENDER"
+        /* SHOULD_REFRESH_RENDER */
+      );
+    }
+    return this.enabled;
+  }
+  /** Returns whether this task has subtasks. */
+  hasSubtasks() {
+    return this.subtasks?.length > 0;
+  }
+  /** Returns whether this task is finalized in someform. */
+  hasFinalized() {
+    return this.isCompleted() || this.hasFailed() || this.isSkipped() || this.hasRolledBack();
+  }
+  /** Returns whether this task is in progress. */
+  isPending() {
+    return this.isStarted() || this.isPrompt() || this.hasReset();
+  }
+  /** Returns whether this task has started. */
+  isStarted() {
+    return this.state === "STARTED";
+  }
+  /** Returns whether this task is skipped. */
+  isSkipped() {
+    return this.state === "SKIPPED";
+  }
+  /** Returns whether this task has been completed. */
+  isCompleted() {
+    return this.state === "COMPLETED";
+  }
+  /** Returns whether this task has been failed. */
+  hasFailed() {
+    return this.state === "FAILED";
+  }
+  /** Returns whether this task has an active rollback task going on. */
+  isRollingBack() {
+    return this.state === "ROLLING_BACK";
+  }
+  /** Returns whether the rollback action was successful. */
+  hasRolledBack() {
+    return this.state === "ROLLED_BACK";
+  }
+  /** Returns whether this task has an actively retrying task going on. */
+  isRetrying() {
+    return this.state === "RETRY";
+  }
+  /** Returns whether this task has some kind of reset like retry and rollback going on. */
+  hasReset() {
+    return this.state === "RETRY" || this.state === "ROLLING_BACK";
+  }
+  /** Returns whether enabled function resolves to true. */
+  isEnabled() {
+    return this.enabled;
+  }
+  /** Returns whether this task actually has a title. */
+  hasTitle() {
+    return typeof this?.title === "string";
+  }
+  /** Returns whether this task has a prompt inside. */
+  isPrompt() {
+    return this.state === "PROMPT" || this.state === "PROMPT_COMPLETED";
+  }
+  /** Returns whether this task is currently paused. */
+  isPaused() {
+    return this.state === "PAUSED";
+  }
+  /** Returns whether this task is closed. */
+  isClosed() {
+    return this.closed;
+  }
+  /** Pause the given task for certain time. */
+  async pause(time) {
+    const state = this.state;
+    this.state$ = "PAUSED";
+    this.message$ = {
+      paused: Date.now() + time
+    };
+    await delay(time);
+    this.state$ = state;
+    this.message$ = {
+      paused: null
+    };
+  }
+  /** Run the current task. */
+  async run(context, wrapper) {
+    const handleResult = /* @__PURE__ */ __name((result) => {
+      if (result instanceof Listr) {
+        result.options = { ...this.options, ...result.options };
+        result.rendererClass = getRendererClass("silent");
+        this.subtasks = result.tasks;
+        result.errors = this.listr.errors;
+        this.emit("SUBTASK", this.subtasks);
+        result = result.run(context);
+      } else if (result instanceof Promise) {
+        result = result.then(handleResult);
+      } else if (result instanceof import_stream2.Readable) {
+        result = new Promise((resolve, reject) => {
+          result.on("data", (data) => {
+            this.output$ = data.toString();
+          });
+          result.on("error", (error) => reject(error));
+          result.on("end", () => resolve(null));
+        });
+      } else if (isObservable(result)) {
+        result = new Promise((resolve, reject) => {
+          result.subscribe({
+            next: (data) => {
+              this.output$ = data;
+            },
+            error: reject,
+            complete: resolve
+          });
+        });
+      }
+      return result;
+    }, "handleResult");
+    const startTime = Date.now();
+    this.state$ = "STARTED";
+    const skipped = await assertFunctionOrSelf(this.task?.skip ?? false, context);
+    if (skipped) {
+      if (typeof skipped === "string") {
+        this.message$ = { skip: skipped };
+      } else if (this.hasTitle()) {
+        this.message$ = { skip: this.title };
+      } else {
+        this.message$ = { skip: "Skipped task without a title." };
+      }
+      this.state$ = "SKIPPED";
+      return;
+    }
+    try {
+      const retryCount = typeof this.task?.retry === "number" && this.task.retry > 0 ? this.task.retry + 1 : typeof this.task?.retry === "object" && this.task.retry.tries > 0 ? this.task.retry.tries + 1 : 1;
+      const retryDelay = typeof this.task.retry === "object" && this.task.retry.delay;
+      for (let retries = 1; retries <= retryCount; retries++) {
+        try {
+          await handleResult(this.taskFn(context, wrapper));
+          break;
+        } catch (err) {
+          if (retries !== retryCount) {
+            this.retry = { count: retries, error: err };
+            this.message$ = { retry: this.retry };
+            this.title$ = this.initialTitle;
+            this.output = void 0;
+            wrapper.report(
+              err,
+              "WILL_RETRY"
+              /* WILL_RETRY */
+            );
+            this.state$ = "RETRY";
+            if (retryDelay) {
+              await this.pause(retryDelay);
+            }
+          } else {
+            throw err;
+          }
+        }
+      }
+      if (this.isStarted() || this.isRetrying()) {
+        this.message$ = { duration: Date.now() - startTime };
+        this.state$ = "COMPLETED";
+      }
+    } catch (error) {
+      if (this.prompt instanceof PromptError) {
+        error = this.prompt;
+      }
+      if (this.task?.rollback) {
+        wrapper.report(
+          error,
+          "WILL_ROLLBACK"
+          /* WILL_ROLLBACK */
+        );
+        try {
+          this.state$ = "ROLLING_BACK";
+          await this.task.rollback(context, wrapper);
+          this.message$ = { rollback: this.title };
+          this.state$ = "ROLLED_BACK";
+        } catch (err) {
+          this.state$ = "FAILED";
+          wrapper.report(
+            err,
+            "HAS_FAILED_TO_ROLLBACK"
+            /* HAS_FAILED_TO_ROLLBACK */
+          );
+          this.close();
+          throw err;
+        }
+        if (this.listr.options?.exitAfterRollback !== false) {
+          this.close();
+          throw error;
+        }
+      } else {
+        this.state$ = "FAILED";
+        if (this.listr.options.exitOnError !== false && await assertFunctionOrSelf(this.task?.exitOnError, context) !== false) {
+          wrapper.report(
+            error,
+            "HAS_FAILED"
+            /* HAS_FAILED */
+          );
+          this.close();
+          throw error;
+        } else if (!this.hasSubtasks()) {
+          wrapper.report(
+            error,
+            "HAS_FAILED_WITHOUT_ERROR"
+            /* HAS_FAILED_WITHOUT_ERROR */
+          );
+        }
+      }
+    } finally {
+      this.close();
+    }
+  }
+  close() {
+    this.emit(
+      "CLOSED"
+      /* CLOSED */
+    );
+    this.listr.events.emit(
+      "SHOUD_REFRESH_RENDER"
+      /* SHOULD_REFRESH_RENDER */
+    );
+    this.complete();
+  }
+};
+__name(_Task, "Task");
+var Task = _Task;
+var _ListrEventManager = class _ListrEventManager2 extends EventManager {
+};
+__name(_ListrEventManager, "ListrEventManager");
+var ListrEventManager = _ListrEventManager;
+var _Listr = class _Listr2 {
+  constructor(task, options, parentTask) {
+    this.task = task;
+    this.options = options;
+    this.parentTask = parentTask;
+    this.tasks = [];
+    this.errors = [];
+    this.path = [];
+    this.options = {
+      concurrent: false,
+      renderer: "default",
+      fallbackRenderer: "simple",
+      exitOnError: true,
+      exitAfterRollback: true,
+      collectErrors: false,
+      registerSignalListeners: true,
+      ...this.parentTask?.options ?? {},
+      ...options
+    };
+    if (this.options.concurrent === true) {
+      this.options.concurrent = Infinity;
+    } else if (typeof this.options.concurrent !== "number") {
+      this.options.concurrent = 1;
+    }
+    this.concurrency = new Concurrency({ concurrency: this.options.concurrent });
+    if (parentTask) {
+      this.path = [...parentTask.listr.path, parentTask.title];
+      this.errors = parentTask.listr.errors;
+    }
+    if (this.parentTask?.listr.events instanceof ListrEventManager) {
+      this.events = this.parentTask.listr.events;
+    } else {
+      this.events = new ListrEventManager();
+    }
+    const renderer = getRenderer({
+      renderer: this.options.renderer,
+      rendererOptions: this.options.rendererOptions,
+      fallbackRenderer: this.options.fallbackRenderer,
+      fallbackRendererOptions: this.options.fallbackRendererOptions,
+      fallbackRendererCondition: this.options?.fallbackRendererCondition,
+      silentRendererCondition: this.options?.silentRendererCondition
+    });
+    this.rendererClass = renderer.renderer;
+    this.rendererClassOptions = renderer.options;
+    this.rendererSelection = renderer.selection;
+    this.add(task ?? []);
+    if (this.options.registerSignalListeners) {
+      process.once("SIGINT", () => {
+        this.tasks.forEach(async (task2) => {
+          if (task2.isPending()) {
+            task2.state$ = "FAILED";
+          }
+        });
+        this.renderer.end(new Error("Interrupted."));
+        process.exit(127);
+      }).setMaxListeners(0);
+    }
+    if (this.options?.forceTTY || process.env[
+      "LISTR_FORCE_TTY"
+      /* FORCE_TTY */
+    ]) {
+      process.stdout.isTTY = true;
+      process.stderr.isTTY = true;
+    }
+    if (this.options?.forceUnicode) {
+      process.env[
+        "LISTR_FORCE_UNICODE"
+        /* FORCE_UNICODE */
+      ] = "1";
+    }
+  }
+  add(tasks) {
+    this.tasks.push(...this.generate(tasks));
+  }
+  async run(context) {
+    if (!this.renderer) {
+      this.renderer = new this.rendererClass(this.tasks, this.rendererClassOptions, this.events);
+    }
+    await this.renderer.render();
+    this.ctx = this.options?.ctx ?? context ?? {};
+    await Promise.all(this.tasks.map((task) => task.check(this.ctx)));
+    try {
+      await Promise.all(this.tasks.map((task) => this.concurrency.add(() => this.runTask(task))));
+      this.renderer.end();
+    } catch (err) {
+      if (this.options.exitOnError !== false) {
+        this.renderer.end(err);
+        throw err;
+      }
+    }
+    return this.ctx;
+  }
+  generate(tasks) {
+    tasks = Array.isArray(tasks) ? tasks : [tasks];
+    return tasks.map((task) => {
+      let rendererTaskOptions;
+      if (this.rendererSelection === "PRIMARY") {
+        rendererTaskOptions = task.rendererOptions;
+      } else if (this.rendererSelection === "SECONDARY") {
+        rendererTaskOptions = task.fallbackRendererOptions;
+      }
+      return new Task(
+        this,
+        task,
+        this.options,
+        this.rendererClassOptions,
+        rendererTaskOptions
+      );
+    });
+  }
+  async runTask(task) {
+    if (!await task.check(this.ctx)) {
+      return;
+    }
+    return new TaskWrapper(task).run(this.ctx);
+  }
+};
+__name(_Listr, "Listr");
+var Listr = _Listr;
+
 // src/template.js
 async function templateSearchString(github, query) {
   let templatedQuery = query;
@@ -4009,7 +8709,7 @@ async function templateSearchString(github, query) {
 }
 
 // src/lib.js
-async function batchEditPullRequests(github, output, args) {
+async function batchEditPullRequests(github, args) {
   const { pattern, action } = args;
   const prs = [];
   const query = await templateSearchString(
@@ -4031,44 +8731,59 @@ async function batchEditPullRequests(github, output, args) {
   }
   const reports = [];
   const maxTitleLength = Math.max(...prs.map((pr) => pr.title.length));
-  for (const pr of prs) {
-    switch (action) {
-      case "search":
-        output.write(`- ${display(pr, maxTitleLength)}
-`);
-        break;
-      case "approve":
-        github.approvePullRequest(pr);
-        output.write(`\u2714 ${display(pr, maxTitleLength)}
-`);
-        break;
-      case "approve and merge":
-        github.approvePullRequest(pr);
-        github.mergePullRequest(pr);
-        output.write(`\u{1F6A2} ${display(pr, maxTitleLength)}
-`);
-        break;
-      case "merge":
-        github.mergePullRequest(pr);
-        output.write(`\u{1F6A2} ${display(pr, maxTitleLength)}
-`);
-        break;
-      case "close":
-        github.closePullRequest(pr);
-        output.write(`\u{1F6D1} ${display(pr, maxTitleLength)}
-`);
-        break;
-    }
-    reports.push({
-      owner: pr.head.repo.owner.login,
-      repo: pr.head.repo.name,
-      pullRequestNumber: pr.number,
-      approved: action === "approve" || action === "approve and merge",
-      merged: action === "merge" || action === "approve and merge",
-      closed: action === "close"
-    });
-  }
-  output.end();
+  const tasks = new Listr(
+    prs.map((pr) => {
+      reports.push({
+        owner: pr.head.repo.owner.login,
+        repo: pr.head.repo.name,
+        pullRequestNumber: pr.number,
+        approved: action === "approve" || action === "approve and merge",
+        merged: action === "merge" || action === "approve and merge",
+        closed: action === "close"
+      });
+      switch (action) {
+        case "search":
+          return {
+            title: `\u{1F50D} ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await delay(500);
+            }
+          };
+        case "approve":
+          return {
+            title: `\u{1F58A}\uFE0F ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await github.approvePullRequest(pr);
+            }
+          };
+        case "approve and merge":
+          return {
+            title: `\u{1F6A2} ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await github.approvePullRequest(pr);
+              await github.mergePullRequest(pr);
+            }
+          };
+        case "merge":
+          return {
+            title: `\u{1F6A2} ${display(pr, maxTitleLength)}
+`,
+            task: async () => {
+              await github.mergePullRequest(pr);
+            }
+          };
+        case "close":
+          return {
+            title: `\u{1F6AE} ${display(pr, maxTitleLength)}`,
+            task: async () => {
+              await github.closePullRequest(pr);
+            }
+          };
+      }
+    }),
+    { concurrent: true }
+  );
+  await tasks.run();
   return reports;
 }
 async function prIsMergeable(args) {
@@ -4136,7 +8851,7 @@ async function main() {
     action
   };
   try {
-    batchEditPullRequests(github, process.stdout, args);
+    await batchEditPullRequests(github, args);
   } catch (error) {
     console.error("Error processing pull requests:", error);
     process.exit(1);
