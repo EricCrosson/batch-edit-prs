@@ -1,5 +1,9 @@
 # batch-edit-prs
 
+[![Build Status]](https://github.com/EricCrosson/batch-edit-prs/actions/workflows/release.yml)
+
+[build status]: https://github.com/EricCrosson/batch-edit-prs/actions/workflows/release.yml/badge.svg?event=push
+
 **batch-edit-prs** operates on each pull request returned by a [GitHub search].
 
 Supported actions are:
