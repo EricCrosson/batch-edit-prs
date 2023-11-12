@@ -43,11 +43,18 @@
       };
     });
 
-    packages = forEachSystem (system: {
-      default = nixpkgs.legacyPackages.${system}.writeShellApplication {
-        name = "batch-edit-prs";
-        runtimeInputs = with nixpkgs.legacyPackages.${system}; [nodejs_20];
-        text = builtins.readFile ./dist/index.js;
+    packages = forEachSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      name = "batch-edit-prs";
+      script = (pkgs.writeScriptBin name (builtins.readFile ./dist/index.js)).overrideAttrs (old: {
+        buildCommand = "${old.buildCommand}\n patchShebangs $out";
+      });
+    in {
+      default = nixpkgs.legacyPackages.${system}.symlinkJoin {
+        inherit name;
+        paths = [script] ++ [pkgs.nodejs_20];
+        buildInputs = [pkgs.makeWrapper];
+        postBuild = "wrapProgram $out/bin/${name} --prefix PATH: $out/bin";
       };
     });
   };
