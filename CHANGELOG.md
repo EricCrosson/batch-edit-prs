@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/EricCrosson/batch-edit-prs/compare/v1.1.0...v1.1.1) (2023-11-12)
+
+
+### Bug Fixes
+
+* **ci:** commit semantic-release configuration ([6e4aff8](https://github.com/EricCrosson/batch-edit-prs/commit/6e4aff88f37695c25a65bf750f2703c889210a95))
+
 # [1.1.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.0.0...v1.1.0) (2023-11-12)
 
 

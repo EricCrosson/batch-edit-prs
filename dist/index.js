@@ -4078,7 +4078,8 @@ function validateCliArguments(args) {
   const action = args[1];
   let errors = [];
   if (helpFlag) {
-    console.log(`
+    console.log(
+      `
 Usage: batch-edit-prs <pattern> <action>
 
   <pattern>    Search string to use to identify PRs to act on
@@ -4086,7 +4087,8 @@ Usage: batch-edit-prs <pattern> <action>
                  "search", "approve", "merge", "approve and merge", "close"
 
   --help       Show this help message
-`.trimEnd());
+`.trimEnd()
+    );
     process.exit(0);
   }
   const githubToken = process.env.GITHUB_TOKEN;
