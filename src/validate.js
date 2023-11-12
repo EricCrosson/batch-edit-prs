@@ -15,7 +15,7 @@
 export function validateCliArguments(args) {
   const helpFlag = args.includes("--help");
   const pattern = args[0];
-  const action = args[1];
+  let action = args[1];
 
   let errors = [];
 
@@ -45,7 +45,7 @@ Usage: batch-edit-prs <pattern> <action>
   }
 
   if (action === undefined || action.length === 0) {
-    errors.push("Error: Action argument is required.");
+    action = "search";
   } else if (
     action !== "search" &&
     action !== "approve" &&

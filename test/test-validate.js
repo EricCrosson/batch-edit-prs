@@ -33,10 +33,13 @@ test.describe("validateCliArguments", () => {
     });
   });
 
-  test("missing pattern", () => {
+  test("missing action defaults to search", () => {
     const args = ["pattern"];
-    assert.throws(() => validateCliArguments(args), {
-      message: "invalid arguments",
+    const result = validateCliArguments(args);
+    assert.deepEqual(result, {
+      githubToken: "test_token",
+      pattern: "pattern",
+      action: "search",
     });
   });
 
