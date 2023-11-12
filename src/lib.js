@@ -1,6 +1,7 @@
 import { Writable } from "node:stream";
 
 import { GithubClientInterface } from "./service/github.js";
+import { templateSearchString } from "./template.js";
 
 /**
  * @typedef {("search"|"approve"|"merge"|"approve and merge"|"close")} Action
@@ -29,17 +30,17 @@ import { GithubClientInterface } from "./service/github.js";
 export async function batchEditPullRequests(github, output, args) {
   const { pattern, action } = args;
 
-  const username = await github.getUsername();
-
   /**
    * An array of pull requests to perform `action` on.
    * @type {Object}
    */
   const prs = [];
 
-  for await (const issue of github.search(
-    `is:pull-request is:open assignee:${username} ${pattern}`,
-  )) {
+  const query = await templateSearchString(
+    github,
+    `is:pull-request is:open ${pattern}`,
+  );
+  for await (const issue of github.search(query)) {
     const pullRequestNumber = issue.number;
     const [owner, repo] = issue.repository_url.split("/").slice(-2);
 
