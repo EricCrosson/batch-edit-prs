@@ -4,6 +4,11 @@
   "description": "Edit a batch of GitHub pull requests",
   "author": "Eric Crosson <eric.s.crosson@gmail.com>",
   "license": "(Apache-2.0 OR ISC)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricCrosson/batch-edit-prs.git"
+  },
+  "homepage": "https://github.com/EricCrosson/batch-edit-prs",
   "type": "module",
   "exports": "./src/main.js",
   "scripts": {
