@@ -16,7 +16,7 @@
     "test/"
   ],
   "scripts": {
-    "build": "esbuild src/main.js --bundle --platform=node --outfile=dist/index.js",
+    "build": "esbuild src/main.js --bundle --platform=node --format=esm --outfile=dist/index.js --banner:js='import { createRequire as topLevelCreateRequire } from \"module\"; const require = topLevelCreateRequire(import.meta.url);'",
     "test": "node --test test/test-*"
   },
   "dependencies": {
