@@ -8746,7 +8746,6 @@ async function batchEditPullRequests(github, args) {
           return {
             title: `\u{1F50D} ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await delay(500);
             }
           };
         case "approve":

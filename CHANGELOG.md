@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/EricCrosson/batch-edit-prs/compare/v1.3.0...v1.3.1) (2023-11-12)
+
+
+### Bug Fixes
+
+* remove unnecessary delay ([f8a26f2](https://github.com/EricCrosson/batch-edit-prs/commit/f8a26f28da7b49e340288ba2ae488b05ecd66979))
+
 # [1.3.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.2.0...v1.3.0) (2023-11-12)
 
 
