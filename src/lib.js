@@ -32,7 +32,7 @@ export async function batchEditPullRequests(github, output, args) {
 
   /**
    * An array of pull requests to perform `action` on.
-   * @type {Object}
+   * @type {Array<Object>}
    */
   const prs = [];
 
