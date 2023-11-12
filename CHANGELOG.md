@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.0...v1.4.1) (2023-11-12)
+
+
+### Bug Fixes
+
+* bundle as an ES Module ([7561499](https://github.com/EricCrosson/batch-edit-prs/commit/7561499a25857e9cf6a1cd775ab110599de9f2d5)), closes [/github.com/evanw/esbuild/issues/946#issuecomment-911869872](https://github.com//github.com/evanw/esbuild/issues/946/issues/issuecomment-911869872)
+
 # [1.4.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.3.1...v1.4.0) (2023-11-12)
 
 
