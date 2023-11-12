@@ -82,9 +82,7 @@ export async function batchEditPullRequests(github, args) {
         case "search":
           return {
             title: `🔍 ${display(pr, maxTitleLength)}`,
-            task: async () => {
-              await delay(500);
-            },
+            task: async () => {},
           };
         case "approve":
           return {
