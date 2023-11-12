@@ -1,6 +1,6 @@
 {
   "name": "batch-edit-prs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Edit a batch of GitHub pull requests",
   "author": "Eric Crosson <eric.s.crosson@gmail.com>",
   "license": "(Apache-2.0 OR ISC)",
