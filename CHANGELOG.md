@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.2.0...v1.3.0) (2023-11-12)
+
+
+### Features
+
+* provide a reactive ui ([f42c4f6](https://github.com/EricCrosson/batch-edit-prs/commit/f42c4f6d7678d8f6b73d94123c3ec849ae625065)), closes [#5](https://github.com/EricCrosson/batch-edit-prs/issues/5)
+
 # [1.2.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.1.1...v1.2.0) (2023-11-12)
 
 
