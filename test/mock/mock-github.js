@@ -1,23 +1,83 @@
-import { Octokit } from "@octokit/rest";
+import * as fs from "node:fs";
 
-import { GithubClientInterface } from "../service/github.js";
+import { GithubClientInterface } from "../../src/service/github.js";
 
 /**
  * @implements {GithubClientInterface}
  */
-export class GithubClient {
+export class MockGithubClient {
   /**
-   * Creates a new GitHubClient instance.
-   *
-   * @param {string} githubToken - The GitHub token to authenticate with.
+   * Represents a mock GitHub instance.
+   * @constructor
+   * @param {Object} args
+   * @param {string} args.issuesFile - The path to the file containing issue data.
+   * @param {string} args.pullRequestsFile - The path to the file containing pull request data.
+   * @param {string} args.checksFile - The path to the file containing pull request check data.
    */
-  constructor(githubToken) {
+  constructor(args) {
     /**
-     * The Octokit instance to use for GitHub API calls.
-     * @type {Octokit}
+     * The username of the authenticated user.
+     * @type {string}
      * @private
      */
-    this.octokit = new Octokit({ auth: githubToken });
+    this.username = "mock-username";
+
+    /**
+     * Array of issue objects.
+     * @type {Object}
+     * @private
+     */
+    this.issues = JSON.parse(
+      fs.readFileSync(args.issuesFile, { encoding: "utf-8" }),
+    );
+
+    /**
+     * Array of pull request objects.
+     * @type {Object}
+     * @private
+     */
+    this.pullRequests = JSON.parse(
+      fs.readFileSync(args.pullRequestsFile, { encoding: "utf-8" }),
+    );
+
+    /**
+     * Array of check objects.
+     * @type {Object}
+     * @private
+     */
+    this.checks = JSON.parse(
+      fs.readFileSync(args.checksFile, { encoding: "utf-8" }),
+    );
+
+    /**
+     * Map of pull request objects, keyed by a string in the format 'owner/repo#number'.
+     * @type {Map}
+     * @private
+     */
+    this.pullRequestMap = this.pullRequests.reduce((accumulator, pr) => {
+      const key = slug({
+        owner: pr.base.repo.owner.login,
+        repo: pr.base.repo.name,
+        pullRequestNumber: pr.number,
+      });
+      accumulator.set(key, pr);
+      return accumulator;
+    }, new Map());
+
+    /**
+     * Array of approved pull request slugs.
+     */
+    this.approved = [];
+
+    /**
+     * Array of merged pull request slugs.
+     */
+    this.merged = [];
+
+    /**
+     * Array of closed pull request slugs.
+     */
+    this.closed = [];
   }
 
   /**
@@ -26,8 +86,7 @@ export class GithubClient {
    * @returns {Promise<string>} A promise that resolves to the username of the authenticated user.
    */
   async getUsername() {
-    const { data: user } = await this.octokit.users.getAuthenticated();
-    return user.login;
+    return this.username;
   }
 
   /**
@@ -36,17 +95,9 @@ export class GithubClient {
    * @param {string} query - The query to use for the search.
    * @returns {AsyncIterable<Array<Object>>} An asynchronous iterator that yields arrays of issues and pull requests.
    */
-  async *search(query) {
-    for await (const { data: issues } of this.octokit.paginate.iterator(
-      this.octokit.search.issuesAndPullRequests,
-      {
-        q: query,
-        per_page: 100,
-      },
-    )) {
-      for (const issue of issues) {
-        yield issue;
-      }
+  async *search(_query) {
+    for (const issue of this.issues) {
+      yield issue;
     }
   }
 
@@ -60,21 +111,12 @@ export class GithubClient {
    * @returns {Promise<Object>} A promise that resolves to the pull request object.
    */
   async getPullRequest(args) {
-    const { owner, repo, pullRequestNumber } = args;
-
-    const { data: prs } = await this.octokit.pulls.get({
-      owner,
-      repo,
-      pullRequestNumber,
-    });
-
-    if (prs.length === 0) {
-      throw new Error(
-        `Could not retrieve pull request ${owner}/${repo}#${pullRequestNumber}`,
-      );
+    const key = slug(args);
+    const pr = this.pullRequestMap.get(key);
+    if (pr === undefined) {
+      throw new Error(`Could not retrieve pull request ${key}`);
     }
-
-    return prs[0];
+    return pr;
   }
 
   /**
@@ -87,14 +129,8 @@ export class GithubClient {
    * @returns {Promise<boolean>} A promise that resolves to `true` if all checks have passed or been skipped, and `false` otherwise.
    */
   async allChecksPassed(args) {
-    const { owner, repo, ref } = args;
-
-    const { data: checks } = await this.octokit.checks.listForRef({
-      owner,
-      repo,
-      ref,
-    });
-
+    const key = `${args.owner}/${args.repo}@${args.ref}`;
+    const checks = this.checks[key];
     return checks.check_runs.every(
       (check) =>
         check.conclusion === "success" || check.conclusion === "skipped",
@@ -111,14 +147,8 @@ export class GithubClient {
    * @returns {Promise<void>} A promise that resolves when the pull request has been approved.
    */
   async approvePullRequest(args) {
-    const { owner, repo, pullRequestNumber } = args;
-
-    await this.octokit.pulls.createReview({
-      owner,
-      repo,
-      pull_number: pullRequestNumber,
-      event: "APPROVE",
-    });
+    const key = slug(args);
+    this.approved.push(key);
   }
 
   /**
@@ -131,13 +161,8 @@ export class GithubClient {
    * @returns {Promise<void>} A promise that resolves when the pull request has been merged.
    */
   async mergePullRequest(args) {
-    const { owner, repo, pullRequestNumber } = args;
-
-    await this.octokit.pulls.merge({
-      owner,
-      repo,
-      pull_number: pullRequestNumber,
-    });
+    const key = slug(args);
+    this.merged.push(key);
   }
 
   /**
@@ -150,13 +175,20 @@ export class GithubClient {
    * @returns {Promise<void>} A promise that resolves when the pull request has been closed.
    */
   async closePullRequest(args) {
-    const { owner, repo, pullRequestNumber } = args;
-
-    await this.octokit.pulls.update({
-      owner,
-      repo,
-      pull_number: pullRequestNumber,
-      state: "closed",
-    });
+    const key = slug(args);
+    this.closed.push(key);
   }
+}
+
+/**
+ * Returns a string representing the unique key for a pull request.
+ *
+ * @param {Object} args - The arguments object.
+ * @param {string} args.owner - The owner of the repository.
+ * @param {string} args.repo - The name of the repository.
+ * @param {number} args.pullRequestNumber - The number of the pull request.
+ * @returns {string} - The unique key for the pull request.
+ */
+function slug(args) {
+  return `${args.owner}/${args.repo}#${args.pullRequestNumber}`;
 }

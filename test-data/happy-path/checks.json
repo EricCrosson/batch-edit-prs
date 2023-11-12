@@ -1,0 +1,556 @@
+{
+  "semantic-release-action/github-actions@d1ee22ffae5829a4d6210811e75bf4440f640593": {
+    "total_count": 0,
+    "check_runs": []
+  },
+  "semantic-release-action/rust@e79dbf79a1c44402ce2002ed0ce2aa80d543d037": {
+    "total_count": 1,
+    "check_runs": [
+      {
+        "id": 18352946763,
+        "name": "Check",
+        "node_id": "CR_kwDOIu8MDc8AAAAEReu-Sw",
+        "head_sha": "e79dbf79a1c44402ce2002ed0ce2aa80d543d037",
+        "external_id": "db8fdbfe-be3b-5da6-2eca-e2cdb4a569cd",
+        "url": "https://api.github.com/repos/semantic-release-action/rust/check-runs/18352946763",
+        "html_url": "https://github.com/semantic-release-action/rust/actions/runs/6750479630/job/18352946763",
+        "details_url": "https://github.com/semantic-release-action/rust/actions/runs/6750479630/job/18352946763",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2023-11-03T21:45:22Z",
+        "completed_at": "2023-11-03T21:45:58Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 0,
+          "annotations_url": "https://api.github.com/repos/semantic-release-action/rust/check-runs/18352946763/annotations"
+        },
+        "check_suite": {
+          "id": 17896734396
+        },
+        "app": {
+          "id": 15368,
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2019-12-10T19:04:12Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "checks": "write",
+            "contents": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "project",
+            "project_card",
+            "project_column",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/semantic-release-action/rust/pulls/75",
+            "id": 1518327969,
+            "number": 75,
+            "head": {
+              "ref": "renovate/major-semantic-release-monorepo",
+              "sha": "e79dbf79a1c44402ce2002ed0ce2aa80d543d037",
+              "repo": {
+                "id": 586091533,
+                "url": "https://api.github.com/repos/semantic-release-action/rust",
+                "name": "rust"
+              }
+            },
+            "base": {
+              "ref": "master",
+              "sha": "4cc6b3a496b7013670f604308dd0dacc83894ee8",
+              "repo": {
+                "id": 586091533,
+                "url": "https://api.github.com/repos/semantic-release-action/rust",
+                "name": "rust"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "semantic-release-extras/test-verified-git-commit@7ff36ad5e387afd31eaeb06bb954264358eb470d": {
+    "total_count": 3,
+    "check_runs": [
+      {
+        "id": 18352826548,
+        "name": "test / Test (lts/*)",
+        "node_id": "CR_kwDOI_4UOM8AAAAERenotA",
+        "head_sha": "7ff36ad5e387afd31eaeb06bb954264358eb470d",
+        "external_id": "58459340-cb8b-5a87-e775-0ce351141a4a",
+        "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/check-runs/18352826548",
+        "html_url": "https://github.com/semantic-release-extras/test-verified-git-commit/actions/runs/6750442282/job/18352826548",
+        "details_url": "https://github.com/semantic-release-extras/test-verified-git-commit/actions/runs/6750442282/job/18352826548",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2023-11-03T21:39:09Z",
+        "completed_at": "2023-11-03T21:39:30Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 0,
+          "annotations_url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/check-runs/18352826548/annotations"
+        },
+        "check_suite": {
+          "id": 17896628136
+        },
+        "app": {
+          "id": 15368,
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2019-12-10T19:04:12Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "checks": "write",
+            "contents": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "project",
+            "project_card",
+            "project_column",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/pulls/18",
+            "id": 1518311978,
+            "number": 18,
+            "head": {
+              "ref": "renovate/major-semantic-release-monorepo",
+              "sha": "7ff36ad5e387afd31eaeb06bb954264358eb470d",
+              "repo": {
+                "id": 603853880,
+                "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit",
+                "name": "test-verified-git-commit"
+              }
+            },
+            "base": {
+              "ref": "master",
+              "sha": "44d4cfd2bd79c77b6d677b123596ac7febe7adcf",
+              "repo": {
+                "id": 603853880,
+                "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit",
+                "name": "test-verified-git-commit"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 18352826418,
+        "name": "test / Test (lts/-1)",
+        "node_id": "CR_kwDOI_4UOM8AAAAERenoMg",
+        "head_sha": "7ff36ad5e387afd31eaeb06bb954264358eb470d",
+        "external_id": "1b382e7b-9ec4-5a35-2699-726d6e2f8372",
+        "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/check-runs/18352826418",
+        "html_url": "https://github.com/semantic-release-extras/test-verified-git-commit/actions/runs/6750442282/job/18352826418",
+        "details_url": "https://github.com/semantic-release-extras/test-verified-git-commit/actions/runs/6750442282/job/18352826418",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2023-11-03T21:39:07Z",
+        "completed_at": "2023-11-03T21:39:23Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 0,
+          "annotations_url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/check-runs/18352826418/annotations"
+        },
+        "check_suite": {
+          "id": 17896628136
+        },
+        "app": {
+          "id": 15368,
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2019-12-10T19:04:12Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "checks": "write",
+            "contents": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "project",
+            "project_card",
+            "project_column",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/pulls/18",
+            "id": 1518311978,
+            "number": 18,
+            "head": {
+              "ref": "renovate/major-semantic-release-monorepo",
+              "sha": "7ff36ad5e387afd31eaeb06bb954264358eb470d",
+              "repo": {
+                "id": 603853880,
+                "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit",
+                "name": "test-verified-git-commit"
+              }
+            },
+            "base": {
+              "ref": "master",
+              "sha": "44d4cfd2bd79c77b6d677b123596ac7febe7adcf",
+              "repo": {
+                "id": 603853880,
+                "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit",
+                "name": "test-verified-git-commit"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 18352826271,
+        "name": "test / Test (lts/-2)",
+        "node_id": "CR_kwDOI_4UOM8AAAAERennnw",
+        "head_sha": "7ff36ad5e387afd31eaeb06bb954264358eb470d",
+        "external_id": "95d28576-85af-5486-de13-6b8a5ed4eb5a",
+        "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/check-runs/18352826271",
+        "html_url": "https://github.com/semantic-release-extras/test-verified-git-commit/actions/runs/6750442282/job/18352826271",
+        "details_url": "https://github.com/semantic-release-extras/test-verified-git-commit/actions/runs/6750442282/job/18352826271",
+        "status": "completed",
+        "conclusion": "success",
+        "started_at": "2023-11-03T21:39:09Z",
+        "completed_at": "2023-11-03T21:39:27Z",
+        "output": {
+          "title": null,
+          "summary": null,
+          "text": null,
+          "annotations_count": 0,
+          "annotations_url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/check-runs/18352826271/annotations"
+        },
+        "check_suite": {
+          "id": 17896628136
+        },
+        "app": {
+          "id": 15368,
+          "slug": "github-actions",
+          "node_id": "MDM6QXBwMTUzNjg=",
+          "owner": {
+            "login": "github",
+            "id": 9919,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github",
+            "html_url": "https://github.com/github",
+            "followers_url": "https://api.github.com/users/github/followers",
+            "following_url": "https://api.github.com/users/github/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+            "organizations_url": "https://api.github.com/users/github/orgs",
+            "repos_url": "https://api.github.com/users/github/repos",
+            "events_url": "https://api.github.com/users/github/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github/received_events",
+            "type": "Organization",
+            "site_admin": false
+          },
+          "name": "GitHub Actions",
+          "description": "Automate your workflow from idea to production",
+          "external_url": "https://help.github.com/en/actions",
+          "html_url": "https://github.com/apps/github-actions",
+          "created_at": "2018-07-30T09:30:17Z",
+          "updated_at": "2019-12-10T19:04:12Z",
+          "permissions": {
+            "actions": "write",
+            "administration": "read",
+            "checks": "write",
+            "contents": "write",
+            "deployments": "write",
+            "discussions": "write",
+            "issues": "write",
+            "merge_queues": "write",
+            "metadata": "read",
+            "packages": "write",
+            "pages": "write",
+            "pull_requests": "write",
+            "repository_hooks": "write",
+            "repository_projects": "write",
+            "security_events": "write",
+            "statuses": "write",
+            "vulnerability_alerts": "read"
+          },
+          "events": [
+            "branch_protection_rule",
+            "check_run",
+            "check_suite",
+            "create",
+            "delete",
+            "deployment",
+            "deployment_status",
+            "discussion",
+            "discussion_comment",
+            "fork",
+            "gollum",
+            "issues",
+            "issue_comment",
+            "label",
+            "merge_group",
+            "milestone",
+            "page_build",
+            "project",
+            "project_card",
+            "project_column",
+            "public",
+            "pull_request",
+            "pull_request_review",
+            "pull_request_review_comment",
+            "push",
+            "registry_package",
+            "release",
+            "repository",
+            "repository_dispatch",
+            "status",
+            "watch",
+            "workflow_dispatch",
+            "workflow_run"
+          ]
+        },
+        "pull_requests": [
+          {
+            "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit/pulls/18",
+            "id": 1518311978,
+            "number": 18,
+            "head": {
+              "ref": "renovate/major-semantic-release-monorepo",
+              "sha": "7ff36ad5e387afd31eaeb06bb954264358eb470d",
+              "repo": {
+                "id": 603853880,
+                "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit",
+                "name": "test-verified-git-commit"
+              }
+            },
+            "base": {
+              "ref": "master",
+              "sha": "44d4cfd2bd79c77b6d677b123596ac7febe7adcf",
+              "repo": {
+                "id": 603853880,
+                "url": "https://api.github.com/repos/semantic-release-extras/test-verified-git-commit",
+                "name": "test-verified-git-commit"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "semantic-release-action/typescript@4f4b42aa0f3cae4360e27c55f9294da51fec7d94": {
+    "total_count": 0,
+    "check_runs": []
+  }
+}

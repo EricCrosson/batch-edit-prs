@@ -15,7 +15,7 @@ export class GithubClientInterface {
    * @param {string} query - The query to use for the search.
    * @returns {AsyncIterable<Array<Object>>} An asynchronous iterator that yields arrays of issues and pull requests.
    */
-  async search(query) {}
+  async *search(query) {}
 
   /**
    * Returns the pull request for the given repository and pull request number.
@@ -40,6 +40,17 @@ export class GithubClientInterface {
   async allChecksPassed(args) {}
 
   /**
+   * Approves the specified pull request.
+   *
+   * @param {Object} args - The arguments for the function.
+   * @param {string} args.owner - The owner of the repository.
+   * @param {string} args.repo - The name of the repository.
+   * @param {number} args.pullRequestNumber - The number of the pull request.
+   * @returns {Promise<void>} A promise that resolves when the pull request has been approved.
+   */
+  async approvePullRequest(args) {}
+
+  /**
    * Merges the specified pull request.
    *
    * @param {Object} args - The arguments for the function.
@@ -49,4 +60,15 @@ export class GithubClientInterface {
    * @returns {Promise<void>} A promise that resolves when the pull request has been merged.
    */
   async mergePullRequest(args) {}
+
+  /**
+   * Closes the specified pull request.
+   *
+   * @param {Object} args - The arguments for the function.
+   * @param {string} args.owner - The owner of the repository.
+   * @param {string} args.repo - The name of the repository.
+   * @param {number} args.pullRequestNumber - The number of the pull request.
+   * @returns {Promise<void>} A promise that resolves when the pull request has been closed.
+   */
+  async closePullRequest(args) {}
 }
