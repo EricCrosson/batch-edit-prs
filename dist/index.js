@@ -8803,7 +8803,7 @@ function display(pr, maxTitleLength) {
 function validateCliArguments(args) {
   const helpFlag = args.includes("--help");
   const pattern = args[0];
-  const action = args[1];
+  let action = args[1];
   let errors = [];
   if (helpFlag) {
     console.log(
@@ -8827,7 +8827,7 @@ Usage: batch-edit-prs <pattern> <action>
     errors.push("Error: Pattern argument is required.");
   }
   if (action === void 0 || action.length === 0) {
-    errors.push("Error: Action argument is required.");
+    action = "search";
   } else if (action !== "search" && action !== "approve" && action !== "merge" && action !== "approve and merge" && action !== "close") {
     errors.push(
       "Error: Invalid action. Must be one of: search, approve, merge, approve and merge, close."

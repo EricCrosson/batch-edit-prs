@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.3.1...v1.4.0) (2023-11-12)
+
+
+### Features
+
+* default action to `search` ([eb9087d](https://github.com/EricCrosson/batch-edit-prs/commit/eb9087d0126b5ee78a09eb3c65c27afea665918c))
+
 ## [1.3.1](https://github.com/EricCrosson/batch-edit-prs/compare/v1.3.0...v1.3.1) (2023-11-12)
 
 
