@@ -3995,14 +3995,28 @@ var GithubClient = class {
   }
 };
 
+// src/template.js
+async function templateSearchString(github, query) {
+  let templatedQuery = query;
+  if (/:me\b/.test(templatedQuery)) {
+    const username = await github.getUsername();
+    templatedQuery = templatedQuery.replace(
+      new RegExp(":me", "g"),
+      `:${username}`
+    );
+  }
+  return templatedQuery;
+}
+
 // src/lib.js
 async function batchEditPullRequests(github, output, args) {
   const { pattern, action } = args;
-  const username = await github.getUsername();
   const prs = [];
-  for await (const issue of github.search(
-    `is:pull-request is:open assignee:${username} ${pattern}`
-  )) {
+  const query = await templateSearchString(
+    github,
+    `is:pull-request is:open ${pattern}`
+  );
+  for await (const issue of github.search(query)) {
     const pullRequestNumber = issue.number;
     const [owner, repo] = issue.repository_url.split("/").slice(-2);
     const pr = await github.getPullRequest({
@@ -4025,23 +4039,23 @@ async function batchEditPullRequests(github, output, args) {
         break;
       case "approve":
         github.approvePullRequest(pr);
-        output.write(`- \u2714 ${display(pr, maxTitleLength)}
+        output.write(`\u2714 ${display(pr, maxTitleLength)}
 `);
         break;
       case "approve and merge":
         github.approvePullRequest(pr);
         github.mergePullRequest(pr);
-        output.write(`- \u{1F6A2} ${display(pr, maxTitleLength)}
+        output.write(`\u{1F6A2} ${display(pr, maxTitleLength)}
 `);
         break;
       case "merge":
         github.mergePullRequest(pr);
-        output.write(`- \u{1F6A2} ${display(pr, maxTitleLength)}
+        output.write(`\u{1F6A2} ${display(pr, maxTitleLength)}
 `);
         break;
       case "close":
         github.closePullRequest(pr);
-        output.write(`- \u{1F6D1} ${display(pr, maxTitleLength)}
+        output.write(`\u{1F6D1} ${display(pr, maxTitleLength)}
 `);
         break;
     }

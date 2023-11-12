@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.1.1...v1.2.0) (2023-11-12)
+
+
+### Bug Fixes
+
+* simplify output ([becf499](https://github.com/EricCrosson/batch-edit-prs/commit/becf499f0c8ab822ac02a7d565f31b76c9f4c7f4))
+
+
+### Features
+
+* treat `:me` as a template ([512218c](https://github.com/EricCrosson/batch-edit-prs/commit/512218c22b738e545a8833e0fa8aa12b3bb109ce)), closes [#6](https://github.com/EricCrosson/batch-edit-prs/issues/6)
+
 ## [1.1.1](https://github.com/EricCrosson/batch-edit-prs/compare/v1.1.0...v1.1.1) (2023-11-12)
 
 
