@@ -16,9 +16,18 @@
     "test/"
   ],
   "scripts": {
+    "build": "esbuild src/main.js --bundle --platform=node --outfile=dist/index.js",
     "test": "node --test test/test-*"
   },
   "dependencies": {
     "@octokit/rest": "20.0.2"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "esbuild": "0.19.5",
+    "semantic-release": "22.0.7",
+    "semantic-release-major-tag": "0.3.2"
   }
 }

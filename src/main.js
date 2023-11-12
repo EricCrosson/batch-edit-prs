@@ -12,7 +12,6 @@ async function main() {
 
   const args = {
     pattern,
-    // TODO: read action from stdin
     action,
   };
 

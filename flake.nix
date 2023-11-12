@@ -42,5 +42,13 @@
         '';
       };
     });
+
+    packages = forEachSystem (system: {
+      default = nixpkgs.legacyPackages.${system}.writeShellApplication {
+        name = "batch-edit-prs";
+        runtimeInputs = with nixpkgs.legacyPackages.${system}; [nodejs_20];
+        text = builtins.readFile ./dist/index.js;
+      };
+    });
   };
 }

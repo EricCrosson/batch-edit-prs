@@ -20,12 +20,17 @@ export function validateCliArguments(args) {
   let errors = [];
 
   if (helpFlag) {
-    console.log(`Usage: script.js <pattern> <action>
-    --help    Show this help message.
-    <pattern> Required pattern to match PR titles.
-    <action>  Action to take on matching PRs. Must be one of:
-                "search", "approve", "merge", "approve and merge", "close".
-`);
+    console.log(
+      `
+Usage: batch-edit-prs <pattern> <action>
+
+  <pattern>    Search string to use to identify PRs to act on
+  <action>     Action to take on matching PRs. Must be one of:
+                 "search", "approve", "merge", "approve and merge", "close"
+
+  --help       Show this help message
+`.trimEnd(),
+    );
     process.exit(0);
   }
 
