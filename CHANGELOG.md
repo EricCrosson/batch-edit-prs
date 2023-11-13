@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.1...v1.4.2) (2023-11-13)
+
+
+### Bug Fixes
+
+* use commonJS in the Nix flake ([8fee87d](https://github.com/EricCrosson/batch-edit-prs/commit/8fee87da2cc22a6319c009602ebd7aeb031cd3c2))
+
 ## [1.4.1](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.0...v1.4.1) (2023-11-12)
 
 
