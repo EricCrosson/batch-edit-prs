@@ -1,3 +1,11 @@
+## [1.4.3](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.2...v1.4.3) (2023-11-20)
+
+
+### Bug Fixes
+
+* only operate on each PR once ([a406f2b](https://github.com/EricCrosson/batch-edit-prs/commit/a406f2b233bcc8d69aaeb60e3cc3b5c768ef6446))
+* pass correct arguments to GitHub API ([d91a534](https://github.com/EricCrosson/batch-edit-prs/commit/d91a5344c9b96b2aa4b21ea6aad1376e77fcf49c))
+
 ## [1.4.2](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.1...v1.4.2) (2023-11-13)
 
 

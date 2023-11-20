@@ -8712,6 +8712,7 @@ async function templateSearchString(github, query) {
 async function batchEditPullRequests(github, args) {
   const { pattern, action } = args;
   const prs = [];
+  const seenPrs = /* @__PURE__ */ new Set();
   const query = await templateSearchString(
     github,
     `is:pull-request is:open ${pattern}`
@@ -8725,7 +8726,8 @@ async function batchEditPullRequests(github, args) {
       pullRequestNumber
     });
     const isMergeable = await prIsMergeable({ github, owner, repo, pr });
-    if (isMergeable) {
+    if (isMergeable && !seenPrs.has(pr.html_url)) {
+      seenPrs.add(pr.html_url);
       prs.push(pr);
     }
   }
@@ -8741,6 +8743,11 @@ async function batchEditPullRequests(github, args) {
         merged: action === "merge" || action === "approve and merge",
         closed: action === "close"
       });
+      const prMetadata = {
+        owner: pr.head.repo.owner.login,
+        repo: pr.head.repo.name,
+        pullRequestNumber: pr.number
+      };
       switch (action) {
         case "search":
           return {
@@ -8752,30 +8759,29 @@ async function batchEditPullRequests(github, args) {
           return {
             title: `\u{1F58A}\uFE0F ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.approvePullRequest(pr);
+              await github.approvePullRequest(prMetadata);
             }
           };
         case "approve and merge":
           return {
             title: `\u{1F6A2} ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.approvePullRequest(pr);
-              await github.mergePullRequest(pr);
+              await github.approvePullRequest(prMetadata);
+              await github.mergePullRequest(prMetadata);
             }
           };
         case "merge":
           return {
-            title: `\u{1F6A2} ${display(pr, maxTitleLength)}
-`,
+            title: `\u{1F6A2} ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.mergePullRequest(pr);
+              await github.mergePullRequest(prMetadata);
             }
           };
         case "close":
           return {
             title: `\u{1F6AE} ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.closePullRequest(pr);
+              await github.closePullRequest(prMetadata);
             }
           };
       }
