@@ -34,6 +34,8 @@ export async function batchEditPullRequests(github, args) {
    * @type {Array<Object>}
    */
   const prs = [];
+  // I'm not sure yet why search sometimes returns duplicates
+  const seenPrs = new Set();
 
   const query = await templateSearchString(
     github,
@@ -50,7 +52,8 @@ export async function batchEditPullRequests(github, args) {
     });
 
     const isMergeable = await prIsMergeable({ github, owner, repo, pr });
-    if (isMergeable) {
+    if (isMergeable && !seenPrs.has(pr.html_url)) {
+      seenPrs.add(pr.html_url);
       prs.push(pr);
     }
   }
