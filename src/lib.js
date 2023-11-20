@@ -78,6 +78,12 @@ export async function batchEditPullRequests(github, args) {
         closed: action === "close",
       });
 
+      const prMetadata = {
+        owner: pr.head.repo.owner.login,
+        repo: pr.head.repo.name,
+        pullRequestNumber: pr.number,
+      };
+
       switch (action) {
         case "search":
           return {
@@ -88,29 +94,29 @@ export async function batchEditPullRequests(github, args) {
           return {
             title: `🖊️ ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.approvePullRequest(pr);
+              await github.approvePullRequest(prMetadata);
             },
           };
         case "approve and merge":
           return {
             title: `🚢 ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.approvePullRequest(pr);
-              await github.mergePullRequest(pr);
+              await github.approvePullRequest(prMetadata);
+              await github.mergePullRequest(prMetadata);
             },
           };
         case "merge":
           return {
-            title: `🚢 ${display(pr, maxTitleLength)}\n`,
+            title: `🚢 ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.mergePullRequest(pr);
+              await github.mergePullRequest(prMetadata);
             },
           };
         case "close":
           return {
             title: `🚮 ${display(pr, maxTitleLength)}`,
             task: async () => {
-              await github.closePullRequest(pr);
+              await github.closePullRequest(prMetadata);
             },
           };
       }
