@@ -36,7 +36,7 @@ Usage: batch-edit-prs <pattern> <action>
 Use `search` to show PRs matching your query:
 
 ```
-$ batch-edit-pr "author:app/renovate assignee:me semantic-release to v22" "search"
+$ batch-edit-pr "author:app/renovate assignee:@me semantic-release to v22" "search"
 
 🔍 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
 🔍 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
@@ -47,7 +47,7 @@ $ batch-edit-pr "author:app/renovate assignee:me semantic-release to v22" "searc
 Operate on that selection with a different action:
 
 ```
-$ batch-edit-pr "author:app/renovate assignee:me semantic-release to v22" "approve and merge"
+$ batch-edit-pr "author:app/renovate assignee:@me semantic-release to v22" "approve and merge"
 
 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/github-actions/pull/24]
 🚢 fix(deps): update dependency semantic-release to v22    [https://github.com/semantic-release-action/rust/pull/75]
