@@ -5903,7 +5903,8 @@ function stringWidth3(string, options = {}) {
     return 0;
   }
   let width = 0;
-  for (const { segment: character } of new Intl.Segmenter().segment(string)) {
+  const eastAsianWidthOptions = { ambiguousAsWide: !ambiguousIsNarrow };
+  for (const { segment: character } of segmenter.segment(string)) {
     const codePoint = character.codePointAt(0);
     if (codePoint <= 31 || codePoint >= 127 && codePoint <= 159) {
       continue;
@@ -5915,16 +5916,17 @@ function stringWidth3(string, options = {}) {
       width += 2;
       continue;
     }
-    width += eastAsianWidth(codePoint, { ambiguousAsWide: !ambiguousIsNarrow });
+    width += eastAsianWidth(codePoint, eastAsianWidthOptions);
   }
   return width;
 }
-var import_emoji_regex3;
+var import_emoji_regex3, segmenter;
 var init_string_width3 = __esm({
   "node_modules/listr2/node_modules/string-width/index.js"() {
     init_strip_ansi3();
     init_get_east_asian_width();
     import_emoji_regex3 = __toESM(require_emoji_regex3(), 1);
+    segmenter = new Intl.Segmenter();
   }
 });
 
