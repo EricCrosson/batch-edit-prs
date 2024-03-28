@@ -6553,7 +6553,6 @@ var import_stream = require("stream");
 var import_os3 = require("os");
 var import_rfdc = __toESM(require_rfdc(), 1);
 var import_crypto = require("crypto");
-var import_stream2 = require("stream");
 var __defProp2 = Object.defineProperty;
 var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
 var ANSI_ESCAPE = "\x1B[";
@@ -6603,9 +6602,13 @@ var BaseEventMap = class {
   }
 };
 function isObservable(obj) {
-  return !!obj && typeof obj.lift === "function" && typeof obj.subscribe === "function";
+  return !!obj && typeof obj === "object" && typeof obj.lift === "function" && typeof obj.subscribe === "function";
 }
 __name(isObservable, "isObservable");
+function isReadable(obj) {
+  return !!obj && typeof obj === "object" && obj.readable === true && typeof obj.read === "function" && typeof obj.on === "function";
+}
+__name(isReadable, "isReadable");
 function isUnicodeSupported() {
   return !!process.env[
     "LISTR_FORCE_UNICODE"
@@ -8602,7 +8605,7 @@ var Task = class extends ListrTaskEventManager {
         result = result.run(context);
       } else if (result instanceof Promise) {
         result = result.then(handleResult);
-      } else if (result instanceof import_stream2.Readable) {
+      } else if (isReadable(result)) {
         result = new Promise((resolve, reject) => {
           result.on("data", (data) => {
             this.output$ = data.toString();
@@ -8780,15 +8783,7 @@ var Listr = class {
     this.rendererSelection = renderer.selection;
     this.add(task ?? []);
     if (this.options.registerSignalListeners) {
-      process.once("SIGINT", () => {
-        this.tasks.forEach(async (task2) => {
-          if (task2.isPending()) {
-            task2.state$ = "FAILED";
-          }
-        });
-        this.renderer.end(new Error("Interrupted."));
-        process.exit(127);
-      }).setMaxListeners(0);
+      process.once("SIGINT", this.signalHandler.bind(this)).setMaxListeners(0);
     }
     if (this.options?.forceTTY || process.env[
       "LISTR_FORCE_TTY"
@@ -8830,9 +8825,11 @@ var Listr = class {
     try {
       await Promise.all(this.tasks.map((task) => this.concurrency.add(() => this.runTask(task))));
       this.renderer.end();
+      process.removeAllListeners("SIGINT");
     } catch (err) {
       if (this.options.exitOnError !== false) {
         this.renderer.end(err);
+        process.removeAllListeners("SIGINT");
         throw err;
       }
     }
@@ -8861,6 +8858,18 @@ var Listr = class {
       return;
     }
     return new TaskWrapper(task).run(this.ctx);
+  }
+  signalHandler() {
+    this.tasks?.forEach(async (task) => {
+      if (task.isPending()) {
+        task.state$ = "FAILED";
+      }
+    });
+    if (!this.parentTask) {
+      this.renderer.end(new Error("Interrupted."));
+      process.removeAllListeners("SIGINT");
+      process.exit(127);
+    }
   }
 };
 
