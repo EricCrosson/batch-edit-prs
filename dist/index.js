@@ -8783,7 +8783,8 @@ var Listr = class {
     this.rendererSelection = renderer.selection;
     this.add(task ?? []);
     if (this.options.registerSignalListeners) {
-      process.once("SIGINT", this.signalHandler.bind(this)).setMaxListeners(0);
+      this.boundSignalHandler = this.signalHandler.bind(this);
+      process.once("SIGINT", this.boundSignalHandler).setMaxListeners(0);
     }
     if (this.options?.forceTTY || process.env[
       "LISTR_FORCE_TTY"
@@ -8810,6 +8811,7 @@ var Listr = class {
   rendererClass;
   rendererClassOptions;
   rendererSelection;
+  boundSignalHandler;
   concurrency;
   renderer;
   add(tasks) {
@@ -8825,11 +8827,11 @@ var Listr = class {
     try {
       await Promise.all(this.tasks.map((task) => this.concurrency.add(() => this.runTask(task))));
       this.renderer.end();
-      process.removeAllListeners("SIGINT");
+      process.removeListener("SIGINT", this.boundSignalHandler);
     } catch (err) {
       if (this.options.exitOnError !== false) {
         this.renderer.end(err);
-        process.removeAllListeners("SIGINT");
+        process.removeListener("SIGINT", this.boundSignalHandler);
         throw err;
       }
     }
