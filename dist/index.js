@@ -8814,9 +8814,31 @@ var Listr = class {
   boundSignalHandler;
   concurrency;
   renderer;
+  /**
+   * Whether this is the root task.
+   */
+  isRoot() {
+    return !this.parentTask;
+  }
+  /**
+   * Whether this is a subtask of another task list.
+   */
+  isSubtask() {
+    return !!this.parentTask;
+  }
+  /**
+   * Add tasks to current task list.
+   *
+   * @see {@link https://listr2.kilic.dev/task/task.html}
+   */
   add(tasks) {
     this.tasks.push(...this.generate(tasks));
   }
+  /**
+   * Run the task list.
+   *
+   * @see {@link https://listr2.kilic.dev/listr/listr.html#run-the-generated-task-list}
+   */
   async run(context) {
     if (!this.renderer) {
       this.renderer = new this.rendererClass(this.tasks, this.rendererClassOptions, this.events);
@@ -8867,7 +8889,7 @@ var Listr = class {
         task.state$ = "FAILED";
       }
     });
-    if (!this.parentTask) {
+    if (this.isRoot()) {
       this.renderer.end(new Error("Interrupted."));
       process.exit(127);
     }
