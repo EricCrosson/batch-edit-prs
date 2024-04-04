@@ -8849,11 +8849,11 @@ var Listr = class {
     try {
       await Promise.all(this.tasks.map((task) => this.concurrency.add(() => this.runTask(task))));
       this.renderer.end();
-      process.removeListener("SIGINT", this.boundSignalHandler);
+      this.removeSignalHandler();
     } catch (err) {
       if (this.options.exitOnError !== false) {
         this.renderer.end(err);
-        process.removeListener("SIGINT", this.boundSignalHandler);
+        this.removeSignalHandler();
         throw err;
       }
     }
@@ -8892,6 +8892,11 @@ var Listr = class {
     if (this.isRoot()) {
       this.renderer.end(new Error("Interrupted."));
       process.exit(127);
+    }
+  }
+  removeSignalHandler() {
+    if (this.boundSignalHandler) {
+      process.removeListener("SIGINT", this.boundSignalHandler);
     }
   }
 };
