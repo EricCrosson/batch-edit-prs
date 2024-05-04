@@ -20,7 +20,7 @@
     "test": "node --test test/test-*"
   },
   "dependencies": {
-    "@octokit/rest": "20.1.0",
+    "@octokit/rest": "20.1.1",
     "listr2": "8.2.1"
   },
   "devDependencies": {
