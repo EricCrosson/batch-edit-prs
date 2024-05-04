@@ -1,3 +1,10 @@
+## [1.4.13](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.12...v1.4.13) (2024-05-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @octokit/rest to v20.1.1 ([348cc82](https://github.com/EricCrosson/batch-edit-prs/commit/348cc82583499ed08251d56715e30331eb1b21e5))
+
 ## [1.4.12](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.11...v1.4.12) (2024-04-04)
 
 
