@@ -203,14 +203,11 @@ var require_is_plain_object = __commonJS({
     }
     function isPlainObject(o) {
       var ctor, prot;
-      if (isObject(o) === false)
-        return false;
+      if (isObject(o) === false) return false;
       ctor = o.constructor;
-      if (ctor === void 0)
-        return true;
+      if (ctor === void 0) return true;
       prot = ctor.prototype;
-      if (isObject(prot) === false)
-        return false;
+      if (isObject(prot) === false) return false;
       if (prot.hasOwnProperty("isPrototypeOf") === false) {
         return false;
       }
@@ -576,8 +573,7 @@ var require_wrappy = __commonJS({
   "node_modules/wrappy/wrappy.js"(exports2, module2) {
     module2.exports = wrappy;
     function wrappy(fn, cb) {
-      if (fn && cb)
-        return wrappy(fn)(cb);
+      if (fn && cb) return wrappy(fn)(cb);
       if (typeof fn !== "function")
         throw new TypeError("need wrapper function");
       Object.keys(fn).forEach(function(k) {
@@ -624,8 +620,7 @@ var require_once = __commonJS({
     });
     function once(fn) {
       var f = function() {
-        if (f.called)
-          return f.value;
+        if (f.called) return f.value;
         f.called = true;
         return f.value = fn.apply(this, arguments);
       };
@@ -3889,8 +3884,7 @@ var require_eventemitter3 = __commonJS({
     }
     if (Object.create) {
       Events.prototype = /* @__PURE__ */ Object.create(null);
-      if (!new Events().__proto__)
-        prefix = false;
+      if (!new Events().__proto__) prefix = false;
     }
     function EE(fn, context, once) {
       this.fn = fn;
@@ -3902,19 +3896,14 @@ var require_eventemitter3 = __commonJS({
         throw new TypeError("The listener must be a function");
       }
       var listener = new EE(fn, context || emitter, once), evt = prefix ? prefix + event : event;
-      if (!emitter._events[evt])
-        emitter._events[evt] = listener, emitter._eventsCount++;
-      else if (!emitter._events[evt].fn)
-        emitter._events[evt].push(listener);
-      else
-        emitter._events[evt] = [emitter._events[evt], listener];
+      if (!emitter._events[evt]) emitter._events[evt] = listener, emitter._eventsCount++;
+      else if (!emitter._events[evt].fn) emitter._events[evt].push(listener);
+      else emitter._events[evt] = [emitter._events[evt], listener];
       return emitter;
     }
     function clearEvent(emitter, evt) {
-      if (--emitter._eventsCount === 0)
-        emitter._events = new Events();
-      else
-        delete emitter._events[evt];
+      if (--emitter._eventsCount === 0) emitter._events = new Events();
+      else delete emitter._events[evt];
     }
     function EventEmitter2() {
       this._events = new Events();
@@ -3922,11 +3911,9 @@ var require_eventemitter3 = __commonJS({
     }
     EventEmitter2.prototype.eventNames = function eventNames() {
       var names = [], events, name;
-      if (this._eventsCount === 0)
-        return names;
+      if (this._eventsCount === 0) return names;
       for (name in events = this._events) {
-        if (has.call(events, name))
-          names.push(prefix ? name.slice(1) : name);
+        if (has.call(events, name)) names.push(prefix ? name.slice(1) : name);
       }
       if (Object.getOwnPropertySymbols) {
         return names.concat(Object.getOwnPropertySymbols(events));
@@ -3935,10 +3922,8 @@ var require_eventemitter3 = __commonJS({
     };
     EventEmitter2.prototype.listeners = function listeners(event) {
       var evt = prefix ? prefix + event : event, handlers = this._events[evt];
-      if (!handlers)
-        return [];
-      if (handlers.fn)
-        return [handlers.fn];
+      if (!handlers) return [];
+      if (handlers.fn) return [handlers.fn];
       for (var i = 0, l = handlers.length, ee = new Array(l); i < l; i++) {
         ee[i] = handlers[i].fn;
       }
@@ -3946,20 +3931,16 @@ var require_eventemitter3 = __commonJS({
     };
     EventEmitter2.prototype.listenerCount = function listenerCount(event) {
       var evt = prefix ? prefix + event : event, listeners = this._events[evt];
-      if (!listeners)
-        return 0;
-      if (listeners.fn)
-        return 1;
+      if (!listeners) return 0;
+      if (listeners.fn) return 1;
       return listeners.length;
     };
     EventEmitter2.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
       var evt = prefix ? prefix + event : event;
-      if (!this._events[evt])
-        return false;
+      if (!this._events[evt]) return false;
       var listeners = this._events[evt], len = arguments.length, args, i;
       if (listeners.fn) {
-        if (listeners.once)
-          this.removeListener(event, listeners.fn, void 0, true);
+        if (listeners.once) this.removeListener(event, listeners.fn, void 0, true);
         switch (len) {
           case 1:
             return listeners.fn.call(listeners.context), true;
@@ -3981,8 +3962,7 @@ var require_eventemitter3 = __commonJS({
       } else {
         var length = listeners.length, j;
         for (i = 0; i < length; i++) {
-          if (listeners[i].once)
-            this.removeListener(event, listeners[i].fn, void 0, true);
+          if (listeners[i].once) this.removeListener(event, listeners[i].fn, void 0, true);
           switch (len) {
             case 1:
               listeners[i].fn.call(listeners[i].context);
@@ -3997,10 +3977,9 @@ var require_eventemitter3 = __commonJS({
               listeners[i].fn.call(listeners[i].context, a1, a2, a3);
               break;
             default:
-              if (!args)
-                for (j = 1, args = new Array(len - 1); j < len; j++) {
-                  args[j - 1] = arguments[j];
-                }
+              if (!args) for (j = 1, args = new Array(len - 1); j < len; j++) {
+                args[j - 1] = arguments[j];
+              }
               listeners[i].fn.apply(listeners[i].context, args);
           }
         }
@@ -4015,8 +3994,7 @@ var require_eventemitter3 = __commonJS({
     };
     EventEmitter2.prototype.removeListener = function removeListener(event, fn, context, once) {
       var evt = prefix ? prefix + event : event;
-      if (!this._events[evt])
-        return this;
+      if (!this._events[evt]) return this;
       if (!fn) {
         clearEvent(this, evt);
         return this;
@@ -4032,10 +4010,8 @@ var require_eventemitter3 = __commonJS({
             events.push(listeners[i]);
           }
         }
-        if (events.length)
-          this._events[evt] = events.length === 1 ? events[0] : events;
-        else
-          clearEvent(this, evt);
+        if (events.length) this._events[evt] = events.length === 1 ? events[0] : events;
+        else clearEvent(this, evt);
       }
       return this;
     };
@@ -4043,8 +4019,7 @@ var require_eventemitter3 = __commonJS({
       var evt;
       if (event) {
         evt = prefix ? prefix + event : event;
-        if (this._events[evt])
-          clearEvent(this, evt);
+        if (this._events[evt]) clearEvent(this, evt);
       } else {
         this._events = new Events();
         this._eventsCount = 0;
@@ -4074,19 +4049,28 @@ var require_rfdc = __commonJS({
     }
     function rfdc2(opts) {
       opts = opts || {};
-      if (opts.circles)
-        return rfdcCircles(opts);
+      if (opts.circles) return rfdcCircles(opts);
+      const constructorHandlers = /* @__PURE__ */ new Map();
+      constructorHandlers.set(Date, (o) => new Date(o));
+      constructorHandlers.set(Map, (o, fn) => new Map(cloneArray(Array.from(o), fn)));
+      constructorHandlers.set(Set, (o, fn) => new Set(cloneArray(Array.from(o), fn)));
+      if (opts.constructorHandlers) {
+        for (const handler2 of opts.constructorHandlers) {
+          constructorHandlers.set(handler2[0], handler2[1]);
+        }
+      }
+      let handler = null;
       return opts.proto ? cloneProto : clone2;
       function cloneArray(a, fn) {
-        var keys = Object.keys(a);
-        var a2 = new Array(keys.length);
-        for (var i = 0; i < keys.length; i++) {
-          var k = keys[i];
-          var cur = a[k];
+        const keys = Object.keys(a);
+        const a2 = new Array(keys.length);
+        for (let i = 0; i < keys.length; i++) {
+          const k = keys[i];
+          const cur = a[k];
           if (typeof cur !== "object" || cur === null) {
             a2[k] = cur;
-          } else if (cur instanceof Date) {
-            a2[k] = new Date(cur);
+          } else if (cur.constructor !== Object && (handler = constructorHandlers.get(cur.constructor))) {
+            a2[k] = handler(cur, fn);
           } else if (ArrayBuffer.isView(cur)) {
             a2[k] = copyBuffer(cur);
           } else {
@@ -4096,29 +4080,19 @@ var require_rfdc = __commonJS({
         return a2;
       }
       function clone2(o) {
-        if (typeof o !== "object" || o === null)
-          return o;
-        if (o instanceof Date)
-          return new Date(o);
-        if (Array.isArray(o))
-          return cloneArray(o, clone2);
-        if (o instanceof Map)
-          return new Map(cloneArray(Array.from(o), clone2));
-        if (o instanceof Set)
-          return new Set(cloneArray(Array.from(o), clone2));
-        var o2 = {};
-        for (var k in o) {
-          if (Object.hasOwnProperty.call(o, k) === false)
-            continue;
-          var cur = o[k];
+        if (typeof o !== "object" || o === null) return o;
+        if (Array.isArray(o)) return cloneArray(o, clone2);
+        if (o.constructor !== Object && (handler = constructorHandlers.get(o.constructor))) {
+          return handler(o, clone2);
+        }
+        const o2 = {};
+        for (const k in o) {
+          if (Object.hasOwnProperty.call(o, k) === false) continue;
+          const cur = o[k];
           if (typeof cur !== "object" || cur === null) {
             o2[k] = cur;
-          } else if (cur instanceof Date) {
-            o2[k] = new Date(cur);
-          } else if (cur instanceof Map) {
-            o2[k] = new Map(cloneArray(Array.from(cur), clone2));
-          } else if (cur instanceof Set) {
-            o2[k] = new Set(cloneArray(Array.from(cur), clone2));
+          } else if (cur.constructor !== Object && (handler = constructorHandlers.get(cur.constructor))) {
+            o2[k] = handler(cur, clone2);
           } else if (ArrayBuffer.isView(cur)) {
             o2[k] = copyBuffer(cur);
           } else {
@@ -4128,27 +4102,18 @@ var require_rfdc = __commonJS({
         return o2;
       }
       function cloneProto(o) {
-        if (typeof o !== "object" || o === null)
-          return o;
-        if (o instanceof Date)
-          return new Date(o);
-        if (Array.isArray(o))
-          return cloneArray(o, cloneProto);
-        if (o instanceof Map)
-          return new Map(cloneArray(Array.from(o), cloneProto));
-        if (o instanceof Set)
-          return new Set(cloneArray(Array.from(o), cloneProto));
-        var o2 = {};
-        for (var k in o) {
-          var cur = o[k];
+        if (typeof o !== "object" || o === null) return o;
+        if (Array.isArray(o)) return cloneArray(o, cloneProto);
+        if (o.constructor !== Object && (handler = constructorHandlers.get(o.constructor))) {
+          return handler(o, cloneProto);
+        }
+        const o2 = {};
+        for (const k in o) {
+          const cur = o[k];
           if (typeof cur !== "object" || cur === null) {
             o2[k] = cur;
-          } else if (cur instanceof Date) {
-            o2[k] = new Date(cur);
-          } else if (cur instanceof Map) {
-            o2[k] = new Map(cloneArray(Array.from(cur), cloneProto));
-          } else if (cur instanceof Set) {
-            o2[k] = new Set(cloneArray(Array.from(cur), cloneProto));
+          } else if (cur.constructor !== Object && (handler = constructorHandlers.get(cur.constructor))) {
+            o2[k] = handler(cur, cloneProto);
           } else if (ArrayBuffer.isView(cur)) {
             o2[k] = copyBuffer(cur);
           } else {
@@ -4159,23 +4124,33 @@ var require_rfdc = __commonJS({
       }
     }
     function rfdcCircles(opts) {
-      var refs = [];
-      var refsNew = [];
+      const refs = [];
+      const refsNew = [];
+      const constructorHandlers = /* @__PURE__ */ new Map();
+      constructorHandlers.set(Date, (o) => new Date(o));
+      constructorHandlers.set(Map, (o, fn) => new Map(cloneArray(Array.from(o), fn)));
+      constructorHandlers.set(Set, (o, fn) => new Set(cloneArray(Array.from(o), fn)));
+      if (opts.constructorHandlers) {
+        for (const handler2 of opts.constructorHandlers) {
+          constructorHandlers.set(handler2[0], handler2[1]);
+        }
+      }
+      let handler = null;
       return opts.proto ? cloneProto : clone2;
       function cloneArray(a, fn) {
-        var keys = Object.keys(a);
-        var a2 = new Array(keys.length);
-        for (var i = 0; i < keys.length; i++) {
-          var k = keys[i];
-          var cur = a[k];
+        const keys = Object.keys(a);
+        const a2 = new Array(keys.length);
+        for (let i = 0; i < keys.length; i++) {
+          const k = keys[i];
+          const cur = a[k];
           if (typeof cur !== "object" || cur === null) {
             a2[k] = cur;
-          } else if (cur instanceof Date) {
-            a2[k] = new Date(cur);
+          } else if (cur.constructor !== Object && (handler = constructorHandlers.get(cur.constructor))) {
+            a2[k] = handler(cur, fn);
           } else if (ArrayBuffer.isView(cur)) {
             a2[k] = copyBuffer(cur);
           } else {
-            var index = refs.indexOf(cur);
+            const index = refs.indexOf(cur);
             if (index !== -1) {
               a2[k] = refsNew[index];
             } else {
@@ -4186,35 +4161,25 @@ var require_rfdc = __commonJS({
         return a2;
       }
       function clone2(o) {
-        if (typeof o !== "object" || o === null)
-          return o;
-        if (o instanceof Date)
-          return new Date(o);
-        if (Array.isArray(o))
-          return cloneArray(o, clone2);
-        if (o instanceof Map)
-          return new Map(cloneArray(Array.from(o), clone2));
-        if (o instanceof Set)
-          return new Set(cloneArray(Array.from(o), clone2));
-        var o2 = {};
+        if (typeof o !== "object" || o === null) return o;
+        if (Array.isArray(o)) return cloneArray(o, clone2);
+        if (o.constructor !== Object && (handler = constructorHandlers.get(o.constructor))) {
+          return handler(o, clone2);
+        }
+        const o2 = {};
         refs.push(o);
         refsNew.push(o2);
-        for (var k in o) {
-          if (Object.hasOwnProperty.call(o, k) === false)
-            continue;
-          var cur = o[k];
+        for (const k in o) {
+          if (Object.hasOwnProperty.call(o, k) === false) continue;
+          const cur = o[k];
           if (typeof cur !== "object" || cur === null) {
             o2[k] = cur;
-          } else if (cur instanceof Date) {
-            o2[k] = new Date(cur);
-          } else if (cur instanceof Map) {
-            o2[k] = new Map(cloneArray(Array.from(cur), clone2));
-          } else if (cur instanceof Set) {
-            o2[k] = new Set(cloneArray(Array.from(cur), clone2));
+          } else if (cur.constructor !== Object && (handler = constructorHandlers.get(cur.constructor))) {
+            o2[k] = handler(cur, clone2);
           } else if (ArrayBuffer.isView(cur)) {
             o2[k] = copyBuffer(cur);
           } else {
-            var i = refs.indexOf(cur);
+            const i = refs.indexOf(cur);
             if (i !== -1) {
               o2[k] = refsNew[i];
             } else {
@@ -4227,33 +4192,24 @@ var require_rfdc = __commonJS({
         return o2;
       }
       function cloneProto(o) {
-        if (typeof o !== "object" || o === null)
-          return o;
-        if (o instanceof Date)
-          return new Date(o);
-        if (Array.isArray(o))
-          return cloneArray(o, cloneProto);
-        if (o instanceof Map)
-          return new Map(cloneArray(Array.from(o), cloneProto));
-        if (o instanceof Set)
-          return new Set(cloneArray(Array.from(o), cloneProto));
-        var o2 = {};
+        if (typeof o !== "object" || o === null) return o;
+        if (Array.isArray(o)) return cloneArray(o, cloneProto);
+        if (o.constructor !== Object && (handler = constructorHandlers.get(o.constructor))) {
+          return handler(o, cloneProto);
+        }
+        const o2 = {};
         refs.push(o);
         refsNew.push(o2);
-        for (var k in o) {
-          var cur = o[k];
+        for (const k in o) {
+          const cur = o[k];
           if (typeof cur !== "object" || cur === null) {
             o2[k] = cur;
-          } else if (cur instanceof Date) {
-            o2[k] = new Date(cur);
-          } else if (cur instanceof Map) {
-            o2[k] = new Map(cloneArray(Array.from(cur), cloneProto));
-          } else if (cur instanceof Set) {
-            o2[k] = new Set(cloneArray(Array.from(cur), cloneProto));
+          } else if (cur.constructor !== Object && (handler = constructorHandlers.get(cur.constructor))) {
+            o2[k] = handler(cur, cloneProto);
           } else if (ArrayBuffer.isView(cur)) {
             o2[k] = copyBuffer(cur);
           } else {
-            var i = refs.indexOf(cur);
+            const i = refs.indexOf(cur);
             if (i !== -1) {
               o2[k] = refsNew[i];
             } else {
@@ -7215,7 +7171,7 @@ __name(parseTimer, "parseTimer");
 var PRESET_TIMER = {
   condition: true,
   field: parseTimer,
-  format: () => color.dim
+  format: /* @__PURE__ */ __name(() => color.dim, "format")
 };
 function parseTimestamp() {
   const now = /* @__PURE__ */ new Date();
@@ -7264,7 +7220,7 @@ var DefaultRenderer = class _DefaultRenderer {
     formatOutput: "wrap",
     pausedTimer: {
       ...PRESET_TIMER,
-      format: () => color.yellowBright
+      format: /* @__PURE__ */ __name(() => color.yellowBright, "format")
     }
   };
   static rendererTaskOptions = {
@@ -7501,7 +7457,7 @@ var DefaultRenderer = class _DefaultRenderer {
                 this.logger.suffix(task.message.skip && rendererOptions.showSkipMessage ? task.message.skip : task.title, {
                   field: "SKIPPED",
                   condition: rendererOptions.suffixSkips,
-                  format: () => color.dim
+                  format: /* @__PURE__ */ __name(() => color.dim, "format")
                 }),
                 this.style(task),
                 level
@@ -7512,7 +7468,7 @@ var DefaultRenderer = class _DefaultRenderer {
               ...this.format(
                 this.logger.suffix(task.title, {
                   field: `${"RETRY"}:${task.message.retry.count}`,
-                  format: () => color.yellow,
+                  format: /* @__PURE__ */ __name(() => color.yellow, "format"),
                   condition: rendererOptions.suffixRetries
                 }),
                 this.style(task),
@@ -7742,8 +7698,8 @@ var SimpleRenderer = class _SimpleRenderer {
   static rendererOptions = {
     pausedTimer: {
       ...PRESET_TIMER,
-      field: (time) => `${"PAUSED"}:${time}`,
-      format: () => color.yellowBright
+      field: /* @__PURE__ */ __name((time) => `${"PAUSED"}:${time}`, "field"),
+      format: /* @__PURE__ */ __name(() => color.yellowBright, "format")
     }
   };
   static rendererTaskOptions = {};
@@ -7809,28 +7765,28 @@ var SimpleRenderer = class _SimpleRenderer {
           this.logger.log("FAILED", task.title, {
             suffix: {
               field: `${"FAILED"}: ${message.error}`,
-              format: () => color.red
+              format: /* @__PURE__ */ __name(() => color.red, "format")
             }
           });
         } else if (message.skip) {
           this.logger.log("SKIPPED", task.title, {
             suffix: {
               field: `${"SKIPPED"}: ${message.skip}`,
-              format: () => color.yellow
+              format: /* @__PURE__ */ __name(() => color.yellow, "format")
             }
           });
         } else if (message.rollback) {
           this.logger.log("ROLLBACK", task.title, {
             suffix: {
               field: `${"ROLLBACK"}: ${message.rollback}`,
-              format: () => color.red
+              format: /* @__PURE__ */ __name(() => color.red, "format")
             }
           });
         } else if (message.retry) {
           this.logger.log("RETRY", task.title, {
             suffix: {
               field: `${"RETRY"}:${message.retry.count}`,
-              format: () => color.red
+              format: /* @__PURE__ */ __name(() => color.red, "format")
             }
           });
         } else if (message.paused) {
@@ -8031,7 +7987,7 @@ var VerboseRenderer = class _VerboseRenderer {
     logTitleChange: false,
     pausedTimer: {
       ...PRESET_TIMER,
-      format: () => color.yellowBright
+      format: /* @__PURE__ */ __name(() => color.yellowBright, "format")
     }
   };
   static rendererTaskOptions;
@@ -8630,9 +8586,9 @@ var Task = class extends ListrTaskEventManager {
       } else if (isObservable(result)) {
         result = new Promise((resolve, reject) => {
           result.subscribe({
-            next: (data) => {
+            next: /* @__PURE__ */ __name((data) => {
               this.output$ = data;
-            },
+            }, "next"),
             error: reject,
             complete: resolve
           });
