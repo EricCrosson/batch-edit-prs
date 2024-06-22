@@ -6593,6 +6593,8 @@ var ProcessOutput = class {
 };
 function createWritable(cb) {
   const writable = new import_stream.Writable();
+  writable.rows = Infinity;
+  writable.columns = Infinity;
   writable.write = (chunk) => {
     cb(chunk.toString());
     return true;
