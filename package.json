@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@octokit/rest": "21.0.0",
-    "listr2": "8.2.2"
+    "listr2": "8.2.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
