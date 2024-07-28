@@ -2871,23 +2871,79 @@ var require_rfdc = __commonJS({
   }
 });
 
-// node_modules/ansi-escapes/index.js
-var import_node_process, ESC, OSC, BEL, SEP, isBrowser, isTerminalApp, isWindows2, cwdFunction, ansiEscapes, ansi_escapes_default;
-var init_ansi_escapes = __esm({
-  "node_modules/ansi-escapes/index.js"() {
+// node_modules/environment/index.js
+var isBrowser, isNode, isBun, isDeno, isElectron, isJsDom, isWebWorker, isDedicatedWorker, isSharedWorker, isServiceWorker, platform2, isMacOs, isWindows2, isLinux, isIos, isAndroid;
+var init_environment = __esm({
+  "node_modules/environment/index.js"() {
+    isBrowser = globalThis.window?.document !== void 0;
+    isNode = globalThis.process?.versions?.node !== void 0;
+    isBun = globalThis.process?.versions?.bun !== void 0;
+    isDeno = globalThis.Deno?.version?.deno !== void 0;
+    isElectron = globalThis.process?.versions?.electron !== void 0;
+    isJsDom = globalThis.navigator?.userAgent?.includes("jsdom") === true;
+    isWebWorker = typeof WorkerGlobalScope !== "undefined" && globalThis instanceof WorkerGlobalScope;
+    isDedicatedWorker = typeof DedicatedWorkerGlobalScope !== "undefined" && globalThis instanceof DedicatedWorkerGlobalScope;
+    isSharedWorker = typeof SharedWorkerGlobalScope !== "undefined" && globalThis instanceof SharedWorkerGlobalScope;
+    isServiceWorker = typeof ServiceWorkerGlobalScope !== "undefined" && globalThis instanceof ServiceWorkerGlobalScope;
+    platform2 = globalThis.navigator?.userAgentData?.platform;
+    isMacOs = platform2 === "macOS" || globalThis.navigator?.platform === "MacIntel" || globalThis.navigator?.userAgent?.includes(" Mac ") === true || globalThis.process?.platform === "darwin";
+    isWindows2 = platform2 === "Windows" || globalThis.navigator?.platform === "Win32" || globalThis.process?.platform === "win32";
+    isLinux = platform2 === "Linux" || globalThis.navigator?.platform?.startsWith("Linux") === true || globalThis.navigator?.userAgent?.includes(" Linux ") === true || globalThis.process?.platform === "linux";
+    isIos = platform2 === "iOS" || globalThis.navigator?.platform === "MacIntel" && globalThis.navigator?.maxTouchPoints > 1 || /iPad|iPhone|iPod/.test(globalThis.navigator?.platform);
+    isAndroid = platform2 === "Android" || globalThis.navigator?.platform === "Android" || globalThis.navigator?.userAgent?.includes(" Android ") === true || globalThis.process?.platform === "android";
+  }
+});
+
+// node_modules/log-update/node_modules/ansi-escapes/base.js
+var base_exports = {};
+__export(base_exports, {
+  beep: () => beep,
+  clearScreen: () => clearScreen,
+  clearTerminal: () => clearTerminal,
+  cursorBackward: () => cursorBackward,
+  cursorDown: () => cursorDown,
+  cursorForward: () => cursorForward,
+  cursorGetPosition: () => cursorGetPosition,
+  cursorHide: () => cursorHide,
+  cursorLeft: () => cursorLeft,
+  cursorMove: () => cursorMove,
+  cursorNextLine: () => cursorNextLine,
+  cursorPrevLine: () => cursorPrevLine,
+  cursorRestorePosition: () => cursorRestorePosition,
+  cursorSavePosition: () => cursorSavePosition,
+  cursorShow: () => cursorShow,
+  cursorTo: () => cursorTo,
+  cursorUp: () => cursorUp,
+  enterAlternativeScreen: () => enterAlternativeScreen,
+  eraseDown: () => eraseDown,
+  eraseEndLine: () => eraseEndLine,
+  eraseLine: () => eraseLine,
+  eraseLines: () => eraseLines,
+  eraseScreen: () => eraseScreen,
+  eraseStartLine: () => eraseStartLine,
+  eraseUp: () => eraseUp,
+  exitAlternativeScreen: () => exitAlternativeScreen,
+  iTerm: () => iTerm,
+  image: () => image,
+  link: () => link,
+  scrollDown: () => scrollDown,
+  scrollUp: () => scrollUp
+});
+var import_node_process, ESC, OSC, BEL, SEP, isTerminalApp, isWindows3, cwdFunction, cursorTo, cursorMove, cursorUp, cursorDown, cursorForward, cursorBackward, cursorLeft, cursorSavePosition, cursorRestorePosition, cursorGetPosition, cursorNextLine, cursorPrevLine, cursorHide, cursorShow, eraseLines, eraseEndLine, eraseStartLine, eraseLine, eraseDown, eraseUp, eraseScreen, scrollUp, scrollDown, clearScreen, clearTerminal, enterAlternativeScreen, exitAlternativeScreen, beep, link, image, iTerm;
+var init_base = __esm({
+  "node_modules/log-update/node_modules/ansi-escapes/base.js"() {
     import_node_process = __toESM(require("node:process"), 1);
+    init_environment();
     ESC = "\x1B[";
     OSC = "\x1B]";
     BEL = "\x07";
     SEP = ";";
-    isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined";
     isTerminalApp = !isBrowser && import_node_process.default.env.TERM_PROGRAM === "Apple_Terminal";
-    isWindows2 = !isBrowser && import_node_process.default.platform === "win32";
+    isWindows3 = !isBrowser && import_node_process.default.platform === "win32";
     cwdFunction = isBrowser ? () => {
       throw new Error("`process.cwd()` only works in Node.js, not the browser.");
     } : import_node_process.default.cwd;
-    ansiEscapes = {};
-    ansiEscapes.cursorTo = (x, y) => {
+    cursorTo = (x, y) => {
       if (typeof x !== "number") {
         throw new TypeError("The `x` argument is required");
       }
@@ -2896,7 +2952,7 @@ var init_ansi_escapes = __esm({
       }
       return ESC + (y + 1) + SEP + (x + 1) + "H";
     };
-    ansiEscapes.cursorMove = (x, y) => {
+    cursorMove = (x, y) => {
       if (typeof x !== "number") {
         throw new TypeError("The `x` argument is required");
       }
@@ -2913,42 +2969,42 @@ var init_ansi_escapes = __esm({
       }
       return returnValue;
     };
-    ansiEscapes.cursorUp = (count = 1) => ESC + count + "A";
-    ansiEscapes.cursorDown = (count = 1) => ESC + count + "B";
-    ansiEscapes.cursorForward = (count = 1) => ESC + count + "C";
-    ansiEscapes.cursorBackward = (count = 1) => ESC + count + "D";
-    ansiEscapes.cursorLeft = ESC + "G";
-    ansiEscapes.cursorSavePosition = isTerminalApp ? "\x1B7" : ESC + "s";
-    ansiEscapes.cursorRestorePosition = isTerminalApp ? "\x1B8" : ESC + "u";
-    ansiEscapes.cursorGetPosition = ESC + "6n";
-    ansiEscapes.cursorNextLine = ESC + "E";
-    ansiEscapes.cursorPrevLine = ESC + "F";
-    ansiEscapes.cursorHide = ESC + "?25l";
-    ansiEscapes.cursorShow = ESC + "?25h";
-    ansiEscapes.eraseLines = (count) => {
+    cursorUp = (count = 1) => ESC + count + "A";
+    cursorDown = (count = 1) => ESC + count + "B";
+    cursorForward = (count = 1) => ESC + count + "C";
+    cursorBackward = (count = 1) => ESC + count + "D";
+    cursorLeft = ESC + "G";
+    cursorSavePosition = isTerminalApp ? "\x1B7" : ESC + "s";
+    cursorRestorePosition = isTerminalApp ? "\x1B8" : ESC + "u";
+    cursorGetPosition = ESC + "6n";
+    cursorNextLine = ESC + "E";
+    cursorPrevLine = ESC + "F";
+    cursorHide = ESC + "?25l";
+    cursorShow = ESC + "?25h";
+    eraseLines = (count) => {
       let clear = "";
       for (let i = 0; i < count; i++) {
-        clear += ansiEscapes.eraseLine + (i < count - 1 ? ansiEscapes.cursorUp() : "");
+        clear += eraseLine + (i < count - 1 ? cursorUp() : "");
       }
       if (count) {
-        clear += ansiEscapes.cursorLeft;
+        clear += cursorLeft;
       }
       return clear;
     };
-    ansiEscapes.eraseEndLine = ESC + "K";
-    ansiEscapes.eraseStartLine = ESC + "1K";
-    ansiEscapes.eraseLine = ESC + "2K";
-    ansiEscapes.eraseDown = ESC + "J";
-    ansiEscapes.eraseUp = ESC + "1J";
-    ansiEscapes.eraseScreen = ESC + "2J";
-    ansiEscapes.scrollUp = ESC + "S";
-    ansiEscapes.scrollDown = ESC + "T";
-    ansiEscapes.clearScreen = "\x1Bc";
-    ansiEscapes.clearTerminal = isWindows2 ? `${ansiEscapes.eraseScreen}${ESC}0f` : `${ansiEscapes.eraseScreen}${ESC}3J${ESC}H`;
-    ansiEscapes.enterAlternativeScreen = ESC + "?1049h";
-    ansiEscapes.exitAlternativeScreen = ESC + "?1049l";
-    ansiEscapes.beep = BEL;
-    ansiEscapes.link = (text, url) => [
+    eraseEndLine = ESC + "K";
+    eraseStartLine = ESC + "1K";
+    eraseLine = ESC + "2K";
+    eraseDown = ESC + "J";
+    eraseUp = ESC + "1J";
+    eraseScreen = ESC + "2J";
+    scrollUp = ESC + "S";
+    scrollDown = ESC + "T";
+    clearScreen = "\x1Bc";
+    clearTerminal = isWindows3 ? `${eraseScreen}${ESC}0f` : `${eraseScreen}${ESC}3J${ESC}H`;
+    enterAlternativeScreen = ESC + "?1049h";
+    exitAlternativeScreen = ESC + "?1049l";
+    beep = BEL;
+    link = (text, url) => [
       OSC,
       "8",
       SEP,
@@ -2962,7 +3018,7 @@ var init_ansi_escapes = __esm({
       SEP,
       BEL
     ].join("");
-    ansiEscapes.image = (buffer, options = {}) => {
+    image = (data, options = {}) => {
       let returnValue = `${OSC}1337;File=inline=1`;
       if (options.width) {
         returnValue += `;width=${options.width}`;
@@ -2973,18 +3029,18 @@ var init_ansi_escapes = __esm({
       if (options.preserveAspectRatio === false) {
         returnValue += ";preserveAspectRatio=0";
       }
-      return returnValue + ":" + buffer.toString("base64") + BEL;
+      return returnValue + ":" + Buffer.from(data).toString("base64") + BEL;
     };
-    ansiEscapes.iTerm = {
+    iTerm = {
       setCwd: (cwd = cwdFunction()) => `${OSC}50;CurrentDir=${cwd}${BEL}`,
       annotation(message, options = {}) {
         let returnValue = `${OSC}1337;`;
-        const hasX = typeof options.x !== "undefined";
-        const hasY = typeof options.y !== "undefined";
-        if ((hasX || hasY) && !(hasX && hasY && typeof options.length !== "undefined")) {
+        const hasX = options.x !== void 0;
+        const hasY = options.y !== void 0;
+        if ((hasX || hasY) && !(hasX && hasY && options.length !== void 0)) {
           throw new Error("`x`, `y` and `length` must be defined when `x` or `y` is defined");
         }
-        message = message.replace(/\|/g, "");
+        message = message.replaceAll("|", "");
         returnValue += options.isHidden ? "AddHiddenAnnotation=" : "AddAnnotation=";
         if (options.length > 0) {
           returnValue += (hasX ? [message, options.length, options.x, options.y] : [options.length, message]).join("|");
@@ -2994,75 +3050,115 @@ var init_ansi_escapes = __esm({
         return returnValue + BEL;
       }
     };
-    ansi_escapes_default = ansiEscapes;
   }
 });
 
-// node_modules/mimic-fn/index.js
-var require_mimic_fn = __commonJS({
-  "node_modules/mimic-fn/index.js"(exports2, module2) {
-    "use strict";
-    var mimicFn = (to, from) => {
-      for (const prop of Reflect.ownKeys(from)) {
-        Object.defineProperty(to, prop, Object.getOwnPropertyDescriptor(from, prop));
+// node_modules/log-update/node_modules/ansi-escapes/index.js
+var init_ansi_escapes = __esm({
+  "node_modules/log-update/node_modules/ansi-escapes/index.js"() {
+    init_base();
+    init_base();
+  }
+});
+
+// node_modules/mimic-function/index.js
+function mimicFunction(to, from, { ignoreNonConfigurable = false } = {}) {
+  const { name } = to;
+  for (const property of Reflect.ownKeys(from)) {
+    copyProperty(to, from, property, ignoreNonConfigurable);
+  }
+  changePrototype(to, from);
+  changeToString(to, from, name);
+  return to;
+}
+var copyProperty, canCopyProperty, changePrototype, wrappedToString, toStringDescriptor, toStringName, changeToString;
+var init_mimic_function = __esm({
+  "node_modules/mimic-function/index.js"() {
+    copyProperty = (to, from, property, ignoreNonConfigurable) => {
+      if (property === "length" || property === "prototype") {
+        return;
       }
-      return to;
+      if (property === "arguments" || property === "caller") {
+        return;
+      }
+      const toDescriptor = Object.getOwnPropertyDescriptor(to, property);
+      const fromDescriptor = Object.getOwnPropertyDescriptor(from, property);
+      if (!canCopyProperty(toDescriptor, fromDescriptor) && ignoreNonConfigurable) {
+        return;
+      }
+      Object.defineProperty(to, property, fromDescriptor);
     };
-    module2.exports = mimicFn;
-    module2.exports.default = mimicFn;
+    canCopyProperty = function(toDescriptor, fromDescriptor) {
+      return toDescriptor === void 0 || toDescriptor.configurable || toDescriptor.writable === fromDescriptor.writable && toDescriptor.enumerable === fromDescriptor.enumerable && toDescriptor.configurable === fromDescriptor.configurable && (toDescriptor.writable || toDescriptor.value === fromDescriptor.value);
+    };
+    changePrototype = (to, from) => {
+      const fromPrototype = Object.getPrototypeOf(from);
+      if (fromPrototype === Object.getPrototypeOf(to)) {
+        return;
+      }
+      Object.setPrototypeOf(to, fromPrototype);
+    };
+    wrappedToString = (withName, fromBody) => `/* Wrapped ${withName}*/
+${fromBody}`;
+    toStringDescriptor = Object.getOwnPropertyDescriptor(Function.prototype, "toString");
+    toStringName = Object.getOwnPropertyDescriptor(Function.prototype.toString, "name");
+    changeToString = (to, from, name) => {
+      const withName = name === "" ? "" : `with ${name.trim()}() `;
+      const newToString = wrappedToString.bind(null, withName, from.toString());
+      Object.defineProperty(newToString, "name", toStringName);
+      const { writable, enumerable, configurable } = toStringDescriptor;
+      Object.defineProperty(to, "toString", { value: newToString, writable, enumerable, configurable });
+    };
   }
 });
 
-// node_modules/onetime/index.js
-var require_onetime = __commonJS({
-  "node_modules/onetime/index.js"(exports2, module2) {
-    "use strict";
-    var mimicFn = require_mimic_fn();
-    var calledFunctions = /* @__PURE__ */ new WeakMap();
-    var onetime2 = (function_, options = {}) => {
+// node_modules/restore-cursor/node_modules/onetime/index.js
+var calledFunctions, onetime, onetime_default;
+var init_onetime = __esm({
+  "node_modules/restore-cursor/node_modules/onetime/index.js"() {
+    init_mimic_function();
+    calledFunctions = /* @__PURE__ */ new WeakMap();
+    onetime = (function_, options = {}) => {
       if (typeof function_ !== "function") {
         throw new TypeError("Expected a function");
       }
       let returnValue;
       let callCount = 0;
       const functionName = function_.displayName || function_.name || "<anonymous>";
-      const onetime3 = function(...arguments_) {
-        calledFunctions.set(onetime3, ++callCount);
+      const onetime2 = function(...arguments_) {
+        calledFunctions.set(onetime2, ++callCount);
         if (callCount === 1) {
           returnValue = function_.apply(this, arguments_);
-          function_ = null;
+          function_ = void 0;
         } else if (options.throw === true) {
           throw new Error(`Function \`${functionName}\` can only be called once`);
         }
         return returnValue;
       };
-      mimicFn(onetime3, function_);
-      calledFunctions.set(onetime3, callCount);
-      return onetime3;
+      mimicFunction(onetime2, function_);
+      calledFunctions.set(onetime2, callCount);
+      return onetime2;
     };
-    module2.exports = onetime2;
-    module2.exports.default = onetime2;
-    module2.exports.callCount = (function_) => {
+    onetime.callCount = (function_) => {
       if (!calledFunctions.has(function_)) {
         throw new Error(`The given function \`${function_.name}\` is not wrapped by the \`onetime\` package`);
       }
       return calledFunctions.get(function_);
     };
+    onetime_default = onetime;
   }
 });
 
-// node_modules/signal-exit/signals.js
-var require_signals = __commonJS({
-  "node_modules/signal-exit/signals.js"(exports2, module2) {
-    module2.exports = [
-      "SIGABRT",
-      "SIGALRM",
-      "SIGHUP",
-      "SIGINT",
-      "SIGTERM"
-    ];
+// node_modules/restore-cursor/node_modules/signal-exit/dist/mjs/signals.js
+var signals;
+var init_signals = __esm({
+  "node_modules/restore-cursor/node_modules/signal-exit/dist/mjs/signals.js"() {
+    signals = [];
+    signals.push("SIGHUP", "SIGINT", "SIGTERM");
     if (process.platform !== "win32") {
-      module2.exports.push(
+      signals.push(
+        "SIGALRM",
+        "SIGABRT",
         "SIGVTALRM",
         "SIGXCPU",
         "SIGXFSZ",
@@ -3077,188 +3173,264 @@ var require_signals = __commonJS({
       );
     }
     if (process.platform === "linux") {
-      module2.exports.push(
-        "SIGIO",
-        "SIGPOLL",
-        "SIGPWR",
-        "SIGSTKFLT",
-        "SIGUNUSED"
-      );
+      signals.push("SIGIO", "SIGPOLL", "SIGPWR", "SIGSTKFLT");
     }
   }
 });
 
-// node_modules/signal-exit/index.js
-var require_signal_exit = __commonJS({
-  "node_modules/signal-exit/index.js"(exports2, module2) {
-    var process6 = global.process;
-    var processOk = function(process7) {
-      return process7 && typeof process7 === "object" && typeof process7.removeListener === "function" && typeof process7.emit === "function" && typeof process7.reallyExit === "function" && typeof process7.listeners === "function" && typeof process7.kill === "function" && typeof process7.pid === "number" && typeof process7.on === "function";
-    };
-    if (!processOk(process6)) {
-      module2.exports = function() {
-        return function() {
-        };
+// node_modules/restore-cursor/node_modules/signal-exit/dist/mjs/index.js
+var processOk, kExitEmitter, global, ObjectDefineProperty, Emitter, SignalExitBase, signalExitWrap, SignalExitFallback, SignalExit, process3, onExit, load, unload;
+var init_mjs = __esm({
+  "node_modules/restore-cursor/node_modules/signal-exit/dist/mjs/index.js"() {
+    init_signals();
+    processOk = (process7) => !!process7 && typeof process7 === "object" && typeof process7.removeListener === "function" && typeof process7.emit === "function" && typeof process7.reallyExit === "function" && typeof process7.listeners === "function" && typeof process7.kill === "function" && typeof process7.pid === "number" && typeof process7.on === "function";
+    kExitEmitter = Symbol.for("signal-exit emitter");
+    global = globalThis;
+    ObjectDefineProperty = Object.defineProperty.bind(Object);
+    Emitter = class {
+      emitted = {
+        afterExit: false,
+        exit: false
       };
-    } else {
-      assert = require("assert");
-      signals = require_signals();
-      isWin = /^win/i.test(process6.platform);
-      EE = require("events");
-      if (typeof EE !== "function") {
-        EE = EE.EventEmitter;
+      listeners = {
+        afterExit: [],
+        exit: []
+      };
+      count = 0;
+      id = Math.random();
+      constructor() {
+        if (global[kExitEmitter]) {
+          return global[kExitEmitter];
+        }
+        ObjectDefineProperty(global, kExitEmitter, {
+          value: this,
+          writable: false,
+          enumerable: false,
+          configurable: false
+        });
       }
-      if (process6.__signal_exit_emitter__) {
-        emitter = process6.__signal_exit_emitter__;
-      } else {
-        emitter = process6.__signal_exit_emitter__ = new EE();
-        emitter.count = 0;
-        emitter.emitted = {};
+      on(ev, fn) {
+        this.listeners[ev].push(fn);
       }
-      if (!emitter.infinite) {
-        emitter.setMaxListeners(Infinity);
-        emitter.infinite = true;
+      removeListener(ev, fn) {
+        const list = this.listeners[ev];
+        const i = list.indexOf(fn);
+        if (i === -1) {
+          return;
+        }
+        if (i === 0 && list.length === 1) {
+          list.length = 0;
+        } else {
+          list.splice(i, 1);
+        }
       }
-      module2.exports = function(cb, opts) {
-        if (!processOk(global.process)) {
-          return function() {
+      emit(ev, code, signal) {
+        if (this.emitted[ev]) {
+          return false;
+        }
+        this.emitted[ev] = true;
+        let ret = false;
+        for (const fn of this.listeners[ev]) {
+          ret = fn(code, signal) === true || ret;
+        }
+        if (ev === "exit") {
+          ret = this.emit("afterExit", code, signal) || ret;
+        }
+        return ret;
+      }
+    };
+    SignalExitBase = class {
+    };
+    signalExitWrap = (handler) => {
+      return {
+        onExit(cb, opts) {
+          return handler.onExit(cb, opts);
+        },
+        load() {
+          return handler.load();
+        },
+        unload() {
+          return handler.unload();
+        }
+      };
+    };
+    SignalExitFallback = class extends SignalExitBase {
+      onExit() {
+        return () => {
+        };
+      }
+      load() {
+      }
+      unload() {
+      }
+    };
+    SignalExit = class extends SignalExitBase {
+      // "SIGHUP" throws an `ENOSYS` error on Windows,
+      // so use a supported signal instead
+      /* c8 ignore start */
+      #hupSig = process3.platform === "win32" ? "SIGINT" : "SIGHUP";
+      /* c8 ignore stop */
+      #emitter = new Emitter();
+      #process;
+      #originalProcessEmit;
+      #originalProcessReallyExit;
+      #sigListeners = {};
+      #loaded = false;
+      constructor(process7) {
+        super();
+        this.#process = process7;
+        this.#sigListeners = {};
+        for (const sig of signals) {
+          this.#sigListeners[sig] = () => {
+            const listeners = this.#process.listeners(sig);
+            let { count } = this.#emitter;
+            const p = process7;
+            if (typeof p.__signal_exit_emitter__ === "object" && typeof p.__signal_exit_emitter__.count === "number") {
+              count += p.__signal_exit_emitter__.count;
+            }
+            if (listeners.length === count) {
+              this.unload();
+              const ret = this.#emitter.emit("exit", null, sig);
+              const s = sig === "SIGHUP" ? this.#hupSig : sig;
+              if (!ret)
+                process7.kill(process7.pid, s);
+            }
           };
         }
-        assert.equal(typeof cb, "function", "a callback must be provided for exit handler");
-        if (loaded === false) {
-          load();
+        this.#originalProcessReallyExit = process7.reallyExit;
+        this.#originalProcessEmit = process7.emit;
+      }
+      onExit(cb, opts) {
+        if (!processOk(this.#process)) {
+          return () => {
+          };
         }
-        var ev = "exit";
-        if (opts && opts.alwaysLast) {
-          ev = "afterexit";
+        if (this.#loaded === false) {
+          this.load();
         }
-        var remove = function() {
-          emitter.removeListener(ev, cb);
-          if (emitter.listeners("exit").length === 0 && emitter.listeners("afterexit").length === 0) {
-            unload();
+        const ev = opts?.alwaysLast ? "afterExit" : "exit";
+        this.#emitter.on(ev, cb);
+        return () => {
+          this.#emitter.removeListener(ev, cb);
+          if (this.#emitter.listeners["exit"].length === 0 && this.#emitter.listeners["afterExit"].length === 0) {
+            this.unload();
           }
         };
-        emitter.on(ev, cb);
-        return remove;
-      };
-      unload = function unload2() {
-        if (!loaded || !processOk(global.process)) {
+      }
+      load() {
+        if (this.#loaded) {
           return;
         }
-        loaded = false;
-        signals.forEach(function(sig) {
+        this.#loaded = true;
+        this.#emitter.count += 1;
+        for (const sig of signals) {
           try {
-            process6.removeListener(sig, sigListeners[sig]);
-          } catch (er) {
+            const fn = this.#sigListeners[sig];
+            if (fn)
+              this.#process.on(sig, fn);
+          } catch (_) {
           }
-        });
-        process6.emit = originalProcessEmit;
-        process6.reallyExit = originalProcessReallyExit;
-        emitter.count -= 1;
-      };
-      module2.exports.unload = unload;
-      emit = function emit2(event, code, signal) {
-        if (emitter.emitted[event]) {
-          return;
         }
-        emitter.emitted[event] = true;
-        emitter.emit(event, code, signal);
-      };
-      sigListeners = {};
-      signals.forEach(function(sig) {
-        sigListeners[sig] = function listener() {
-          if (!processOk(global.process)) {
-            return;
-          }
-          var listeners = process6.listeners(sig);
-          if (listeners.length === emitter.count) {
-            unload();
-            emit("exit", null, sig);
-            emit("afterexit", null, sig);
-            if (isWin && sig === "SIGHUP") {
-              sig = "SIGINT";
-            }
-            process6.kill(process6.pid, sig);
-          }
+        this.#process.emit = (ev, ...a) => {
+          return this.#processEmit(ev, ...a);
         };
-      });
-      module2.exports.signals = function() {
-        return signals;
-      };
-      loaded = false;
-      load = function load2() {
-        if (loaded || !processOk(global.process)) {
+        this.#process.reallyExit = (code) => {
+          return this.#processReallyExit(code);
+        };
+      }
+      unload() {
+        if (!this.#loaded) {
           return;
         }
-        loaded = true;
-        emitter.count += 1;
-        signals = signals.filter(function(sig) {
+        this.#loaded = false;
+        signals.forEach((sig) => {
+          const listener = this.#sigListeners[sig];
+          if (!listener) {
+            throw new Error("Listener not defined for signal: " + sig);
+          }
           try {
-            process6.on(sig, sigListeners[sig]);
-            return true;
-          } catch (er) {
-            return false;
+            this.#process.removeListener(sig, listener);
+          } catch (_) {
           }
         });
-        process6.emit = processEmit;
-        process6.reallyExit = processReallyExit;
-      };
-      module2.exports.load = load;
-      originalProcessReallyExit = process6.reallyExit;
-      processReallyExit = function processReallyExit2(code) {
-        if (!processOk(global.process)) {
-          return;
+        this.#process.emit = this.#originalProcessEmit;
+        this.#process.reallyExit = this.#originalProcessReallyExit;
+        this.#emitter.count -= 1;
+      }
+      #processReallyExit(code) {
+        if (!processOk(this.#process)) {
+          return 0;
         }
-        process6.exitCode = code || /* istanbul ignore next */
-        0;
-        emit("exit", process6.exitCode, null);
-        emit("afterexit", process6.exitCode, null);
-        originalProcessReallyExit.call(process6, process6.exitCode);
-      };
-      originalProcessEmit = process6.emit;
-      processEmit = function processEmit2(ev, arg) {
-        if (ev === "exit" && processOk(global.process)) {
-          if (arg !== void 0) {
-            process6.exitCode = arg;
+        this.#process.exitCode = code || 0;
+        this.#emitter.emit("exit", this.#process.exitCode, null);
+        return this.#originalProcessReallyExit.call(this.#process, this.#process.exitCode);
+      }
+      #processEmit(ev, ...args) {
+        const og = this.#originalProcessEmit;
+        if (ev === "exit" && processOk(this.#process)) {
+          if (typeof args[0] === "number") {
+            this.#process.exitCode = args[0];
           }
-          var ret = originalProcessEmit.apply(this, arguments);
-          emit("exit", process6.exitCode, null);
-          emit("afterexit", process6.exitCode, null);
+          const ret = og.call(this.#process, ev, ...args);
+          this.#emitter.emit("exit", this.#process.exitCode, null);
           return ret;
         } else {
-          return originalProcessEmit.apply(this, arguments);
+          return og.call(this.#process, ev, ...args);
         }
-      };
-    }
-    var assert;
-    var signals;
-    var isWin;
-    var EE;
-    var emitter;
-    var unload;
-    var emit;
-    var sigListeners;
-    var loaded;
-    var load;
-    var originalProcessReallyExit;
-    var processReallyExit;
-    var originalProcessEmit;
-    var processEmit;
+      }
+    };
+    process3 = globalThis.process;
+    ({
+      onExit: (
+        /**
+         * Called when the process is exiting, whether via signal, explicit
+         * exit, or running out of stuff to do.
+         *
+         * If the global process object is not suitable for instrumentation,
+         * then this will be a no-op.
+         *
+         * Returns a function that may be used to unload signal-exit.
+         */
+        onExit
+      ),
+      load: (
+        /**
+         * Load the listeners.  Likely you never need to call this, unless
+         * doing a rather deep integration with signal-exit functionality.
+         * Mostly exposed for the benefit of testing.
+         *
+         * @internal
+         */
+        load
+      ),
+      unload: (
+        /**
+         * Unload the listeners.  Likely you never need to call this, unless
+         * doing a rather deep integration with signal-exit functionality.
+         * Mostly exposed for the benefit of testing.
+         *
+         * @internal
+         */
+        unload
+      )
+    } = signalExitWrap(processOk(process3) ? new SignalExit(process3) : new SignalExitFallback()));
   }
 });
 
 // node_modules/restore-cursor/index.js
-var import_node_process2, import_onetime, import_signal_exit, restoreCursor, restore_cursor_default;
+var import_node_process2, terminal, restoreCursor, restore_cursor_default;
 var init_restore_cursor = __esm({
   "node_modules/restore-cursor/index.js"() {
     import_node_process2 = __toESM(require("node:process"), 1);
-    import_onetime = __toESM(require_onetime(), 1);
-    import_signal_exit = __toESM(require_signal_exit(), 1);
-    restoreCursor = (0, import_onetime.default)(() => {
-      (0, import_signal_exit.default)(() => {
-        import_node_process2.default.stderr.write("\x1B[?25h");
+    init_onetime();
+    init_mjs();
+    terminal = import_node_process2.default.stderr.isTTY ? import_node_process2.default.stderr : import_node_process2.default.stdout.isTTY ? import_node_process2.default.stdout : void 0;
+    restoreCursor = terminal ? onetime_default(() => {
+      onExit(() => {
+        terminal.write("\x1B[?25h");
       }, { alwaysLast: true });
-    });
+    }) : () => {
+    };
     restore_cursor_default = restoreCursor;
   }
 });
@@ -3927,36 +4099,32 @@ function createLogUpdate(stream, { showCursor = false } = {}) {
   let previousLineCount = 0;
   let previousWidth = getWidth(stream);
   let previousOutput = "";
+  const reset2 = () => {
+    previousOutput = "";
+    previousWidth = getWidth(stream);
+    previousLineCount = 0;
+  };
   const render = (...arguments_) => {
     if (!showCursor) {
       cli_cursor_default.hide();
     }
-    let output = arguments_.join(" ") + "\n";
-    output = fitToTerminalHeight(stream, output);
+    let output = fitToTerminalHeight(stream, arguments_.join(" ") + "\n");
     const width = getWidth(stream);
     if (output === previousOutput && previousWidth === width) {
       return;
     }
     previousOutput = output;
     previousWidth = width;
-    output = wrapAnsi(output, width, {
-      trim: false,
-      hard: true,
-      wordWrap: false
-    });
-    stream.write(ansi_escapes_default.eraseLines(previousLineCount) + output);
+    output = wrapAnsi(output, width, { trim: false, hard: true, wordWrap: false });
+    stream.write(base_exports.eraseLines(previousLineCount) + output);
     previousLineCount = output.split("\n").length;
   };
   render.clear = () => {
-    stream.write(ansi_escapes_default.eraseLines(previousLineCount));
-    previousOutput = "";
-    previousWidth = getWidth(stream);
-    previousLineCount = 0;
+    stream.write(base_exports.eraseLines(previousLineCount));
+    reset2();
   };
   render.done = () => {
-    previousOutput = "";
-    previousWidth = getWidth(stream);
-    previousLineCount = 0;
+    reset2();
     if (!showCursor) {
       cli_cursor_default.show();
     }
@@ -3973,24 +4141,12 @@ var init_log_update = __esm({
     init_slice_ansi();
     init_strip_ansi();
     defaultTerminalHeight = 24;
-    getWidth = (stream) => {
-      const { columns } = stream;
-      if (!columns) {
-        return 80;
-      }
-      return columns;
-    };
+    getWidth = ({ columns = 80 }) => columns;
     fitToTerminalHeight = (stream, text) => {
       const terminalHeight = stream.rows ?? defaultTerminalHeight;
       const lines = text.split("\n");
-      const toRemove = lines.length - terminalHeight;
-      if (toRemove <= 0) {
-        return text;
-      }
-      return sliceAnsi(
-        text,
-        stripAnsi(lines.slice(0, toRemove).join("\n")).length + 1
-      );
+      const toRemove = Math.max(0, lines.length - terminalHeight);
+      return toRemove ? sliceAnsi(text, stripAnsi(lines.slice(0, toRemove).join("\n")).length + 1) : text;
     };
     logUpdate = createLogUpdate(import_node_process4.default.stdout);
     log_update_default = logUpdate;
@@ -4525,7 +4681,19 @@ function stringWidth3(string, options = {}) {
     if (codePoint <= 31 || codePoint >= 127 && codePoint <= 159) {
       continue;
     }
-    if (codePoint >= 768 && codePoint <= 879) {
+    if (codePoint >= 8203 && codePoint <= 8207 || codePoint === 65279) {
+      continue;
+    }
+    if (codePoint >= 768 && codePoint <= 879 || codePoint >= 6832 && codePoint <= 6911 || codePoint >= 7616 && codePoint <= 7679 || codePoint >= 8400 && codePoint <= 8447 || codePoint >= 65056 && codePoint <= 65071) {
+      continue;
+    }
+    if (codePoint >= 55296 && codePoint <= 57343) {
+      continue;
+    }
+    if (codePoint >= 65024 && codePoint <= 65039) {
+      continue;
+    }
+    if (defaultIgnorableCodePointRegex.test(character)) {
       continue;
     }
     if ((0, import_emoji_regex3.default)().test(character)) {
@@ -4536,13 +4704,14 @@ function stringWidth3(string, options = {}) {
   }
   return width;
 }
-var import_emoji_regex3, segmenter;
+var import_emoji_regex3, segmenter, defaultIgnorableCodePointRegex;
 var init_string_width3 = __esm({
   "node_modules/listr2/node_modules/string-width/index.js"() {
     init_strip_ansi3();
     init_get_east_asian_width();
     import_emoji_regex3 = __toESM(require_emoji_regex3(), 1);
     segmenter = new Intl.Segmenter();
+    defaultIgnorableCodePointRegex = /^\p{Default_Ignorable_Code_Point}$/u;
   }
 });
 
