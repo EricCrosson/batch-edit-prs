@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@octokit/rest": "21.0.1",
+    "inquirer": "10.1.7",
     "listr2": "8.2.4"
   },
   "devDependencies": {

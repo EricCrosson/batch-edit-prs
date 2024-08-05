@@ -1,4 +1,5 @@
 import { delay, Listr } from "listr2";
+import inquirer from "inquirer";
 
 import { GithubClientInterface } from "./service/github.js";
 import { templateSearchString } from "./template.js";
@@ -24,16 +25,17 @@ import { templateSearchString } from "./template.js";
  * @param {Object} args - The arguments for the function.
  * @param {string} args.pattern - The pattern to use for searching pull requests.
  * @param {Action} args.action - The action to take on matching pull requests.
+ * @param {boolean} args.interactive - Whether to run in interactive mode.
  * @returns {Promise<Array<PullRequestReport>>} A promise that resolves when all assigned pull requests have been processed.
  */
 export async function batchEditPullRequests(github, args) {
-  const { pattern, action } = args;
+  const { pattern, action, interactive } = args;
 
   /**
    * An array of pull requests to perform `action` on.
    * @type {Array<Object>}
    */
-  const prs = [];
+  let prs = [];
   // I'm not sure yet why search sometimes returns duplicates
   const seenPrs = new Set();
 
@@ -56,6 +58,10 @@ export async function batchEditPullRequests(github, args) {
       seenPrs.add(pr.html_url);
       prs.push(pr);
     }
+  }
+
+  if (interactive) {
+    prs = await promptUserToSelectPullRequests(prs);
   }
 
   /**
@@ -164,4 +170,28 @@ async function prIsMergeable(args) {
 function display(pr, maxTitleLength) {
   const paddedTitle = pr.title.padEnd(1 + maxTitleLength, " ");
   return `${paddedTitle} [${pr.html_url}]`;
+}
+
+/**
+ * Prompts the user to select which pull requests to act on.
+ *
+ * @param {Array<Object>} prs - The array of pull requests.
+ * @returns {Promise<Array<Object>>} - The array of selected pull requests.
+ */
+async function promptUserToSelectPullRequests(prs) {
+  const choices = prs.map((pr) => ({
+    name: `${pr.title} [${pr.html_url}]`,
+    value: pr,
+  }));
+
+  const answers = await inquirer.prompt([
+    {
+      type: "checkbox",
+      name: "selectedPrs",
+      message: "Select pull requests to act on:",
+      choices,
+    },
+  ]);
+
+  return answers.selectedPrs;
 }

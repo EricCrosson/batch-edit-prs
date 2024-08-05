@@ -6,13 +6,15 @@ import { validateCliArguments } from "./validate.js";
 
 async function main() {
   const cliArguments = process.argv.slice(2);
-  const { githubToken, pattern, action } = validateCliArguments(cliArguments);
+  const { githubToken, pattern, action, interactive } =
+    validateCliArguments(cliArguments);
 
   const github = new GithubClient(githubToken);
 
   const args = {
     pattern,
     action,
+    interactive,
   };
 
   try {

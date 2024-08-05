@@ -1,0 +1,3 @@
+Modify batch-edit-pr to accept a `--interactive` flag, that runs the search
+results and lets the user select which search results they want to run the
+specified action (the second positional argument) on.

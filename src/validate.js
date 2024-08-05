@@ -3,6 +3,7 @@
  * @property {string} githubToken - The User's GitHub token.
  * @property {string} pattern - The pattern to use for searching pull requests.
  * @property {Action} action - The action to take on matching pull requests.
+ * @property {boolean} interactive - Whether to run in interactive mode.
  */
 
 /**
@@ -14,6 +15,8 @@
  */
 export function validateCliArguments(args) {
   const helpFlag = args.includes("--help");
+  const interactiveFlag = args.includes("--interactive");
+  args = args.filter((value) => value !== "--interactive");
   const pattern = args[0];
   let action = args[1];
 
@@ -22,13 +25,14 @@ export function validateCliArguments(args) {
   if (helpFlag) {
     console.log(
       `
-Usage: batch-edit-prs <pattern> <action>
+Usage: batch-edit-prs <pattern> <action> [--interactive]
 
   <pattern>    Search string to use to identify PRs to act on
   <action>     Action to take on matching PRs. Must be one of:
                  "search", "approve", "merge", "approve and merge", "close"
 
   --help       Show this help message
+  --interactive  Run in interactive mode
 `.trimEnd(),
     );
     process.exit(0);
@@ -63,5 +67,5 @@ Usage: batch-edit-prs <pattern> <action>
     throw new Error("invalid arguments");
   }
 
-  return { githubToken, pattern, action };
+  return { githubToken, pattern, action, interactive: interactiveFlag };
 }
