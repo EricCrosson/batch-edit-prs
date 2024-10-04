@@ -1,3 +1,10 @@
+## [1.4.20](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.19...v1.4.20) (2024-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency listr2 to v8.2.5 ([3163677](https://github.com/EricCrosson/batch-edit-prs/commit/3163677a25543171a9b889b912a645e4976d082e))
+
 ## [1.4.19](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.18...v1.4.19) (2024-08-17)
 
 
