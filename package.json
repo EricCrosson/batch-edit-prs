@@ -27,7 +27,7 @@
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "7.0.3",
     "@semantic-release/git": "10.0.1",
-    "esbuild": "0.24.2",
+    "esbuild": "0.25.0",
     "semantic-release": "24.2.1",
     "semantic-release-major-tag": "0.3.2"
   }
