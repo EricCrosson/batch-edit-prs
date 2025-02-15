@@ -1,3 +1,10 @@
+## [1.4.22](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.21...v1.4.22) (2025-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @octokit/rest to v21.1.1 ([#75](https://github.com/EricCrosson/batch-edit-prs/issues/75)) ([68b6967](https://github.com/EricCrosson/batch-edit-prs/commit/68b69674ff1bfe9f8b073599fc3759e5b64f0d20))
+
 ## [1.4.21](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.20...v1.4.21) (2025-01-09)
 
 
