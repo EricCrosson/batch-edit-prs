@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.22...v1.5.0) (2025-03-10)
+
+
+### Features
+
+* use GitHub advanced search ([d190cbd](https://github.com/EricCrosson/batch-edit-prs/commit/d190cbd1187fed88b05e03242643ecc67ef9ae03))
+
 ## [1.4.22](https://github.com/EricCrosson/batch-edit-prs/compare/v1.4.21...v1.4.22) (2025-02-15)
 
 

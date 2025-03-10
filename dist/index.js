@@ -5991,7 +5991,8 @@ var GithubClient = class {
       this.octokit.search.issuesAndPullRequests,
       {
         q: query,
-        per_page: 100
+        per_page: 100,
+        advanced_search: true
       }
     )) {
       for (const issue of issues) {
