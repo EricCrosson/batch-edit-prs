@@ -42,6 +42,7 @@ export class GithubClient {
       {
         q: query,
         per_page: 100,
+        advanced_search: true,
       },
     )) {
       for (const issue of issues) {
