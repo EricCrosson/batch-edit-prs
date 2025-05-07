@@ -8448,6 +8448,19 @@ var Listr = class {
     } else {
       this.events = new ListrEventManager();
     }
+    if (this.options?.forceTTY || process.env[
+      "LISTR_FORCE_TTY"
+      /* FORCE_TTY */
+    ]) {
+      process.stdout.isTTY = true;
+      process.stderr.isTTY = true;
+    }
+    if (this.options?.forceUnicode) {
+      process.env[
+        "LISTR_FORCE_UNICODE"
+        /* FORCE_UNICODE */
+      ] = "1";
+    }
     const renderer = getRenderer({
       renderer: this.options.renderer,
       rendererOptions: this.options.rendererOptions,
@@ -8463,19 +8476,6 @@ var Listr = class {
     if (this.options.registerSignalListeners) {
       this.boundSignalHandler = this.signalHandler.bind(this);
       process.once("SIGINT", this.boundSignalHandler).setMaxListeners(0);
-    }
-    if (this.options?.forceTTY || process.env[
-      "LISTR_FORCE_TTY"
-      /* FORCE_TTY */
-    ]) {
-      process.stdout.isTTY = true;
-      process.stderr.isTTY = true;
-    }
-    if (this.options?.forceUnicode) {
-      process.env[
-        "LISTR_FORCE_UNICODE"
-        /* FORCE_UNICODE */
-      ] = "1";
     }
   }
   static {
