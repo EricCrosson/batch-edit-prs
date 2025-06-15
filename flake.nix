@@ -52,7 +52,7 @@
     in {
       default = nixpkgs.legacyPackages.${system}.symlinkJoin {
         inherit name;
-        paths = [script] ++ [pkgs.nodejs_20];
+        paths = [script];
         buildInputs = [pkgs.makeWrapper];
         postBuild = "wrapProgram $out/bin/${name} --prefix PATH: $out/bin";
       };
