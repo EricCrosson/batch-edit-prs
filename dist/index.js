@@ -502,7 +502,7 @@ var init_environment = __esm({
   }
 });
 
-// node_modules/log-update/node_modules/ansi-escapes/base.js
+// node_modules/ansi-escapes/base.js
 var base_exports = {};
 __export(base_exports, {
   beep: () => beep,
@@ -539,7 +539,7 @@ __export(base_exports, {
 });
 var import_node_process, ESC, OSC, BEL, SEP, isTerminalApp, isWindows3, cwdFunction, cursorTo, cursorMove, cursorUp, cursorDown, cursorForward, cursorBackward, cursorLeft, cursorSavePosition, cursorRestorePosition, cursorGetPosition, cursorNextLine, cursorPrevLine, cursorHide, cursorShow, eraseLines, eraseEndLine, eraseStartLine, eraseLine, eraseDown, eraseUp, eraseScreen, scrollUp, scrollDown, clearScreen, clearTerminal, enterAlternativeScreen, exitAlternativeScreen, beep, link, image, iTerm;
 var init_base = __esm({
-  "node_modules/log-update/node_modules/ansi-escapes/base.js"() {
+  "node_modules/ansi-escapes/base.js"() {
     import_node_process = __toESM(require("node:process"), 1);
     init_environment();
     ESC = "\x1B[";
@@ -661,9 +661,9 @@ var init_base = __esm({
   }
 });
 
-// node_modules/log-update/node_modules/ansi-escapes/index.js
+// node_modules/ansi-escapes/index.js
 var init_ansi_escapes = __esm({
-  "node_modules/log-update/node_modules/ansi-escapes/index.js"() {
+  "node_modules/ansi-escapes/index.js"() {
     init_base();
     init_base();
   }

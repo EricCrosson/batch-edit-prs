@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/EricCrosson/batch-edit-prs/compare/v1.5.2...v1.5.3) (2025-06-15)
+
+
+### Bug Fixes
+
+* resolve node binary collision with system-level nodejs ([c9bab0e](https://github.com/EricCrosson/batch-edit-prs/commit/c9bab0e134affeba2e210fe0dd73e06bd3914193))
+
 ## [1.5.2](https://github.com/EricCrosson/batch-edit-prs/compare/v1.5.1...v1.5.2) (2025-05-07)
 
 
